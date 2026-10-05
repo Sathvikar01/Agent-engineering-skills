@@ -4,7 +4,7 @@ Author: Sathvik. Date: 5 October 2026.
 
 ## Installation and acceptance
 
-19 physical global skills are installed in `~/.cc-switch/skills`, exposed through 19 verified junctions each in Codex and Claude global roots. Catalogue hardlinks expose the same content. CC Switch database/settings were not edited; UI toggle registration is unverified. The old orchestration live name is removed, with its original physical directory retired into the workspace and an immutable v1 snapshot retained.
+All 19 skills were installed into a local global skills store during validation and exposed to Codex and Claude Code through verified directory junctions. Installed content was hash-checked against the staged sources. The old orchestration name (`multi-agent-orchestration`) was retired, with an immutable v1 snapshot retained in the evidence archive. Local machine paths have been replaced with `~` in the published archive.
 
 **Bounded structural/behavior/routing-proxy gates passed. The full acceptance gate is NOT completely verified:** actual automatic invocation/official description optimization, repeated held-out variance and human review remain unresolved. No production-readiness certification is claimed.
 
@@ -101,7 +101,7 @@ Official tooling preflight was repeated in a separate evidence directory on 5 Oc
 
 ## Validation commands and integrity
 
-Runtime: bundled Python invoked with `-X utf8 -B`; locally staged PyYAML dependencies only. Governing tools are untouched.
+Runtime: bundled Python invoked with `-X utf8 -B`; locally staged PyYAML dependencies only. Governing tools are untouched. The `work/` scripts below are archived under `reproduction/` in the evidence zip; they expect the original local workspace layout.
 
 - `python -X utf8 -B work/v2_audit.py`: official quick_validate for each staged skill plus frontmatter/name/author/scope, suite schemas, references, duplicates, snapshot and third-party hashes.
 - `python -X utf8 -B work/v2_finish_evidence.py`: exact assertion contract checks, official aggregate_benchmark and generate_review.py; generated metadata corrected to actual run count and unavailable usage, with raw official output retained.
@@ -133,8 +133,14 @@ The collection catalogue lists all 19 skills, author, purpose, triggers/non-trig
 Final workflow: understand → map uncertainty → choose task-fit architecture → baseline/evals → freeze contracts → model/code boundary and authority → evidence flow → necessary tools/retrieval/state → bounded control → vertical slice → plan/implement/run/debug/correct/review → semantic and evidence reconciliation → failure tests → matched evals/ablations → retain/revise/rollback → technical defence → verification → authorized release.
 
 ```text
-skills/
+Agent-engineering-skills/
+  README.md
+  LICENSE
   AGENT-ENGINEERING-SKILLS.md
+  VALIDATION-REPORT.md
+  evaluation/
+    README.md
+    evaluation-evidence-v2.zip
   agent-architecture/
     evals/evals.json
     evals/trigger-evals.json

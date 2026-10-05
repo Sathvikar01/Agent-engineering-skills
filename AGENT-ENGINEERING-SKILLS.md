@@ -33,11 +33,20 @@ When safe candidates may exist: CONSTRUCT → VERIFY → ADMIT. Bound reconstruc
 | Used support | Observed, accessible evidence checked as support for a particular decision/claim, distinct from retrieval candidates. |
 | Uncertainty map | Component-specific model need, reason, consequence and validation before architecture choice. |
 
-## Global installation and methodology
+## Installation
 
-Discovered central storage: `~/.cc-switch/skills` (`skillStorageLocation=cc_switch`, `skillSyncMethod=auto`). Codex/Claude expose central implementations through junctions in their global skills roots. CC Switch database/settings are not edited; UI toggle registration is not inferred from file presence. A fresh session may be needed for catalogue refresh.
+Install the whole collection or a single skill with the [skills CLI](https://skills.sh):
 
-Anthropic creator at `~/.cc-switch/skills/skill-creator` governs snapshots, progressive disclosure, official eval/trigger/grading schemas, validator, aggregator and review templates. Audit read all 17 v1 custom skills, all suites/resources, 18 creator files and 22 relevant third-party SKILL.md files. This task did not write third-party source. Third-party files drifted between session snapshots; the report preserves differences and verifies the final installation against a current read-only baseline.
+```bash
+npx skills add Sathvikar01/Agent-engineering-skills
+npx skills add Sathvikar01/Agent-engineering-skills --skill agent-evals
+```
+
+Each skill is a self-contained folder with a `SKILL.md`; skills reference each other by name as optional companions, never as required dependencies. A fresh agent session may be needed before newly installed skills appear.
+
+## Methodology
+
+Anthropic's skill-creator governs snapshots, progressive disclosure, official eval/trigger/grading schemas, validator, aggregator and review templates. Audit read all 17 v1 custom skills, all suites/resources, 18 creator files and 22 relevant third-party SKILL.md files. This task did not write third-party source. Third-party files drifted between session snapshots; the report preserves differences and verifies the final installation against a current read-only baseline.
 
 User-supplied Orchestrate observations motivate rules, not statistical/causal claims. Original reports/article were not supplied. No provider choice is prescribed from participation counts. No separate model-selection-and-routing or technical-defence skill: existing owners cover those workflows.
 
@@ -76,8 +85,14 @@ Current Claude CLI preflight is not logged in; untouched official trigger runner
 ## Directory structure
 
 ```text
-skills/
+Agent-engineering-skills/
+  README.md
+  LICENSE
   AGENT-ENGINEERING-SKILLS.md
+  VALIDATION-REPORT.md
+  evaluation/
+    README.md
+    evaluation-evidence-v2.zip
   agent-architecture/
     evals/evals.json
     evals/trigger-evals.json
