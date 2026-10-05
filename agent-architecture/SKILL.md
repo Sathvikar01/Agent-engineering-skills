@@ -5,7 +5,7 @@ description: >-
 metadata:
   author: Sathvik
   collection: "Sathvik — Agent Engineering"
-  version: "2.0.0"
+  version: "2.1.0"
 ---
 
 # Agent Architecture
@@ -31,7 +31,7 @@ Start with the user outcome, not an agent framework. Produce a decision record b
 ## Specify the boundaries
 
 4. Map one representative run: intent → success/evals → context/state → model proposal → deterministic validation → policy authorization → approval if required → tool execution → evidence → evaluation → deterministic state update.
-5. Assign owners for reasoning (interpretation/planning), execution (side effects), trust (untrusted inputs), and authority (permissions/business rules). The model may propose actions but cannot promote its prose into trusted state. Show where each input becomes validated data.
+5. Assign owners for reasoning (interpretation/planning), execution (side effects), trust (untrusted inputs), and authority (permissions/business rules). The model may propose actions but cannot promote its prose into trusted state. Show where each input becomes validated data. Keep routing/control, safety/validation/authority and I/O adapters in separate modules with narrow interfaces so each boundary can be tested and audited; a single monolithic agent module hides them.
 6. Define context sources and budgets; persisted state, memory and source of truth; coherent tool contracts; least-privilege identities; approval gates; and evidence provenance. Use application-owned state for money, permissions and workflow status.
 7. Define terminal statuses and hard ceilings for time, steps, model/tool calls and spend. Include cancellation, no-progress detection, policy denial, unavailable evidence and partial completion. Completion requires outcome verification, not the agent's declaration.
 8. Design checkpoints at durable boundaries, ambiguous-side-effect reconciliation, and resume authorization. Capture run IDs, versions, transitions, costs and evaluator outcomes so a failed trajectory is reconstructable.

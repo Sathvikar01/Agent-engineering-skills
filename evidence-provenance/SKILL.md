@@ -5,7 +5,7 @@ description: >-
 metadata:
   author: Sathvik
   collection: "Sathvik — Agent Engineering"
-  version: "2.0.0"
+  version: "2.1.0"
 ---
 
 # Evidence Provenance
@@ -21,14 +21,15 @@ Provenance is an application-owned record of observed sources/transformations, n
 ## Bind decisions and claims
 
 4. Bind structured facts/decisions to observed evidence or computation inputs/rule/version. Bind emitted claims to supporting decisions/facts/source spans; label inference, uncertainty and gaps. Preserve contradictory sources rather than deleting inconvenient evidence.
-5. Reconcile before emission: decision ↔ facts ↔ explanation ↔ ledger ↔ cited IDs. Enforce emitted IDs ⊆ accessible ledger AND supported used IDs for the relevant claim. Reject guessed IDs, unrelated known IDs, cross-tenant/stale versions and unobserved citations. Do not append provenance to conceal an unsupported decision.
-6. Encode decidable checks in code: ID existence/scope/version, source visibility, transform ancestry, arithmetic and cross-field relations. For semantic entailment/support use evidence-based review or calibrated grader when needed; an ID whitelist is insufficient. A hash does not prove truth. Explanation cannot invent facts absent from the admitted structured path.
+5. Reconcile contradictions explicitly before deciding. Detect evidence that disagrees about the same fact (value, date, status, identity) and resolve it only by a declared, versioned rule—for example authoritative source over derived summary, or newer version over stale where the domain permits. Record the rule and both sources. If no rule resolves it, mark the fact contested and abstain, return a typed conflict status, or escalate; never silently pick the convenient source or let the model choose without a recorded basis.
+6. Reconcile before emission: decision ↔ facts ↔ explanation ↔ ledger ↔ cited IDs. Enforce emitted IDs ⊆ accessible ledger AND supported used IDs for the relevant claim. Reject guessed IDs, unrelated known IDs, cross-tenant/stale versions and unobserved citations. Do not append provenance to conceal an unsupported decision.
+7. Encode decidable checks in code: ID existence/scope/version, source visibility, transform ancestry, arithmetic and cross-field relations. For semantic entailment/support use evidence-based review or calibrated grader when needed; an ID whitelist is insufficient. A hash does not prove truth. Explanation cannot invent facts absent from the admitted structured path.
 
 ## Recover without laundering evidence
 
-7. When support is missing, retrieve/construct a supported candidate or revise/remove the claim within finite budgets, then reconcile under unchanged rules. If none can be established, return explicit unsupported/insufficient-evidence status or fail the required output gate. Critical unsupported decisions fail closed; never fabricate entries or hide uncertainty behind citations.
-8. Carry pointers through tools, compaction, checkpoints and resume. Recheck access/freshness at use; historical IDs may be unauthorized now. Log IDs and validation safely for reconstruction without duplicating sensitive content everywhere.
+8. When support is missing, retrieve/construct a supported candidate or revise/remove the claim within finite budgets, then reconcile under unchanged rules. If none can be established, return explicit unsupported/insufficient-evidence status or fail the required output gate. Critical unsupported decisions fail closed; never fabricate entries or hide uncertainty behind citations.
+9. Carry pointers through tools, compaction, checkpoints and resume. Recheck access/freshness at use; historical IDs may be unauthorized now. Log IDs and validation safely for reconstruction without duplicating sensitive content everywhere.
 
-Deliver ledger/lineage contract, claim-support mapping, reconciliation validator/checker, supported/rejected examples and tests. Read [ledger example](references/ledger-and-reconciliation.md) when implementing records. Verify unknown IDs, retrieved-but-unused/irrelevant citations, spoofed envelopes, lost transform parents, contradictory explanation, revoked access and valid support.
+Deliver ledger/lineage contract, claim-support mapping, reconciliation validator/checker, supported/rejected examples and tests. Read [ledger example](references/ledger-and-reconciliation.md) when implementing records. Verify unknown IDs, retrieved-but-unused/irrelevant citations, spoofed envelopes, lost transform parents, contradictory explanation, conflicting sources resolved by rule versus left contested, revoked access and valid support.
 
 RAG owns retrieval/ranking; this skill owns lineage/reconciliation across evidence-producing stages. Observability records decisions, structured-output-design owns proposal shape/semantics, deterministic-authority owns effect admission. No mandatory dependency chain.

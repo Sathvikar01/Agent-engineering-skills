@@ -5,7 +5,7 @@ description: >-
 metadata:
   author: Sathvik
   collection: "Sathvik — Agent Engineering"
-  version: "2.0.0"
+  version: "2.1.0"
 ---
 
 # Tool Design
@@ -16,7 +16,7 @@ Design the smallest coherent capability surface for the agent's tasks. Existing 
 
 1. List representative user intents, required observations and permitted mutations. Map each intent to a short call sequence. Remove tools that provide authority the task does not need. Do not expose arbitrary SQL, shell or generic HTTP simply because the backend supports them.
 2. Group operations by a stable goal and permission boundary. Prefer a few coherent tools over an omnibus action/args bag or dozens of tiny field setters. Separate read, preview and commit where risk or authorization differs; do not force a preview for harmless reads.
-3. Name tools with explicit action and resource. Describe what they do, when to choose them, explicit USE WHEN and DO NOT USE WHEN choices, preconditions, postconditions, effects and return semantics. Disambiguate overlapping tools using one concrete choice example. Tool metadata describes capabilities; it does not authorize calls.
+3. Name tools with explicit action and resource. Describe what they do, when to choose them, explicit USE WHEN and DO NOT USE WHEN choices, preconditions, postconditions, effects and return semantics. Put one short example call and its result shape in the model-facing description so the model knows what it gets back, not only what it sends. Disambiguate overlapping tools using one concrete choice example. Tool metadata describes capabilities; it does not authorize calls.
 
 ## Make misuse detectable
 

@@ -45,6 +45,17 @@
         "Defines at least three signals with baseline or provisional baseline, threshold, window/denominator, severity and owner/response.",
         "Distinguishes retrieved/visible/used support and proposes reconstructable decision/claim/evidence joins; no invented measured baselines."
       ]
+    },
+    {
+      "id": 5,
+      "prompt": "An audit found our agent approved a wrong refund, but our traces only contain one-line summaries of each model call and tool result. Redesign what the trace keeps so the auditor can see exactly what the model saw and what tools returned, without leaking customer card data.",
+      "expected_output": "Raw prompt/response artifacts retained safely and linked to events.",
+      "files": [],
+      "expectations": [
+        "Retains the exact assembled model input and raw model and tool responses as artifacts linked by event ID, not only summaries.",
+        "Applies redaction before persistence and access control to those artifacts so card data is not stored or exposed.",
+        "Shows how the auditor reconstructs the wrong approval from these artifacts and events."
+      ]
     }
   ]
 }

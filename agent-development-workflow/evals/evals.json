@@ -34,6 +34,18 @@
         "Returns corrected insufficient_evidence sentence.",
         "Does not impose architecture/approval/eval/lifecycle documentation for this typo."
       ]
+    },
+    {
+      "id": 4,
+      "prompt": "Our receipt-to-reimbursement agent passes 18/20 examples. One output has the wrong currency field and the reviewer asked 'is it robust?'. Plan the next debugging step, including what you will paste to the AI coding assistant, and answer the reviewer's question about the currency handling in the format you would use in a technical interview.",
+      "expected_output": "Evidence-bearing debug request and a direct, anchored technical defence.",
+      "files": [],
+      "expectations": [
+        "States an observation and a root-cause hypothesis before investigating or delegating, and includes the actual failing case, output field and error/trace evidence in the AI request instead of a bare 'please investigate'.",
+        "Traces the failing request from input/evidence to the exact final currency field.",
+        "Answers the reviewer directly first, then implementation location, reason, evidence and limitation, and replaces 'robust' with the named run/test result (18/20, the failing case) rather than an adjective.",
+        "States the limitation as gap, current fallback and next step, and separates what the engineer chose or verified from what the AI tool generated."
+      ]
     }
   ]
 }

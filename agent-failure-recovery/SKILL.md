@@ -5,7 +5,7 @@ description: >-
 metadata:
   author: Sathvik
   collection: "Sathvik — Agent Engineering"
-  version: "2.0.0"
+  version: "2.1.0"
 ---
 
 # Agent Failure Recovery
@@ -37,3 +37,7 @@ Use existing debugging skills to find defects; this skill owns runtime recovery 
 ## Plan model-boundary degradation
 
 For each boundary define primary path → eligible bounded retry → repair/alternative → supported partial result, human escalation or terminal failure. Distinguish retry (same eligible request), repair (new candidate under the same facts/contract), fallback (different implementation meeting the same acceptance gate), escalation (authorized external judgment) and terminal failure. Cover empty/malformed output, semantic contradiction, invented IDs, refusal, timeout and provider failure. Deterministic fallback is useful only for behavior it reliably specifies; regex guessing is not a semantic fallback. Construct → verify → admit within remaining budgets when valid candidates may exist. Fallback success requires evidence under the original policy; never bypass validation or resend an unknown committed effect for a reassuring result.
+
+## Plan input-evidence degradation
+
+Before implementation, define for each required input (file, image, audio, message history, record, retrieved document) what happens when it is missing, unreadable/corrupt (truncated, wrong encoding or type, failed decode, checksum/schema mismatch), stale or contradictory. Detect corruption with deterministic checks—size, type, decode, checksum, schema—before model interpretation; a model's description of an unreadable input is not evidence of its content. Choose an explicit action per case: request or re-fetch the input, use a validated alternate source, return a typed partial result naming the gap, escalate, or fail. Do not fill missing or corrupt evidence with plausible model output. Route contradictory inputs to the declared reconciliation rule (evidence-provenance). Test each case with a fixture and assert the typed status and absence of unsupported fields or effects.

@@ -33,6 +33,17 @@
         "Formats supplied bibliography without invented source details.",
         "Does not create agent ledger, decision reconciliation or runtime approval machinery."
       ]
+    },
+    {
+      "id": 4,
+      "prompt": "A claims agent receives a policy record saying coverage ends 2026-03-31 and a customer email summary saying it was extended to 2026-09-30. Retrieval returned both plus three unrelated documents. Design how the system decides the coverage end date and which evidence IDs it may cite.",
+      "expected_output": "Explicit contradiction reconciliation with recorded rule and fail-closed fallback.",
+      "files": [],
+      "expectations": [
+        "Detects the two sources as contradicting the same fact and resolves it only by a declared rule (such as authoritative policy record over derived summary) that is recorded with both sources.",
+        "If the rule cannot resolve it, marks the date contested and abstains, returns a typed conflict or escalates, rather than letting the model pick silently.",
+        "Cites only the evidence actually used for the decision, not the three unrelated retrieved documents."
+      ]
     }
   ]
 }

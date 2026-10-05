@@ -45,6 +45,18 @@
         "Attempts supported repair/alternative when feasible but does not treat semantic regex guessing as verified fallback success.",
         "Revalidates fallback under original semantic/policy/evidence requirements and reports review-needed/terminal status if unresolved."
       ]
+    },
+    {
+      "id": 5,
+      "prompt": "A support agent reads a customer's uploaded screenshot plus message history to propose a refund. Sometimes the screenshot is truncated or not an image, and sometimes the history is missing. Define the behavior before implementation.",
+      "expected_output": "Per-input degradation policy with deterministic corruption checks.",
+      "files": [],
+      "expectations": [
+        "Defines separate behavior for missing, corrupt/unreadable and contradictory inputs before implementation.",
+        "Detects corruption with deterministic checks (type, size, decode or schema) before any model interpretation, and does not treat a model's description of an unreadable image as evidence.",
+        "Chooses explicit actions such as re-request, typed partial result naming the gap, escalation or failure, and never fills the missing screenshot facts with plausible model output or issues a refund on them.",
+        "Specifies fixture tests asserting the typed status and that no refund effect occurs."
+      ]
     }
   ]
 }

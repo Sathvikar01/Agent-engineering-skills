@@ -5,7 +5,7 @@ description: >-
 metadata:
   author: Sathvik
   collection: "Sathvik — Agent Engineering"
-  version: "2.0.0"
+  version: "2.1.0"
 ---
 
 # Agent Observability
@@ -15,7 +15,7 @@ Design telemetry around questions an operator must answer: what the run tried, w
 ## Specify the event contract
 
 1. Choose request/run IDs and parent span/worker/task IDs that survive retries and resume. Distinguish logical operation ID from attempt ID; join distributed records with correlation IDs and state versions. Include event time and ordering/sequence where needed; clock timestamps alone do not establish causal order.
-2. Emit structured events for request acceptance, model call, proposal/validation, policy decision, approval request/decision, tool attempt/result, retrieval/context assembly, checkpoint, state transition, retry/failure, evaluator outcome and terminal status. Capture inputs/outputs by safe reference or redacted bounded fields rather than indiscriminate payload logging.
+2. Emit structured events for request acceptance, model call, proposal/validation, policy decision, approval request/decision, tool attempt/result, retrieval/context assembly, checkpoint, state transition, retry/failure, evaluator outcome and terminal status. Capture inputs/outputs by safe reference or redacted bounded fields rather than indiscriminate payload logging. Where auditability or debugging requires it, retain the exact assembled model input and raw model/tool responses as redacted, access-controlled artifacts linked by event ID; a summary can omit the very fact that caused a failure.
 3. Record actual model/prompt/schema/tool/policy/retrieval versions, authorized principal scope, token usage when available, tool/result classification, timing, normalized action digest, state versions and evidence/receipt IDs. Capture refusal, malformed output, truncated response and unknown effects distinctly.
 4. Log observable decisions and short explanations when useful; do not require or store private chain-of-thought. Tool arguments, policy reasons, citations and committed state are stronger debugging evidence than a narrative of the model's thoughts.
 

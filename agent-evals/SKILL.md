@@ -5,7 +5,7 @@ description: >-
 metadata:
   author: Sathvik
   collection: "Sathvik — Agent Engineering"
-  version: "2.0.0"
+  version: "2.1.0"
 ---
 
 # Agent Evals
@@ -20,7 +20,7 @@ Before large implementation work, write a small executable or reviewable eval sp
 
 ## Score outcomes and trajectories separately
 
-4. Prefer executable assertions for calculations, schemas, final state, authorization, tool arguments, citation existence and budgets. A syntactically valid response is not necessarily correct. Do not require identical intermediate reasoning when several safe trajectories are acceptable.
+4. Prefer executable assertions for calculations, schemas, final state, authorization, tool arguments, citation existence and budgets. A syntactically valid response is not necessarily correct; passing contract/schema checks is scaffolding, not task correctness. When the output is a record or set of fields, score each required field against gold separately (declared exact or normalized match) and report per-field accuracy alongside whole-record exact match; an aggregate score can hide one systematically wrong field. Do not require identical intermediate reasoning when several safe trajectories are acceptable.
 5. Evaluate final answer correctness, completeness, groundedness and calibrated abstention. Evaluate trajectory permissions, tool selection/arguments, evidence support, redundant steps, retry behavior and termination. A good final answer cannot cancel an unauthorized action.
 6. Use a model grader only for judgments that deterministic checks cannot express economically. Give it a rubric, source evidence and examples; conceal variant identity, delimit untrusted content, compare against human labels, and record disagreements. A grader's approval never grants execution authority. Do not request private chain-of-thought; evaluate observable calls, decisions and evidence.
 7. Assign a failure taxonomy: task misunderstanding, context/retrieval, proposal/schema, authority, tool selection/arguments, execution/recovery, grounding, state, termination. Attribute the earliest decisive failure rather than counting downstream symptoms as independent failures.
@@ -37,4 +37,4 @@ Existing TDD and verification skills own normal code correctness and completion 
 
 ## Make comparisons rerunnable
 
-Provide one project-appropriate command that resets fixtures, runs the selected suite and emits results: run → inspect → change → rerun → compare. Record hypothesis, changed variable, dataset/prompt/model versions, architecture, retrieval and verification settings, task/safety/tool/provenance metrics, latency, cost, failure classes and KEEP/REVISE/REJECT conclusion. Separate formal eval results from production telemetry and exploratory diagnostics. Ablate optional verification, an extra model or routing before attributing reliability to it; unavailable measurements remain unavailable.
+Provide one project-appropriate command that resets fixtures, runs the selected suite and emits results: run → inspect → change → rerun → compare. Record hypothesis, changed variable, dataset/prompt/model versions, architecture, retrieval and verification settings, task/safety/tool/provenance metrics, latency, cost, failure classes and KEEP/REVISE/REJECT conclusion. Record each rejected alternative as TRIED → RESULT → REJECTED because <metric> moved from X to Y on <dataset/version>. Quality claims such as "more robust" or "more reliable" must name the run, metric and dataset that support them, otherwise report them as unmeasured. Separate formal eval results from production telemetry and exploratory diagnostics. Ablate optional verification, an extra model or routing before attributing reliability to it; unavailable measurements remain unavailable.

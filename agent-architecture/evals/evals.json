@@ -45,6 +45,17 @@
         "Uses fixed control and deterministic calculations/authority while permitting bounded model interpretation.",
         "Rejects multi-agent/framework machinery for typed arithmetic and requires evidence before extra model/framework complexity."
       ]
+    },
+    {
+      "id": 5,
+      "prompt": "Our ticket-routing agent is a single 2,400-line file mixing prompt assembly, model calls, routing decisions, PII redaction and the database writes. Propose the target structure before we add a refund capability.",
+      "expected_output": "Module boundaries that keep control, safety and I/O separately testable.",
+      "files": [],
+      "expectations": [
+        "Separates routing/control, safety/validation/authority and I/O adapters into distinct modules with narrow interfaces.",
+        "Explains how each boundary is tested or audited independently, including that the refund path passes deterministic authority before the database write.",
+        "Does not add agents or a framework merely to split the file."
+      ]
     }
   ]
 }

@@ -8,6 +8,22 @@ All 19 skills were installed into a local global skills store during validation 
 
 **Bounded structural/behavior/routing-proxy gates passed. The full acceptance gate is NOT completely verified:** actual automatic invocation/official description optimization, repeated held-out variance and human review remain unresolved. No production-readiness certification is claimed.
 
+## Revision 2.1.0 addendum (5 October 2026)
+
+Seven skills received targeted additions mapped to the published HackerRank Orchestrate findings and interview feedback (complete engineering loop, technical defence, ownership, output contracts, evaluation evidence). Descriptions are unchanged, so trigger behavior and the 380 trigger cases are unaffected.
+
+| Skill | Addition |
+|---|---|
+| agent-development-workflow | Freeze run command/arguments and exact output fields; define missing/corrupt/contradictory input behavior up front; trace one real request to each final field; OBSERVATION → HYPOTHESIS → TRACE → FIX with pasted evidence before delegating debugging to AI; state engineer-vs-AI ownership; keep raw prompts/tool responses/diffs/assertions/traces; anchor claims to code; replace "robust"-style claims with named evidence; GAP → CURRENT FALLBACK → NEXT STEP |
+| agent-evals | Contract checks are scaffolding; per-field accuracy plus whole-record exact match; TRIED → RESULT → REJECTED record; quality claims must name run/metric/dataset |
+| evidence-provenance | New step 5: explicit contradiction reconciliation by a declared, recorded rule, otherwise contested/abstain/escalate (later steps renumbered 6–9) |
+| agent-failure-recovery | New section: input-evidence degradation for missing, corrupt, stale and contradictory inputs with deterministic corruption checks |
+| agent-observability | Retain exact assembled model input and raw model/tool responses as redacted, access-controlled artifacts when auditability requires |
+| tool-design | Example call and result shape in each model-facing description |
+| agent-architecture | Separate routing/control, safety/validation/authority and I/O modules |
+
+Each revised skill gained one stored behavioral case targeting its addition (7 cases; collection total 78). **These cases have not been executed;** 2.1.0 behavior is unverified until paired runs against 2.0.0 are completed. Structural checks (frontmatter, JSON, links, CLI discovery) were rerun on the revised files.
+
 ## Audit, changes and scope
 
 Read every v1 custom SKILL.md, all 51 behavioral cases, all 340 trigger queries and four references; no custom production scripts existed. Read all 18 installed Anthropic creator files and 22 relevant third-party SKILL.md files, plus three newly visible architecture/interview command files after the inventory refresh. Their explicitly invoked general refactor/interview workflows remain complementary; no additional agent specialist was discovered. Preserve v1 files/evaluation history. Rules are motivated by the user-supplied Orchestrate observations; original reports/article were not provided and no external statistics or causality are claimed.

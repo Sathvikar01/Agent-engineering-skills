@@ -44,6 +44,17 @@
         "Provides representative request/response examples and strict input/output/errors for coherent search/preview/commit tools.",
         "Preview cannot commit and model-selected commit cannot bypass exact approval/validation or idempotency."
       ]
+    },
+    {
+      "id": 5,
+      "prompt": "Write the model-facing definitions for two tools an order-support agent will use: one that looks up an order and one that issues a refund.",
+      "expected_output": "Tool contracts optimized for model selection.",
+      "files": [],
+      "expectations": [
+        "Each description states USE WHEN and DO NOT USE WHEN guidance and disambiguates the two tools.",
+        "Each description includes one short example call and the shape of what it returns.",
+        "The refund tool states side effects, idempotency and error semantics, with identity and permissions taken from execution context."
+      ]
     }
   ]
 }
