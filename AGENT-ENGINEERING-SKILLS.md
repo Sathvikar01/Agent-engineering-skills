@@ -1,4 +1,4 @@
-# Sathvik — Agent Engineering
+# Agent Engineering
 
 Author: **Sathvik**. Collection revision: **2.0.0**. Nineteen global, framework-agnostic skills. Three unchanged skill implementations retain version 1.0.0; modified/new implementations use 2.0.0.
 
