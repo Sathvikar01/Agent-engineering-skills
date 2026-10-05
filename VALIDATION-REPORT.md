@@ -1,4 +1,4 @@
-# Sathvik — Agent Engineering: revision 2 validation report
+# Agent Engineering: revision 2 validation report
 
 Author: Sathvik. Date: 5 October 2026.
 
