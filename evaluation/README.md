@@ -9,3 +9,4 @@ The selected behavioral comparison ran 68 paired cases across 16 modified or new
 The archive preserves failed and superseded runs alongside corrected iterations. See `VALIDATION-REPORT.md` for the exact failures, scope of each rerun, and unresolved limitations. Actual automatic invocation and official description optimization could not be measured in this environment; repeated-run variance and human review also remain outstanding.
 
 The archive records the work and includes individual test artifacts where generated. It is not a single-command, provider-independent replay harness: some checks depend on the original evaluation runner, model access, or the fixture context described in their run records.
+[`v2.1/`](v2.1/README.md) holds the paired, blinded smoke run of the seven cases added in revision 2.1.0, with every answer, grade and the ID-to-version map.

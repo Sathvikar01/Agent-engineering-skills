@@ -1,0 +1,379 @@
+{
+ "r06": {
+  "case": "wf",
+  "results": [
+   {
+    "expectation": 0,
+    "verdict": "PASS",
+    "evidence": "Hypothesis written before tracing; AI request includes \"Case <id_A> fails on the `currency` field only\" plus per-stage values and \"<pasted output / failing assertion>\"."
+   },
+   {
+    "expectation": 1,
+    "verdict": "PASS",
+    "evidence": "receipt text/image → OCR → model raw output → schema parse → normalizer/defaults → (FX conversion) → final record"
+   },
+   {
+    "expectation": 2,
+    "verdict": "PASS",
+    "evidence": "Answer. Not shown yet... The evidence we have is 18/20 overall, with one confirmed currency failure... 'unverified, and we have one counterexample', not 'robust'."
+   },
+   {
+    "expectation": 3,
+    "verdict": "FAIL",
+    "evidence": "Has a GAP | CURRENT FALLBACK | NEXT STEP table, but never separates what the engineer chose/verified from what the AI tool generated."
+   }
+  ],
+  "passed": 3,
+  "total": 4,
+  "config": "wf-new"
+ },
+ "r13": {
+  "case": "wf",
+  "results": [
+   {
+    "expectation": 0,
+    "verdict": "PASS",
+    "evidence": "Hypothesis table precedes the request; request includes \"Case <CASE_ID> outputs currency=<ACTUAL>, expected <EXPECTED>. Attached: receipt text layer, raw model output...\""
+   },
+   {
+    "expectation": 1,
+    "verdict": "PASS",
+    "evidence": "Trace the currency value through each stage: OCR text -> model raw output -> parsing -> symbol/code normalization -> defaults -> FX conversion -> final output."
+   },
+   {
+    "expectation": 2,
+    "verdict": "PASS",
+    "evidence": "Answer. Not yet... We pass 18/20 overall, but one case returns the wrong currency. Followed by Where it lives / Why / Evidence / Limitation."
+   },
+   {
+    "expectation": 3,
+    "verdict": "FAIL",
+    "evidence": "Limitation is prose without an explicit gap/fallback/next-step structure, and there is no separation of engineer-chosen/verified work from AI-generated work."
+   }
+  ],
+  "passed": 3,
+  "total": 4,
+  "config": "wf-old"
+ },
+ "r04": {
+  "case": "ev",
+  "results": [
+   {
+    "expectation": 0,
+    "verdict": "PASS",
+    "evidence": "Per-field accuracy for each of the five fields, with 95% CIs. Whole-record exact match (all five fields correct)."
+   },
+   {
+    "expectation": 1,
+    "verdict": "PASS",
+    "evidence": "No critical-field regression: for currency and total... If B improves the average but fails any of 1, 2, 4, 5, or 8, it's rejected"
+   },
+   {
+    "expectation": 2,
+    "verdict": "FAIL",
+    "evidence": "Decision record uses Hypothesis/Evidence/Conclusion: REVISE; no TRIED -> RESULT -> REJECTED entry with a metric moving from X to Y."
+   },
+   {
+    "expectation": 3,
+    "verdict": "PASS",
+    "evidence": "Robustness claim: UNMEASURED — no run, metric or dataset supports it."
+   }
+  ],
+  "passed": 3,
+  "total": 4,
+  "config": "ev-new"
+ },
+ "r12": {
+  "case": "ev",
+  "results": [
+   {
+    "expectation": 0,
+    "verdict": "PASS",
+    "evidence": "Report template rows: \"Document-level success\" and \"Field match: total / currency / tax / vendor / date\" with columns A and B."
+   },
+   {
+    "expectation": 1,
+    "verdict": "PASS",
+    "evidence": "Per-field floors: no statistically meaningful regression on total or currency... A gain in the average that breaches gate 1, 3, 4 or 5 is rejected."
+   },
+   {
+    "expectation": 2,
+    "verdict": "FAIL",
+    "evidence": "Mentions a KEEP / REVISE / REJECT log but records no variant as TRIED -> RESULT -> REJECTED with a named metric moving X to Y."
+   },
+   {
+    "expectation": 3,
+    "verdict": "PASS",
+    "evidence": "B is \"more robust\" | No | Robustness means performance on hard slices plus run-to-run stability. Neither was measured"
+   }
+  ],
+  "passed": 3,
+  "total": 4,
+  "config": "ev-old"
+ },
+ "r10": {
+  "case": "pv",
+  "results": [
+   {
+    "expectation": 0,
+    "verdict": "PASS",
+    "evidence": "D1: fact=coverage_end_date, value=2026-03-31, rule=coverage-date-resolution@v2, support=[E1, RECHECK-1], rejected=[E2], conflict=K1"
+   },
+   {
+    "expectation": 1,
+    "verdict": "PASS",
+    "evidence": "The system abstains on the coverage decision, returns status=CONTESTED_FACT, and sends the case to a human adjuster with both sources attached."
+   },
+   {
+    "expectation": 2,
+    "verdict": "PASS",
+    "evidence": "E3, E4, E5 | No | Retrieved but unrelated. Being retrieved isn't support."
+   }
+  ],
+  "passed": 3,
+  "total": 3,
+  "config": "pv-new"
+ },
+ "r11": {
+  "case": "pv",
+  "results": [
+   {
+    "expectation": 0,
+    "verdict": "PASS",
+    "evidence": "Rule coverage_end_resolution@v3 ... support = [EV-POL] conflict = {EV-SUM: \"unverified extension claim\"}; record stores rule version and conflict set."
+   },
+   {
+    "expectation": 1,
+    "verdict": "PASS",
+    "evidence": "Endorsement pending / ambiguous / lookup failed → coverage_end = unresolved, status = insufficient_evidence"
+   },
+   {
+    "expectation": 2,
+    "verdict": "PASS",
+    "evidence": "In all cases: EV-U1..3 are recorded as retrieved but unused, and appear in no citation."
+   }
+  ],
+  "passed": 3,
+  "total": 3,
+  "config": "pv-old"
+ },
+ "r08": {
+  "case": "fr",
+  "results": [
+   {
+    "expectation": 0,
+    "verdict": "PASS",
+    "evidence": "Separate rows: A EVIDENCE_MISSING, B/C EVIDENCE_UNREADABLE (wrong_type/truncated), E EVIDENCE_CONFLICT."
+   },
+   {
+    "expectation": 1,
+    "verdict": "PASS",
+    "evidence": "Size, MIME sniffing, decode, dimensions and schema checks run first. If the model describes an image that failed to decode, that description is not evidence"
+   },
+   {
+    "expectation": 2,
+    "verdict": "PASS",
+    "evidence": "Never fill a gap with plausible output... the agent asks for it again, uses a validated alternate source, returns a typed partial result that names the gap, or escalates."
+   },
+   {
+    "expectation": 3,
+    "verdict": "PASS",
+    "evidence": "Each case uses a fixture and asserts the typed status, the exact gaps/conflicts entries, and the absence of unsupported fields and side effects."
+   }
+  ],
+  "passed": 4,
+  "total": 4,
+  "config": "fr-new"
+ },
+ "r01": {
+  "case": "fr",
+  "results": [
+   {
+    "expectation": 0,
+    "verdict": "PASS",
+    "evidence": "Classes absent/not_found, truncated/invalid_type, and \"Screenshot contradicts order record\" → needs_human_review, each with distinct handling."
+   },
+   {
+    "expectation": 1,
+    "verdict": "PASS",
+    "evidence": "Input classification (runs before any model call)... Magic-byte sniffing; \"Field claimed as 'visible' but region was marked undecodable | Reject and treat the field as unknown.\""
+   },
+   {
+    "expectation": 2,
+    "verdict": "PASS",
+    "evidence": "Never propose an amount with neither customer evidence nor context."
+   },
+   {
+    "expectation": 3,
+    "verdict": "FAIL",
+    "evidence": "Tests assert typed statuses for degraded inputs, but none explicitly asserts that no refund/proposal write side effect occurs in those cases."
+   }
+  ],
+  "passed": 3,
+  "total": 4,
+  "config": "fr-old"
+ },
+ "r02": {
+  "case": "ob",
+  "results": [
+   {
+    "expectation": 0,
+    "verdict": "PASS",
+    "evidence": "Raw evidence artifacts: the exact assembled model input, the raw model output, and the raw tool requests and responses... linked to events by ID."
+   },
+   {
+    "expectation": 1,
+    "verdict": "PASS",
+    "evidence": "redacted before they are written, stored under restricted access... Evidence artifacts go in a restricted store with... role-based access"
+   },
+   {
+    "expectation": 2,
+    "verdict": "PASS",
+    "evidence": "The auditor can open art_input_2 and see exactly what the model was given. They can diff it against art_tres_1 to see the truncation"
+   }
+  ],
+  "passed": 3,
+  "total": 3,
+  "config": "ob-new"
+ },
+ "r03": {
+  "case": "ob",
+  "results": [
+   {
+    "expectation": 0,
+    "verdict": "PASS",
+    "evidence": "Exact rendered request payload (system, messages, tool definitions) and raw response; each envelope event refers to its blobs by a content-addressed ID"
+   },
+   {
+    "expectation": 1,
+    "verdict": "PASS",
+    "evidence": "The redaction pipeline (runs before any write to the envelope or the evidence store)... Evidence store access is limited per tenant and per role"
+   },
+   {
+    "expectation": 2,
+    "verdict": "PASS",
+    "evidence": "Operator runbook: \"why was refund X approved?\" ... Open policy.decision and follow each input fact's source event ID back to the tool result blob."
+   }
+  ],
+  "passed": 3,
+  "total": 3,
+  "config": "ob-old"
+ },
+ "r07": {
+  "case": "td",
+  "results": [
+   {
+    "expectation": 0,
+    "verdict": "PASS",
+    "evidence": "USE WHEN ... (\"where's my refund?\" is a find_orders question, not an issue_refund one); both tools have USE WHEN / DO NOT USE WHEN."
+   },
+   {
+    "expectation": 1,
+    "verdict": "PASS",
+    "evidence": "EXAMPLE find_orders({\"order_number\": \"ORD-10002345\"}) -> {...}; EXAMPLE issue_refund({...}) -> {\"refund_id\":\"rf_91x\",\"status\":\"accepted\",...}"
+   },
+   {
+    "expectation": 2,
+    "verdict": "PASS",
+    "evidence": "MOVES MONEY. Cannot be undone... Never mint a new key for a retry; error table; runtime injects customer_id, tenant_id and permission scope."
+   }
+  ],
+  "passed": 3,
+  "total": 3,
+  "config": "td-new"
+ },
+ "r14": {
+  "case": "td",
+  "results": [
+   {
+    "expectation": 0,
+    "verdict": "PASS",
+    "evidence": "Choosing between tools: \"Where's my refund for ORD-20481133?\" → lookup_order... \"Please refund ORD-20481133\" → lookup_order first, then issue_refund"
+   },
+   {
+    "expectation": 1,
+    "verdict": "FAIL",
+    "evidence": "Neither model-facing description contains an example call; examples appear only in separate walkthrough sections."
+   },
+   {
+    "expectation": 2,
+    "verdict": "PASS",
+    "evidence": "This moves money and the agent cannot undo it... same key and identical arguments... Identity, permissions and approval come from the session and the policy engine"
+   }
+  ],
+  "passed": 2,
+  "total": 3,
+  "config": "td-old"
+ },
+ "r09": {
+  "case": "ar",
+  "results": [
+   {
+    "expectation": 0,
+    "verdict": "PASS",
+    "evidence": "control/ (ROUTING/CONTROL), policy/ (AUTHORITY), intake/ (TRUST boundary), adapters/ (I/O. Thin, swappable, contract-tested.)"
+   },
+   {
+    "expectation": 1,
+    "verdict": "PASS",
+    "evidence": "Boundary table with \"Test that proves it\" per module; \"The executor runs only a decision, never a proposal.\""
+   },
+   {
+    "expectation": 2,
+    "verdict": "PASS",
+    "evidence": "don't add an agent loop... Adopting an agent framework as part of this refactor [avoid]."
+   }
+  ],
+  "passed": 3,
+  "total": 3,
+  "config": "ar-new"
+ },
+ "r05": {
+  "case": "ar",
+  "results": [
+   {
+    "expectation": 0,
+    "verdict": "PASS",
+    "evidence": "pipeline/ (fixed step order), trust/ and policy/ (authority), actions/ and state/repository.py (all DB access), with one-way dependency rules."
+   },
+   {
+    "expectation": 1,
+    "verdict": "PASS",
+    "evidence": "Authority violations... 100% denied or sent to approval. Zero Admit; issue_refund \"executes an ADMITTED refund\"; decision + outbox row in one transaction."
+   },
+   {
+    "expectation": 2,
+    "verdict": "PASS",
+    "evidence": "So no tool-calling loop and no multi-agent split."
+   }
+  ],
+  "passed": 3,
+  "total": 3,
+  "config": "ar-old"
+ },
+ "r15": {
+  "case": "wf",
+  "passed": 4,
+  "total": 4,
+  "results": [
+   {
+    "expectation": 0,
+    "verdict": "PASS"
+   },
+   {
+    "expectation": 1,
+    "verdict": "PASS"
+   },
+   {
+    "expectation": 2,
+    "verdict": "PASS"
+   },
+   {
+    "expectation": 3,
+    "verdict": "PASS"
+   }
+  ],
+  "note": "Re-run after the step-14 ownership fix; graded separately by a fresh grader with the same rubric.",
+  "config": "wf-fix"
+ }
+}

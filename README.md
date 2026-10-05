@@ -59,6 +59,7 @@ Skills mention each other by name as optional companions; none is a required dep
 Each skill ships behavioral cases (`evals/evals.json`) and 20 balanced trigger queries (`evals/trigger-evals.json`).
 
 - **Behavioral:** 68 paired runs over the 16 new or revised skills. Revised skills met 116/116 graded assertions versus 111/116 for their baselines; 4 skills improved and 12 tied. Each case ran once and graders were not blinded, so this is smoke evidence, not a measure of reliability.
+- **Revision 2.1.0:** a paired, blinded run of the seven new cases scored 22/24 for 2.1.0 versus 20/24 for 2.0.0, and 23/24 after one fix the run exposed ([details](evaluation/v2.1/README.md)).
 - **Triggering:** a catalogue-selection proxy chose the right skill in 379/380 queries. Real automatic activation inside an agent harness was not measured.
 
 [VALIDATION-REPORT.md](VALIDATION-REPORT.md) records every preserved failure and open limitation. [`evaluation/`](evaluation/README.md) holds the full run archive.

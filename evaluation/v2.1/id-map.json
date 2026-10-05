@@ -1,0 +1,17 @@
+{
+ "r06": "wf-new",
+ "r13": "wf-old",
+ "r04": "ev-new",
+ "r12": "ev-old",
+ "r10": "pv-new",
+ "r11": "pv-old",
+ "r08": "fr-new",
+ "r01": "fr-old",
+ "r02": "ob-new",
+ "r03": "ob-old",
+ "r07": "td-new",
+ "r14": "td-old",
+ "r09": "ar-new",
+ "r05": "ar-old",
+ "r15": "wf-fix"
+}

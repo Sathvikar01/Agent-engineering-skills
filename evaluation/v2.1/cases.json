@@ -1,0 +1,68 @@
+{
+ "wf": {
+  "skill": "agent-development-workflow",
+  "prompt": "Our receipt-to-reimbursement agent passes 18/20 examples. One output has the wrong currency field and the reviewer asked 'is it robust?'. Plan the next debugging step, including what you will paste to the AI coding assistant, and answer the reviewer's question about the currency handling in the format you would use in a technical interview.",
+  "expectations": [
+   "States an observation and a root-cause hypothesis before investigating or delegating, and includes the actual failing case, output field and error/trace evidence in the AI request instead of a bare 'please investigate'.",
+   "Traces the failing request from input/evidence to the exact final currency field.",
+   "Answers the reviewer directly first, then implementation location, reason, evidence and limitation, and replaces 'robust' with the named run/test result (18/20, the failing case) rather than an adjective.",
+   "States the limitation as gap, current fallback and next step, and separates what the engineer chose or verified from what the AI tool generated."
+  ]
+ },
+ "ev": {
+  "skill": "agent-evals",
+  "prompt": "Our invoice-extraction agent emits vendor, date, currency, total and tax per document. Variant B scores 91% average field match versus 89% for variant A on the same 200-document dev set. A teammate says B is more robust and wants to ship it. Write the comparison and release decision.",
+  "expectations": [
+   "Reports per-field accuracy for each of the five fields and whole-record exact match for both variants, rather than only the average.",
+   "Checks whether B regresses any individual field (for example currency or tax) and blocks or flags the release if a critical field regressed despite the higher average.",
+   "Records any rejected variant as TRIED -> RESULT -> REJECTED because a named metric moved from X to Y on the named dataset/version.",
+   "Refuses the unqualified 'more robust' claim unless it names the run, metric and dataset supporting it."
+  ]
+ },
+ "pv": {
+  "skill": "evidence-provenance",
+  "prompt": "A claims agent receives a policy record saying coverage ends 2026-03-31 and a customer email summary saying it was extended to 2026-09-30. Retrieval returned both plus three unrelated documents. Design how the system decides the coverage end date and which evidence IDs it may cite.",
+  "expectations": [
+   "Detects the two sources as contradicting the same fact and resolves it only by a declared rule (such as authoritative policy record over derived summary) that is recorded with both sources.",
+   "If the rule cannot resolve it, marks the date contested and abstains, returns a typed conflict or escalates, rather than letting the model pick silently.",
+   "Cites only the evidence actually used for the decision, not the three unrelated retrieved documents."
+  ]
+ },
+ "fr": {
+  "skill": "agent-failure-recovery",
+  "prompt": "A support agent reads a customer's uploaded screenshot plus message history to propose a refund. Sometimes the screenshot is truncated or not an image, and sometimes the history is missing. Define the behavior before implementation.",
+  "expectations": [
+   "Defines separate behavior for missing, corrupt/unreadable and contradictory inputs before implementation.",
+   "Detects corruption with deterministic checks (type, size, decode or schema) before any model interpretation, and does not treat a model's description of an unreadable image as evidence.",
+   "Chooses explicit actions such as re-request, typed partial result naming the gap, escalation or failure, and never fills the missing screenshot facts with plausible model output or issues a refund on them.",
+   "Specifies fixture tests asserting the typed status and that no refund effect occurs."
+  ]
+ },
+ "ob": {
+  "skill": "agent-observability",
+  "prompt": "An audit found our agent approved a wrong refund, but our traces only contain one-line summaries of each model call and tool result. Redesign what the trace keeps so the auditor can see exactly what the model saw and what tools returned, without leaking customer card data.",
+  "expectations": [
+   "Retains the exact assembled model input and raw model and tool responses as artifacts linked by event ID, not only summaries.",
+   "Applies redaction before persistence and access control to those artifacts so card data is not stored or exposed.",
+   "Shows how the auditor reconstructs the wrong approval from these artifacts and events."
+  ]
+ },
+ "td": {
+  "skill": "tool-design",
+  "prompt": "Write the model-facing definitions for two tools an order-support agent will use: one that looks up an order and one that issues a refund.",
+  "expectations": [
+   "Each description states USE WHEN and DO NOT USE WHEN guidance and disambiguates the two tools.",
+   "Each description includes one short example call and the shape of what it returns.",
+   "The refund tool states side effects, idempotency and error semantics, with identity and permissions taken from execution context."
+  ]
+ },
+ "ar": {
+  "skill": "agent-architecture",
+  "prompt": "Our ticket-routing agent is a single 2,400-line file mixing prompt assembly, model calls, routing decisions, PII redaction and the database writes. Propose the target structure before we add a refund capability.",
+  "expectations": [
+   "Separates routing/control, safety/validation/authority and I/O adapters into distinct modules with narrow interfaces.",
+   "Explains how each boundary is tested or audited independently, including that the refund path passes deterministic authority before the database write.",
+   "Does not add agents or a framework merely to split the file."
+  ]
+ }
+}

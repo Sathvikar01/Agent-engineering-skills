@@ -1,6 +1,6 @@
 # Agent Engineering
 
-Collection revision: **2.1.0**. Nineteen global, framework-agnostic skills. Three unchanged skill implementations retain version 1.0.0; seven skills revised in 2.1.0 (agent-architecture, agent-development-workflow, agent-evals, agent-failure-recovery, agent-observability, evidence-provenance, tool-design) use 2.1.0; the rest use 2.0.0. The eval-status column below reports the 2.0.0 runs; 2.1.0 additions are covered by new stored cases not yet executed (see the validation report).
+Collection revision: **2.1.0**. Nineteen global, framework-agnostic skills. Three unchanged skill implementations retain version 1.0.0; seven skills revised in 2.1.0 (agent-architecture, agent-development-workflow, agent-evals, agent-failure-recovery, agent-observability, evidence-provenance, tool-design) use 2.1.0; the rest use 2.0.0. The eval-status column below reports the 2.0.0 runs; 2.1.0 additions were checked in a paired, blinded smoke run against 2.0.0 (22/24 vs 20/24; 23/24 after one fix) — see [evaluation/v2.1](evaluation/v2.1/README.md).
 
 Models handle uncertainty. Deterministic software handles authority wherever correctness can be specified. Evidence decides whether changes survive. The engineering loop continues beyond generation. Choose the simplest architecture that correctly handles uncertainty; avoid both agentification and brittle deterministic overcorrection.
 

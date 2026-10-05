@@ -4,7 +4,7 @@ Date: 5 October 2026.
 
 ## Installation and acceptance
 
-All 19 skills were installed into a local global skills store during validation and exposed to Codex and Claude Code through verified directory junctions. Installed content was hash-checked against the staged sources. The old orchestration name (`multi-agent-orchestration`) was retired, with an immutable v1 snapshot retained in the evidence archive. Local machine paths have been replaced with `~` in the published archive.
+All 19 skills were installed into a local global skills store during validation and exposed to Codex and Claude Code through verified directory junctions. Installed content was hash-checked against the staged sources. The old orchestration name (`multi-agent-orchestration`) was retired, with an immutable v1 snapshot retained in the evidence archive. Local machine paths have been replaced with `~` and personal attribution removed from metadata in the published archive; integrity hashes recorded inside the archive refer to the original files.
 
 **Bounded structural/behavior/routing-proxy gates passed. The full acceptance gate is NOT completely verified:** actual automatic invocation/official description optimization, repeated held-out variance and human review remain unresolved. No production-readiness certification is claimed.
 
@@ -14,7 +14,7 @@ Seven skills received targeted additions mapped to the published HackerRank Orch
 
 | Skill | Addition |
 |---|---|
-| agent-development-workflow | Freeze run command/arguments and exact output fields; define missing/corrupt/contradictory input behavior up front; trace one real request to each final field; OBSERVATION → HYPOTHESIS → TRACE → FIX with pasted evidence before delegating debugging to AI; state engineer-vs-AI ownership; keep raw prompts/tool responses/diffs/assertions/traces; anchor claims to code; replace "robust"-style claims with named evidence; GAP → CURRENT FALLBACK → NEXT STEP |
+| agent-development-workflow | Freeze run command/arguments and exact output fields; define missing/corrupt/contradictory input behavior up front; trace one real request to each final field; OBSERVATION → HYPOTHESIS → TRACE → FIX with pasted evidence before delegating debugging to AI; state engineer-vs-AI ownership; keep raw prompts/tool responses/diffs/assertions/traces; anchor claims to code; replace "robust"-style claims with named evidence; GAP → CURRENT FALLBACK → NEXT STEP; engineer-vs-AI ownership in every defence (step 14, added after the smoke run) |
 | agent-evals | Contract checks are scaffolding; per-field accuracy plus whole-record exact match; TRIED → RESULT → REJECTED record; quality claims must name run/metric/dataset |
 | evidence-provenance | New step 5: explicit contradiction reconciliation by a declared, recorded rule, otherwise contested/abstain/escalate (later steps renumbered 6–9) |
 | agent-failure-recovery | New section: input-evidence degradation for missing, corrupt, stale and contradictory inputs with deterministic corruption checks |
@@ -22,7 +22,7 @@ Seven skills received targeted additions mapped to the published HackerRank Orch
 | tool-design | Example call and result shape in each model-facing description |
 | agent-architecture | Separate routing/control, safety/validation/authority and I/O modules |
 
-Each revised skill gained one stored behavioral case targeting its addition (7 cases; collection total 78). **These cases have not been executed;** 2.1.0 behavior is unverified until paired runs against 2.0.0 are completed. Structural checks (frontmatter, JSON, links, CLI discovery) were rerun on the revised files.
+Each revised skill gained one behavioral case targeting its addition (7 cases; collection total 78). These were run as a paired, blinded smoke comparison against the 2.0.0 skills (one fresh executor per run, one blind grader): **2.1.0 scored 22/24 versus 20/24 for 2.0.0**, improving agent-failure-recovery (4/4 vs 3/4) and tool-design (3/3 vs 2/3), with five ties. The run exposed that the engineer-vs-AI ownership rule lived only in step 13, so it was not applied in direct answers; it was added to step 14 and a fresh re-run passed 4/4 (23/24 overall). agent-evals expectation 2 failed in both configurations because both correctly held rather than rejected a variant; the failure is preserved and the case needs revision. One sample per case: smoke evidence, not reliability. Answers, grades and method are in [evaluation/v2.1](evaluation/v2.1/README.md). Structural checks (frontmatter, JSON, links, CLI discovery) were rerun on the revised files.
 
 ## Audit, changes and scope
 
