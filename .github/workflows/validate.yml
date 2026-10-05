@@ -1,0 +1,37 @@
+name: Validate skills
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install validators
+        run: pip install skills-ref==0.1.1 pyyaml==6.0.2
+
+      - name: Agent Skills reference validation
+        run: |
+          status=0
+          count=0
+          for skill in */SKILL.md; do
+            dir="${skill%/SKILL.md}"
+            count=$((count + 1))
+            agentskills validate "$dir" || status=1
+          done
+          echo "Validated $count skill directories"
+          [ "$count" -gt 0 ] || { echo "No skills found"; exit 1; }
+          exit $status
+
+      - name: Repository checks
+        run: python scripts/validate_repo.py

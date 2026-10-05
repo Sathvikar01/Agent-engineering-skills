@@ -4,7 +4,7 @@ description: >-
   Define evaluation-first quality gates for an AI agent or model-powered workflow. Use when specifying agent success before implementation, building gold task sets, comparing agent variants, or diagnosing outcome and trajectory regressions. Do not use for ordinary unit-test writing or tool-interface usability alone without an agent quality measurement question.
 metadata:
   collection: "Agent Engineering"
-  version: "2.1.0"
+  version: "2.1.1"
 ---
 
 # Agent Evals
@@ -32,7 +32,7 @@ Before large implementation work, write a small executable or reviewable eval sp
 
 Deliver case fixtures, scoring/rubric, split policy, runtime-input exposure manifest and leakage assertion, reproducibility manifest, failure analysis and release decision with evidence. Read [scoring guide](references/scoring.md) when constructing metrics or grader calibration.
 
-Existing TDD and verification skills own normal code correctness and completion evidence. Agent-testing owns the runtime test pyramid; tool-evals isolates usability of the tool surface. Do not rebuild either here.
+Normal code correctness and completion evidence belong to ordinary TDD and verification practice (or matching skills, if available). Agent-testing owns the runtime test pyramid; tool-evals isolates usability of the tool surface. Do not rebuild either here.
 
 ## Make comparisons rerunnable
 

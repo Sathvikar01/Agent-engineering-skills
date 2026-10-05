@@ -1,0 +1,22 @@
+{
+ "ev": {
+  "skill": "agent-evals",
+  "prompt": "Our invoice-extraction agent emits vendor, date, currency, total and tax per document. Variant B scores 91% average field match versus 89% for variant A on the same 200-document dev set. A teammate says B is more robust and wants to ship it. Write the comparison and release decision.",
+  "expectations": [
+   "Reports per-field accuracy for each of the five fields and whole-record exact match for both variants, rather than only the average.",
+   "Checks whether B regresses any individual field (for example currency or tax) and blocks or flags the release if a critical field regressed despite the higher average.",
+   "For every variant it rejects, records TRIED -> RESULT -> REJECTED with the named metric moving from X to Y on the named dataset/version; if it rejects no variant (for example holds pending more evidence), it states explicitly that none was rejected and why.",
+   "Refuses the unqualified 'more robust' claim unless it names the run, metric and dataset supporting it."
+  ]
+ },
+ "wf": {
+  "skill": "agent-development-workflow",
+  "prompt": "Our receipt-to-reimbursement agent passes 18/20 examples. One output has the wrong currency field and the reviewer asked 'is it robust?'. Plan the next debugging step, including what you will paste to the AI coding assistant, and answer the reviewer's question about the currency handling in the format you would use in a technical interview.",
+  "expectations": [
+   "States an observation and a root-cause hypothesis before investigating or delegating, and includes the actual failing case, output field and error/trace evidence in the AI request instead of a bare 'please investigate'.",
+   "Traces the failing request from input/evidence to the exact final currency field.",
+   "Answers the reviewer directly first, then implementation location, reason, evidence and limitation, and replaces 'robust' with the named run/test result (18/20, the failing case) rather than an adjective.",
+   "States the limitation as gap, current fallback and next step, and separates what the engineer chose or verified from what the AI tool generated."
+  ]
+ }
+}

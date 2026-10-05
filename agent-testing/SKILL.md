@@ -4,12 +4,12 @@ description: >-
   Build a risk-based test pyramid and CI verification strategy for an AI-agent runtime. Use when implementing agent tests across deterministic admission/state, schemas, tool contracts, integration, trajectories, eval suites, adversarial behavior or restart/recovery. Do not use for ordinary test-first coding without an AI runtime, writing a gold-set scoring strategy alone, or browser automation unrelated to agent behavior.
 metadata:
   collection: "Agent Engineering"
-  version: "2.0.0"
+  version: "2.0.1"
 ---
 
 # Agent Testing
 
-Test the system that interprets and executes model proposals. Spend model calls only where model variability matters. Existing TDD skills own red-green-refactor mechanics; agent-evals owns task population, rubrics and statistical release thresholds.
+Test the system that interprets and executes model proposals. Spend model calls only where model variability matters. Red-green-refactor mechanics belong to general TDD practice (or a TDD skill, if available); agent-evals owns task population, rubrics and statistical release thresholds.
 
 ## Allocate tests by ownership and risk
 
@@ -39,4 +39,4 @@ Test the system that interprets and executes model proposals. Spend model calls 
 
 Deliver a risk-to-test matrix, test fixtures/fakes, runnable checks at the changed layer, CI triggers and exact verification evidence. Select browser tools only for actual user flows. Do not require a sprawling test system for an advisory single call.
 
-Add deterministic provenance/reconciliation tests: unknown IDs and retrieved-but-unused citations cannot support claims; explanation facts must match admitted structured decisions. Include a repairable candidate reaching fresh validation/admission and an unrepairable candidate causing no effect. Execute fault fixtures against the surrounding validator/controller, not merely model promises. agent-development-workflow coordinates run/debug/correct/review; installed TDD retains implementation mechanics.
+Add deterministic provenance/reconciliation tests: unknown IDs and retrieved-but-unused citations cannot support claims; explanation facts must match admitted structured decisions. Include a repairable candidate reaching fresh validation/admission and an unrepairable candidate causing no effect. Execute fault fixtures against the surrounding validator/controller, not merely model promises. agent-development-workflow coordinates run/debug/correct/review; a TDD skill, if available, keeps the implementation mechanics.

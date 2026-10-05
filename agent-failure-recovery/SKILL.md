@@ -4,7 +4,7 @@ description: >-
   Design bounded retries and durable recovery for AI-agent runs and side effects. Use when handling interrupted agent execution, ambiguous tool commits, partial completion, checkpoints/resume, poison tasks or retry/timeout policy. Do not use for general bug diagnosis, ordinary synchronous exception handling, or session handoff with no runtime recovery problem.
 metadata:
   collection: "Agent Engineering"
-  version: "2.1.0"
+  version: "2.1.1"
 ---
 
 # Agent Failure Recovery
@@ -31,7 +31,7 @@ Start by classifying what is known about the effect. A lost response is not evid
 
 Deliver a failure-to-action table, budgets, checkpoint/operation ledger, retry/reconciliation pseudocode, partial-result statuses and crash/restart tests. Verify one committed effect survives a lost response and retry exactly once in an idempotent fake; test permanent denial, expired grant, exhausted budget and failed compensation.
 
-Use existing debugging skills to find defects; this skill owns runtime recovery semantics. agent-state-and-memory owns the state representation and tool-design owns the interface contract.
+Defect diagnosis belongs to ordinary debugging (or a debugging skill, if available); this skill owns runtime recovery semantics. agent-state-and-memory owns the state representation and tool-design owns the interface contract.
 
 ## Plan model-boundary degradation
 

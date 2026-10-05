@@ -4,7 +4,7 @@ description: >-
   Design bounded next-step control for an AI runtime, from fixed routing to adaptive tool/retrieval choice and justified workers. Use when choosing who controls the next step, implementing agent routing, handoffs, fan-out/fan-in, shared state, cancellation or aggregate budgets. Do not use for coding-subagent dispatch, ordinary parallel utilities, whole-system lifecycle planning alone, or tool contracts without a runtime control-flow question.
 metadata:
   collection: "Agent Engineering"
-  version: "2.0.0"
+  version: "2.0.1"
 ---
 
 # Agent Orchestration
@@ -38,5 +38,5 @@ Apply the worker sections below only if the simpler controller is insufficient; 
 9. Limit planner/reviewer rounds and specify the condition for another round. Do not allow recursive delegation or conversation loops without explicit bounded benefit. Capture parent/child traces, worker versions, handoff evidence, conflicts and final evaluator outcome.
 10. Run ablations against the simpler baseline, including coordination/merge costs and failure modes. Ship multiple agents only if the measured benefit survives realistic skew, missing workers, duplicate work and contradictory outputs. Preserve a single-agent fallback only when it meets the same safety policy.
 
-Deliver control ownership, typed controller states/guards, allowed next actions, budgets, termination/failure policy and comparison evidence. For justified workers add task graph, handoff/merge and resource authority contracts. Existing subagent/dispatching skills own agents collaborating on coding tasks; this skill designs the deployed orchestration system.
+Deliver control ownership, typed controller states/guards, allowed next actions, budgets, termination/failure policy and comparison evidence. For justified workers add task graph, handoff/merge and resource authority contracts. Agents collaborating on coding tasks are out of scope (a subagent/dispatching skill may cover them); this skill designs the deployed orchestration system.
 

@@ -4,7 +4,7 @@ description: >-
   Design concise, versioned production prompts with responsibilities, trust boundaries and measurable behavior. Use when building or revising deployed agent/workflow prompts, defining instruction hierarchy, tool/output guidance, uncertainty or termination, or evaluating a prompt regression. Do not use for generic prompt tricks, one-off prose requests, repository context setup, or using a prompt as authorization/security enforcement.
 metadata:
   collection: "Agent Engineering"
-  version: "2.0.0"
+  version: "2.0.1"
 ---
 
 # Prompt Engineering
@@ -28,6 +28,6 @@ Treat a production prompt as a versioned interface to a bounded reasoning compon
 
 Deliver the prompt artifact, responsibility/trust table, version metadata, eval cases and measured comparison/rollback decision. Example rule: “Use only returned resource IDs; if evidence is missing, return insufficient_evidence.” The executor still checks IDs and authority.
 
-Existing context-engineering governs coding-session context; this skill governs model instructions shipped as part of a product. Use structured-output-design for schemas and agent-evals for measurement; neither requires a giant prompt.
+Coding-session context is out of scope (a context-engineering skill may cover it); this skill governs model instructions shipped as part of a product. Use structured-output-design for schemas and agent-evals for measurement; neither requires a giant prompt.
 
 State that model output is a fallible proposal. Returned evidence IDs must describe support actually used for decisions/claims, not every retrieved item. Natural-language explanation must agree with the structured decision and supported facts. Test contradictory explanations and fabricated/irrelevant IDs. Prompts request these behaviors; executable reconciliation and admission enforce decidable constraints.

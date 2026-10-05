@@ -1,0 +1,10 @@
+{
+  "file": "evaluation-evidence-v2.zip",
+  "release": "https://github.com/Sathvikar01/Agent-engineering-skills/releases/tag/evidence-v2",
+  "download": "https://github.com/Sathvikar01/Agent-engineering-skills/releases/download/evidence-v2/evaluation-evidence-v2.zip",
+  "sha256": "6e2325408ada13b163e18f3e2c23d8b6d7baf5a9a79a9341889eee32be25fc63",
+  "bytes": 4869990,
+  "entries": 1194,
+  "uncompressed_bytes": 13592605,
+  "notes": "Local machine paths replaced with ~ and personal attribution removed from metadata; integrity hashes recorded inside the archive refer to the original files."
+}

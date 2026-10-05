@@ -1,5 +1,7 @@
 # Agent Engineering Skills
 
+[![Validate skills](https://github.com/Sathvikar01/Agent-engineering-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/Sathvikar01/Agent-engineering-skills/actions/workflows/validate.yml)
+
 A framework-agnostic collection of 19 agent skills for designing, building, evaluating, and operating AI agents and model-powered workflows.
 
 The core idea: **models handle uncertainty; deterministic code handles authority.** A model may propose an action, but trusted software validates it, authorizes it, and records the evidence. Every skill applies that boundary to one part of the system, and every skill says when *not* to use it, so agents load only the one that fits.
@@ -52,17 +54,20 @@ See [AGENT-ENGINEERING-SKILLS.md](AGENT-ENGINEERING-SKILLS.md) for each skill's 
 
 ## Companion skills
 
-Skills mention each other by name as optional companions; none is a required dependency. Some also defer general engineering mechanics to widely used skills you may already have — for example `systematic-debugging`, `verification-before-completion`, `context-engineering`, `security-and-hardening`, `performance-optimization`, `source-driven-development` and `mcp-builder`. They are not part of this collection; each skill still works without them.
+Skills mention each other by name as optional companions; none is a required dependency. Some also defer general engineering mechanics to widely used skills you may already have — for example `systematic-debugging`, `verification-before-completion`, `context-engineering`, `security-and-hardening`, `performance-optimization`, `source-driven-development` and `mcp-builder`. They are not part of this collection. Each skill uses them only if they are available and otherwise carries its own procedure.
 
 ## Evaluation
 
 Each skill ships behavioral cases (`evals/evals.json`) and 20 balanced trigger queries (`evals/trigger-evals.json`).
 
 - **Behavioral:** 68 paired runs over the 16 new or revised skills. Revised skills met 116/116 graded assertions versus 111/116 for their baselines; 4 skills improved and 12 tied. Each case ran once and graders were not blinded, so this is smoke evidence, not a measure of reliability.
-- **Revision 2.1.0:** a paired, blinded run of the seven new cases scored 22/24 for 2.1.0 versus 20/24 for 2.0.0, and 23/24 after one fix the run exposed ([details](evaluation/v2.1/README.md)).
+- **Revision 2.1:** a paired, blinded run of the seven new cases, with the two problem pairs re-run after fixes, scored 24/24 for the revised skills versus 20/24 for 2.0.0: four improved, three tied. One sample per case, so this is smoke evidence too ([details](evaluation/v2.1/README.md)).
 - **Triggering:** a catalogue-selection proxy chose the right skill in 379/380 queries. Real automatic activation inside an agent harness was not measured.
+- **Next:** [the v3 plan](evaluation/V3-PLAN.md) sets out the experiment that would establish effect and activation: no skill vs previous vs current, repeated runs, a cross-family grader, human labels and real-harness activation tests.
 
-[VALIDATION-REPORT.md](VALIDATION-REPORT.md) records every preserved failure and open limitation. [`evaluation/`](evaluation/README.md) holds the full run archive.
+[VALIDATION-REPORT.md](VALIDATION-REPORT.md) records every preserved failure and open limitation. [`evaluation/`](evaluation/README.md) explains the evidence; the full run archive is a [release asset](https://github.com/Sathvikar01/Agent-engineering-skills/releases/tag/evidence-v2) with its checksum in `evaluation/MANIFEST.json`.
+
+Every push runs the Agent Skills reference validator and [repository checks](scripts/validate_repo.py) in CI.
 
 ## License
 

@@ -4,7 +4,7 @@ description: >-
   Design agent runtime state, checkpoints and memory without confusing recall with authoritative facts. Use when deciding what an AI system should persist, handling long-running context, cross-run memory, checkpoint/resume, provenance, expiry or deterministic state transitions. Do not use for coding-session context setup, a normal database migration, or conversational summarization with no runtime persistence design.
 metadata:
   collection: "Agent Engineering"
-  version: "1.0.0"
+  version: "1.0.1"
 ---
 
 # Agent State and Memory
@@ -38,4 +38,4 @@ Start with a storage ownership table. Do not call every persisted string memory 
 
 Deliver the ownership/lifecycle table, transition contract, checkpoint example, compaction/read policy and isolation/deletion tests. Verify a stale success memory against current failure, simultaneous writers, expired preference, cross-tenant retrieval and restart after unknown commit.
 
-Existing context-engineering owns developer-session context packing and handoff. This skill owns the product runtime's persistence and source-of-truth boundary; agent-failure-recovery owns its recovery policy.
+Developer-session context packing and handoff are out of scope (a context-engineering skill may cover them). This skill owns the product runtime's persistence and source-of-truth boundary; agent-failure-recovery owns its recovery policy.

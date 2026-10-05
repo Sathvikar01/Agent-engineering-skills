@@ -4,12 +4,12 @@ description: >-
   Instrument AI-agent trajectories so actions, evidence, state and quality can be reconstructed. Use when designing or reviewing traces/metrics for agent model calls, tools, approvals, retries, state, evals, cost or latency, or debugging an opaque agent run. Do not use for general service logging without an agent trajectory, full private reasoning collection, or quality scoring rules alone.
 metadata:
   collection: "Agent Engineering"
-  version: "2.1.0"
+  version: "2.1.1"
 ---
 
 # Agent Observability
 
-Design telemetry around questions an operator must answer: what the run tried, what was authorized, what happened, what evidence supports the result, and why it stopped. Existing observability skills own logging/tracing infrastructure and alert plumbing.
+Design telemetry around questions an operator must answer: what the run tried, what was authorized, what happened, what evidence supports the result, and why it stopped. Logging/tracing infrastructure and alert plumbing are general observability concerns outside this skill.
 
 ## Specify the event contract
 

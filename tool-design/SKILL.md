@@ -4,12 +4,12 @@ description: >-
   Design model-facing tools with coherent capabilities, strict contracts and predictable side effects. Use when exposing APIs or operations to an LLM agent, redesigning ambiguous agent tools, or specifying tool names, descriptions, arguments, results and execution semantics. Do not use for ordinary REST design with no model consumer, MCP transport implementation alone, or evaluating tool selection without changing contracts.
 metadata:
   collection: "Agent Engineering"
-  version: "2.1.0"
+  version: "2.1.1"
 ---
 
 # Tool Design
 
-Design the smallest coherent capability surface for the agent's tasks. Existing API/interface skills own backend API mechanics; MCP builder owns protocol, transports and SDK code. This skill adds the contract an LLM must select and use correctly.
+Design the smallest coherent capability surface for the agent's tasks. Backend API mechanics and MCP protocol, transport and SDK code are out of scope (API-design or MCP-builder skills may cover them). This skill adds the contract an LLM must select and use correctly.
 
 ## Derive the surface from tasks
 

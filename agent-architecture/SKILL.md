@@ -4,7 +4,7 @@ description: >-
   Choose the simplest AI-system architecture that correctly handles the task’s uncertainty. Use when designing or reviewing runtime autonomy, deciding whether a product needs an agent, or placing reasoning, tools, state and authority boundaries. Do not use for ordinary application architecture or executing a coding plan without an AI runtime design decision.
 metadata:
   collection: "Agent Engineering"
-  version: "2.1.0"
+  version: "2.1.1"
 ---
 
 # Agent Architecture
@@ -41,7 +41,7 @@ Deliver the classification and rationale, boundary/ownership table, one happy an
 
 Verify with a task requiring no model, a fuzzy but fixed workflow, an adaptive tool task, and an authority violation. Do not add a loop to a fixed pipeline. Do not add workers to a single context merely to label them specialist agents.
 
-Use existing brainstorming/spec/planning skills for requirements and implementation planning. This skill owns the deployed system's autonomy decision. Use agent-evals for scoring, deterministic-authority for admission logic, and agent-orchestration for next-step control and justified workers; none is a mandatory dependency.
+Requirements and implementation planning may use any available brainstorming, spec or planning skill. This skill owns the deployed system's autonomy decision. Use agent-evals for scoring, deterministic-authority for admission logic, and agent-orchestration for next-step control and justified workers; none is a mandatory dependency.
 
 ## Reject misleading architecture evidence
 

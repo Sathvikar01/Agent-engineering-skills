@@ -54,7 +54,7 @@
       "expectations": [
         "Reports per-field accuracy for each of the five fields and whole-record exact match for both variants, rather than only the average.",
         "Checks whether B regresses any individual field (for example currency or tax) and blocks or flags the release if a critical field regressed despite the higher average.",
-        "Records any rejected variant as TRIED -> RESULT -> REJECTED because a named metric moved from X to Y on the named dataset/version.",
+        "For every variant it rejects, records TRIED -> RESULT -> REJECTED with the named metric moving from X to Y on the named dataset/version; if it rejects no variant (for example holds pending more evidence), it states explicitly that none was rejected and why.",
         "Refuses the unqualified 'more robust' claim unless it names the run, metric and dataset supporting it."
       ]
     }

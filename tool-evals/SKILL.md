@@ -4,7 +4,7 @@ description: >-
   Measure whether an LLM agent can discover, select, compose and recover with a tool surface. Use when testing model-facing tool usability, argument accuracy, response interpretation, multi-step tool chains, unnecessary calls or tool failure handling. Do not use for backend API contract tests alone, MCP server scaffolding, or whole-agent answer-quality benchmarking without a tool-use question.
 metadata:
   collection: "Agent Engineering"
-  version: "1.0.0"
+  version: "1.0.1"
 ---
 
 # Tool Evals
@@ -29,4 +29,4 @@ Evaluate the model/tool interaction, not merely whether the endpoint returns 200
 
 9. Change one description, schema, result shape or granularity choice; rerun matched cases and held-out tasks. Retain changes only when benefit outweighs added complexity and latency. Test removal of distractor tools before adding routing machinery.
 
-Deliver task fixtures, allowable/forbidden effects, dependency assertions, traces, dimension scores and a contract improvement justified by failures. Existing MCP XML QA evals are useful for read-only answers; add safety, ambiguity and recovery cases without replacing that tooling.
+Deliver task fixtures, allowable/forbidden effects, dependency assertions, traces, dimension scores and a contract improvement justified by failures. MCP-style XML QA evals, where present, are useful for read-only answers; add safety, ambiguity and recovery cases without replacing that tooling.

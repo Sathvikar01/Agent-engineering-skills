@@ -4,7 +4,7 @@ description: >-
   Optimize AI-system cost and latency per verified successful outcome using measured budgets. Use when profiling model/tool/retrieval spend or delays, setting agent run ceilings, choosing model routing/escalation, caching, batching or parallelism under quality constraints. Do not use for general application performance without model/agent costs, speculative model recommendations, or reducing tokens without outcome measurements.
 metadata:
   collection: "Agent Engineering"
-  version: "2.0.0"
+  version: "2.0.1"
 ---
 
 # Agent Cost and Latency
@@ -29,6 +29,6 @@ Measure the full logical task before optimizing it. Token savings are not a win 
 
 9. Change one variable, run matched eval tasks under comparable load/cache conditions, repeat noisy measurements and examine tail behavior. Keep gains only if success, safety, groundedness and latency floors hold. Report cost per success, failures and p95, not only average tokens. Read [cost comparison](references/cost-comparison.md) for a worked denominator trap.
 
-Deliver a baseline ledger, bottleneck evidence, enforced ceilings, one optimization experiment and a quality-gated retain/revert decision. Existing performance-optimization owns generic profiling; this skill owns model/retrieval/trajectory economics. Do not recommend a provider/model by reputation without current measured evidence.
+Deliver a baseline ledger, bottleneck evidence, enforced ceilings, one optimization experiment and a quality-gated retain/revert decision. Generic profiling belongs to ordinary performance work (or a performance-optimization skill, if available); this skill owns model/retrieval/trajectory economics. Do not recommend a provider/model by reputation without current measured evidence.
 
 Evaluate model choices per role (extraction, reasoning, routing, verification, grounded generation, multimodal interpretation, embedding/reranking), then measure the assembled system. One model may satisfy several roles; an extra verifier/model needs an on/off or matched-routing ablation on the same gold set. Record role errors and whole-task quality, cost per success and latency to verified completion. Participation statistics and provider reputation do not prescribe models. agent-evals owns rigor; agent-orchestration owns route transitions.

@@ -4,7 +4,7 @@ description: >-
   Place proportional human review and approval gates in an AI system's execution path. Use when designing approval/escalation for agent actions with financial, external, destructive or permission impact, preview-before-commit flows, or uncertainty that warrants human judgment. Do not use for requesting routine coding confirmation, imposing approval on harmless reads, or deterministic authorization logic alone.
 metadata:
   collection: "Agent Engineering"
-  version: "1.0.0"
+  version: "1.0.1"
 ---
 
 # Human in the Loop
@@ -30,4 +30,4 @@ Use humans where a consequential decision needs their authority or judgment. Rep
 
 Deliver an action-to-gate table, one exact preview, approval state/binding contract, timeout/changed-action behavior and tests. Verify denied/expired grants prevent effects, changed payload invalidates approval, and harmless authorized reads proceed without repeated prompts.
 
-deterministic-authority owns enforcement; this skill owns when and how a human decision enters that path. Existing coding workflows govern ordinary development review and confirmation; do not add a ritual approval step to every coding task.
+deterministic-authority owns enforcement; this skill owns when and how a human decision enters that path. Ordinary development review and confirmation are out of scope; do not add a ritual approval step to every coding task.

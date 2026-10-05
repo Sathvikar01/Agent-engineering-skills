@@ -22,7 +22,14 @@ Seven skills received targeted additions mapped to the published HackerRank Orch
 | tool-design | Example call and result shape in each model-facing description |
 | agent-architecture | Separate routing/control, safety/validation/authority and I/O modules |
 
-Each revised skill gained one behavioral case targeting its addition (7 cases; collection total 78). These were run as a paired, blinded smoke comparison against the 2.0.0 skills (one fresh executor per run, one blind grader): **2.1.0 scored 22/24 versus 20/24 for 2.0.0**, improving agent-failure-recovery (4/4 vs 3/4) and tool-design (3/3 vs 2/3), with five ties. The run exposed that the engineer-vs-AI ownership rule lived only in step 13, so it was not applied in direct answers; it was added to step 14 and a fresh re-run passed 4/4 (23/24 overall). agent-evals expectation 2 failed in both configurations because both correctly held rather than rejected a variant; the failure is preserved and the case needs revision. One sample per case: smoke evidence, not reliability. Answers, grades and method are in [evaluation/v2.1](evaluation/v2.1/README.md). Structural checks (frontmatter, JSON, links, CLI discovery) were rerun on the revised files.
+Each revised skill gained one behavioral case targeting its addition (7 cases; collection total 78). A paired, blinded smoke comparison against 2.0.0 first scored 22/24 vs 20/24. It exposed two problems: the workflow ownership rule lived only in step 13 (moved into step 14), and agent-evals expectation 2 was invalid because both versions correctly held rather than rejected a variant. The original grades are preserved. The expectation was corrected to cover the no-rejection case, and both affected pairs were re-run blind with fresh executors and grader: revised 4/4 vs 2.0.0 3/4 in each. **Combined paired result: 24/24 vs 20/24** (four skills improved, three tied). Five pairs used the 2.1.0 text rather than 2.1.1. One sample per case, same model family for executors and graders, no human labels: smoke evidence, not reliability. Answers, grades and method are in [evaluation/v2.1](evaluation/v2.1/README.md); the experiment that would establish effect and activation is in [evaluation/V3-PLAN.md](evaluation/V3-PLAN.md).
+
+## Revision 2.1.1 addendum (5 October 2026)
+
+- **Standalone skills:** wording in 14 skills that made companion skills sound required ("use installed systematic-debugging", "Use installed verification-before-completion", "installed TDD retains…", "Existing X owns…") now treats them as optional, and gives the in-skill procedure where one is needed. Patch versions bumped (x.y.1). Descriptions are unchanged.
+- **Eval fix:** agent-evals case 5, expectation 2 now covers the no-rejection case. The blinded re-run is reported above.
+- **CI:** `.github/workflows/validate.yml` runs the Agent Skills reference validator (`skills-ref` 0.1.1, `agentskills validate`) on every skill directory, then `scripts/validate_repo.py`. That script checks frontmatter and folder names, description and SKILL.md length, semver versions, eval JSON validity, `skill_name` matching the folder, unique eval IDs, referenced files, 20 balanced trigger cases per skill, duplicate trigger queries, relative links in all Markdown, absolute local paths, common secret patterns, stray binary archives, and that documented counts (skills, behavioral cases, trigger queries) match the repository. Each check was confirmed to fail on an injected fault.
+- **Evidence archive:** `evaluation-evidence-v2.zip` moved to the [`evidence-v2` GitHub Release](https://github.com/Sathvikar01/Agent-engineering-skills/releases/tag/evidence-v2). [`evaluation/MANIFEST.json`](evaluation/MANIFEST.json) records its size, entry count and SHA-256; the downloaded asset was verified against it. Earlier commits still contain the archive in git history.
 
 ## Audit, changes and scope
 
@@ -156,7 +163,12 @@ Agent-engineering-skills/
   VALIDATION-REPORT.md
   evaluation/
     README.md
-    evaluation-evidence-v2.zip
+    MANIFEST.json        # evidence archive: GitHub Release evidence-v2
+    v2.1/
+  scripts/
+    validate_repo.py
+  .github/workflows/
+    validate.yml
   agent-architecture/
     evals/evals.json
     evals/trigger-evals.json

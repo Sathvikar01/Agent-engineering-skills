@@ -1,0 +1,114 @@
+{
+ "s1": {
+  "case": "ev",
+  "results": [
+   {
+    "expectation": 0,
+    "verdict": "FAIL",
+    "evidence": "Results template lists per-field accuracy for all five fields, but no whole-record exact match (all five fields correct); its 'Document success rate' counts only critical fields correct-or-abstained."
+   },
+   {
+    "expectation": 1,
+    "verdict": "PASS",
+    "evidence": "\"Any regression on totals or currency blocks release, whatever the average does.\""
+   },
+   {
+    "expectation": 2,
+    "verdict": "PASS",
+    "evidence": "\"B is not rejected. But the evidence so far ... can't support either claim being made\""
+   },
+   {
+    "expectation": 3,
+    "verdict": "PASS",
+    "evidence": "\"B is more robust | Unknown. No slice, variance or abstention data\"; robustness defined as run-to-run disagreement, a testable metric."
+   }
+  ],
+  "passed": 3,
+  "total": 4,
+  "config": "ev-old"
+ },
+ "s3": {
+  "case": "ev",
+  "results": [
+   {
+    "expectation": 0,
+    "verdict": "PASS",
+    "evidence": "\"Per-field accuracy for each of the 5 fields, A vs B, with 95% CI\" and \"Whole-record exact match (all 5 correct), A vs B\""
+   },
+   {
+    "expectation": 1,
+    "verdict": "PASS",
+    "evidence": "\"No critical-field regression: for each of total, tax, currency ... A gain elsewhere cannot offset a breach here.\""
+   },
+   {
+    "expectation": 2,
+    "verdict": "PASS",
+    "evidence": "\"Decision: do not ship B yet. Status is REVISE (not REJECT).\" followed by four numbered reasons."
+   },
+   {
+    "expectation": 3,
+    "verdict": "PASS",
+    "evidence": "\"'More robust' has not been measured. No run, slice or metric backs it up. Until one does, the claim goes in the record as unmeasured.\""
+   }
+  ],
+  "passed": 4,
+  "total": 4,
+  "config": "ev-new"
+ },
+ "s2": {
+  "case": "wf",
+  "results": [
+   {
+    "expectation": 0,
+    "verdict": "PASS",
+    "evidence": "Ranked hypotheses (\"Silent default...\") come before the steps; prompt includes \"Failing case: <case_id>. Field currency is wrong. Expected... Actual\" plus per-stage trace."
+   },
+   {
+    "expectation": 1,
+    "verdict": "PASS",
+    "evidence": "\"Capture the trace at each stage: raw OCR text -> raw model output ... -> normalized object -> final reimbursement record.\""
+   },
+   {
+    "expectation": 2,
+    "verdict": "PASS",
+    "evidence": "\"Not yet, and I wouldn't claim it is. On our 20-example suite...\" then Where it lives, Reason, Evidence (\"Have: 18/20 overall\"), Limitation."
+   },
+   {
+    "expectation": 3,
+    "verdict": "FAIL",
+    "evidence": "Limitation gives a gap and a proposed review fallback but no current fallback, and the reviewer answer never separates what the engineer chose or verified from what the AI generated."
+   }
+  ],
+  "passed": 3,
+  "total": 4,
+  "config": "wf-old"
+ },
+ "s4": {
+  "case": "wf",
+  "results": [
+   {
+    "expectation": 0,
+    "verdict": "PASS",
+    "evidence": "\"Committed hypothesis ... H1\" before delegating; prompt includes \"Failing case: <case_id>\", expected/actual currency, and a \"Trace excerpt\"."
+   },
+   {
+    "expectation": 1,
+    "verdict": "PASS",
+    "evidence": "\"raw_model_output.currency = \\\"$\\\" / after <normalizer>: \\\"USD\\\" <- first wrong value / validator: passed\""
+   },
+   {
+    "expectation": 2,
+    "verdict": "PASS",
+    "evidence": "\"Answer: It isn't demonstrated...\" then Implementation, Reason, \"Evidence: One eval run, 18/20 pass... Case <id> returned USD\", Limitation."
+   },
+   {
+    "expectation": 3,
+    "verdict": "PASS",
+    "evidence": "\"GAP ... CURRENT FALLBACK: None in code ... NEXT STEP\" and \"Engineer vs. AI: The AI assistant drafted the normalizer refactor... I wrote the failing reproduction\""
+   }
+  ],
+  "passed": 4,
+  "total": 4,
+  "config": "wf-new"
+ }
+}

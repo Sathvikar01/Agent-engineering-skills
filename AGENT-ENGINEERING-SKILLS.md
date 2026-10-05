@@ -1,6 +1,6 @@
 # Agent Engineering
 
-Collection revision: **2.1.0**. Nineteen global, framework-agnostic skills. Three unchanged skill implementations retain version 1.0.0; seven skills revised in 2.1.0 (agent-architecture, agent-development-workflow, agent-evals, agent-failure-recovery, agent-observability, evidence-provenance, tool-design) use 2.1.0; the rest use 2.0.0. The eval-status column below reports the 2.0.0 runs; 2.1.0 additions were checked in a paired, blinded smoke run against 2.0.0 (22/24 vs 20/24; 23/24 after one fix) — see [evaluation/v2.1](evaluation/v2.1/README.md).
+Collection revision: **2.1.1**. Nineteen global, framework-agnostic skills; each works on its own, and references to other skills are optional companions. Versions: 2.1.x for the seven skills revised in 2.1 (agent-architecture, agent-development-workflow, agent-evals, agent-failure-recovery, agent-observability, tool-design at 2.1.1; evidence-provenance at 2.1.0); 2.0.1 for agent-cost-and-latency, agent-orchestration, agent-security, agent-testing and prompt-engineering; 2.0.0 for agent-guardrails, deterministic-authority, rag-engineering and structured-output-design; 1.0.1 for agent-state-and-memory, human-in-the-loop and tool-evals. Patch releases (x.y.1) change only wording that made optional companion skills sound required, plus the agent-development-workflow step-14 ownership rule. The eval-status column below reports the 2.0.0 runs; the 2.1 additions were checked in a paired, blinded smoke run (see [evaluation/v2.1](evaluation/v2.1/README.md)).
 
 Models handle uncertainty. Deterministic software handles authority wherever correctness can be specified. Evidence decides whether changes survive. The engineering loop continues beyond generation. Choose the simplest architecture that correctly handles uncertainty; avoid both agentification and brittle deterministic overcorrection.
 
@@ -92,7 +92,12 @@ Agent-engineering-skills/
   VALIDATION-REPORT.md
   evaluation/
     README.md
-    evaluation-evidence-v2.zip
+    MANIFEST.json        # evidence archive: GitHub Release evidence-v2
+    v2.1/
+  scripts/
+    validate_repo.py
+  .github/workflows/
+    validate.yml
   agent-architecture/
     evals/evals.json
     evals/trigger-evals.json

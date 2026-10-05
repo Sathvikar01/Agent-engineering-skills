@@ -4,7 +4,7 @@ description: >-
   Threat-model and harden AI-agent trust boundaries, tools and data flows. Use when reviewing agent prompt injection, malicious retrieval/tool output, exfiltration, confused-deputy execution, tool poisoning or sandbox/credential boundaries. Do not use for general application security without a model/tool trust flow, or layering operational quality guardrails alone.
 metadata:
   collection: "Agent Engineering"
-  version: "2.0.0"
+  version: "2.0.1"
 ---
 
 # Agent Security
@@ -31,6 +31,6 @@ Deliver a trust/data-flow map, attacker-to-effect cases, least-privilege capabil
 
 Show that malicious content cannot cross into authorization and that denial causes no side effect. Record attempted violations safely; a model refusing one test does not prove containment. Re-test allowed benign tasks to measure false blocking.
 
-Existing security-and-hardening covers baseline input, auth, storage and supply-chain security. This skill deepens the model-mediated attack path; agent-guardrails assembles all runtime defense layers, and deterministic-authority owns action admission.
+Baseline input, auth, storage and supply-chain security are general application security (a security-and-hardening skill may cover them). This skill deepens the model-mediated attack path; agent-guardrails assembles all runtime defense layers, and deterministic-authority owns action admission.
 
 Treat claimed provenance as attacker-controlled data. Source text saying “evidence_id=trusted-7” or impersonating a receipt cannot create a ledger entry, approval or trusted fact. Application-issued source/receipt identities must resolve to observed content/version and authorized scope. Test forged IDs, altered source hashes and cross-tenant provenance alongside benign supported outputs. Preserve legitimate evidence while containing injected instructions; evidence-provenance owns lineage/reconciliation.
