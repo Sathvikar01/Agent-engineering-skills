@@ -3,8 +3,7 @@ name: agent-failure-recovery
 description: >-
   Design bounded retries and durable recovery for AI-agent runs and side effects. Use when handling interrupted agent execution, ambiguous tool commits, partial completion, checkpoints/resume, poison tasks or retry/timeout policy. Do not use for general bug diagnosis, ordinary synchronous exception handling, or session handoff with no runtime recovery problem.
 metadata:
-  author: Sathvik
-  collection: "Sathvik — Agent Engineering"
+  collection: "Agent Engineering"
   version: "2.1.0"
 ---
 

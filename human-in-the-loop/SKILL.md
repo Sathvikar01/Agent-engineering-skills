@@ -3,8 +3,7 @@ name: human-in-the-loop
 description: >-
   Place proportional human review and approval gates in an AI system's execution path. Use when designing approval/escalation for agent actions with financial, external, destructive or permission impact, preview-before-commit flows, or uncertainty that warrants human judgment. Do not use for requesting routine coding confirmation, imposing approval on harmless reads, or deterministic authorization logic alone.
 metadata:
-  author: Sathvik
-  collection: "Sathvik — Agent Engineering"
+  collection: "Agent Engineering"
   version: "1.0.0"
 ---
 

@@ -3,8 +3,7 @@ name: agent-observability
 description: >-
   Instrument AI-agent trajectories so actions, evidence, state and quality can be reconstructed. Use when designing or reviewing traces/metrics for agent model calls, tools, approvals, retries, state, evals, cost or latency, or debugging an opaque agent run. Do not use for general service logging without an agent trajectory, full private reasoning collection, or quality scoring rules alone.
 metadata:
-  author: Sathvik
-  collection: "Sathvik — Agent Engineering"
+  collection: "Agent Engineering"
   version: "2.1.0"
 ---
 

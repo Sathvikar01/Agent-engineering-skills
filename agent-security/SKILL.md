@@ -3,8 +3,7 @@ name: agent-security
 description: >-
   Threat-model and harden AI-agent trust boundaries, tools and data flows. Use when reviewing agent prompt injection, malicious retrieval/tool output, exfiltration, confused-deputy execution, tool poisoning or sandbox/credential boundaries. Do not use for general application security without a model/tool trust flow, or layering operational quality guardrails alone.
 metadata:
-  author: Sathvik
-  collection: "Sathvik — Agent Engineering"
+  collection: "Agent Engineering"
   version: "2.0.0"
 ---
 

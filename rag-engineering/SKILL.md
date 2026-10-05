@@ -3,8 +3,7 @@ name: rag-engineering
 description: >-
   Design, diagnose and evaluate retrieval-grounded generation with evidence provenance. Use when building or improving document-backed AI answers, measuring retrieval quality, investigating unsupported citations, or deciding whether chunking, hybrid search, reranking or query transformation helps. Do not use for ordinary database search without generation, general browsing, or memory persistence design without a retrieval-quality problem.
 metadata:
-  author: Sathvik
-  collection: "Sathvik — Agent Engineering"
+  collection: "Agent Engineering"
   version: "2.0.0"
 ---
 

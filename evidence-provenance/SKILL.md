@@ -3,8 +3,7 @@ name: evidence-provenance
 description: >-
   Design and verify source-to-decision-to-output evidence lineage for AI systems. Use when implementing evidence ledgers, distinguishing retrieved from used support, reconciling decision/explanation/citation IDs, or preventing fabricated, stale or spoofed provenance across tools and model stages. Do not use for retrieval ranking/chunking alone, ordinary bibliography formatting, general logging, coding-source lookup, or answers with no evidence-lineage contract.
 metadata:
-  author: Sathvik
-  collection: "Sathvik — Agent Engineering"
+  collection: "Agent Engineering"
   version: "2.1.0"
 ---
 

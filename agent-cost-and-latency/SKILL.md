@@ -3,8 +3,7 @@ name: agent-cost-and-latency
 description: >-
   Optimize AI-system cost and latency per verified successful outcome using measured budgets. Use when profiling model/tool/retrieval spend or delays, setting agent run ceilings, choosing model routing/escalation, caching, batching or parallelism under quality constraints. Do not use for general application performance without model/agent costs, speculative model recommendations, or reducing tokens without outcome measurements.
 metadata:
-  author: Sathvik
-  collection: "Sathvik — Agent Engineering"
+  collection: "Agent Engineering"
   version: "2.0.0"
 ---
 

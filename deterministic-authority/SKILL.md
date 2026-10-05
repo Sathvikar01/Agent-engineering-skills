@@ -3,8 +3,7 @@ name: deterministic-authority
 description: >-
   Build deterministic admission and authorization between model proposals and side effects. Use when an LLM can propose state changes, money movements, permission decisions or actions subject to executable constraints, or reviewing whether a model can override policy. Do not use for purely advisory text generation or ordinary business logic with no model-to-action trust boundary.
 metadata:
-  author: Sathvik
-  collection: "Sathvik — Agent Engineering"
+  collection: "Agent Engineering"
   version: "2.0.0"
 ---
 

@@ -1,6 +1,6 @@
 # Agent Engineering: revision 2 validation report
 
-Author: Sathvik. Date: 5 October 2026.
+Date: 5 October 2026.
 
 ## Installation and acceptance
 

@@ -3,8 +3,7 @@ name: prompt-engineering
 description: >-
   Design concise, versioned production prompts with responsibilities, trust boundaries and measurable behavior. Use when building or revising deployed agent/workflow prompts, defining instruction hierarchy, tool/output guidance, uncertainty or termination, or evaluating a prompt regression. Do not use for generic prompt tricks, one-off prose requests, repository context setup, or using a prompt as authorization/security enforcement.
 metadata:
-  author: Sathvik
-  collection: "Sathvik — Agent Engineering"
+  collection: "Agent Engineering"
   version: "2.0.0"
 ---
 

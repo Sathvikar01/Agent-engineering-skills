@@ -3,8 +3,7 @@ name: agent-orchestration
 description: >-
   Design bounded next-step control for an AI runtime, from fixed routing to adaptive tool/retrieval choice and justified workers. Use when choosing who controls the next step, implementing agent routing, handoffs, fan-out/fan-in, shared state, cancellation or aggregate budgets. Do not use for coding-subagent dispatch, ordinary parallel utilities, whole-system lifecycle planning alone, or tool contracts without a runtime control-flow question.
 metadata:
-  author: Sathvik
-  collection: "Sathvik — Agent Engineering"
+  collection: "Agent Engineering"
   version: "2.0.0"
 ---
 

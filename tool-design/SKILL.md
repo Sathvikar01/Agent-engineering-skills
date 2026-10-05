@@ -3,8 +3,7 @@ name: tool-design
 description: >-
   Design model-facing tools with coherent capabilities, strict contracts and predictable side effects. Use when exposing APIs or operations to an LLM agent, redesigning ambiguous agent tools, or specifying tool names, descriptions, arguments, results and execution semantics. Do not use for ordinary REST design with no model consumer, MCP transport implementation alone, or evaluating tool selection without changing contracts.
 metadata:
-  author: Sathvik
-  collection: "Sathvik — Agent Engineering"
+  collection: "Agent Engineering"
   version: "2.1.0"
 ---
 

@@ -3,8 +3,7 @@ name: agent-architecture
 description: >-
   Choose the simplest AI-system architecture that correctly handles the task’s uncertainty. Use when designing or reviewing runtime autonomy, deciding whether a product needs an agent, or placing reasoning, tools, state and authority boundaries. Do not use for ordinary application architecture or executing a coding plan without an AI runtime design decision.
 metadata:
-  author: Sathvik
-  collection: "Sathvik — Agent Engineering"
+  collection: "Agent Engineering"
   version: "2.1.0"
 ---
 

@@ -3,8 +3,7 @@ name: agent-testing
 description: >-
   Build a risk-based test pyramid and CI verification strategy for an AI-agent runtime. Use when implementing agent tests across deterministic admission/state, schemas, tool contracts, integration, trajectories, eval suites, adversarial behavior or restart/recovery. Do not use for ordinary test-first coding without an AI runtime, writing a gold-set scoring strategy alone, or browser automation unrelated to agent behavior.
 metadata:
-  author: Sathvik
-  collection: "Sathvik — Agent Engineering"
+  collection: "Agent Engineering"
   version: "2.0.0"
 ---
 

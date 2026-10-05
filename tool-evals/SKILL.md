@@ -3,8 +3,7 @@ name: tool-evals
 description: >-
   Measure whether an LLM agent can discover, select, compose and recover with a tool surface. Use when testing model-facing tool usability, argument accuracy, response interpretation, multi-step tool chains, unnecessary calls or tool failure handling. Do not use for backend API contract tests alone, MCP server scaffolding, or whole-agent answer-quality benchmarking without a tool-use question.
 metadata:
-  author: Sathvik
-  collection: "Sathvik — Agent Engineering"
+  collection: "Agent Engineering"
   version: "1.0.0"
 ---
 

@@ -3,8 +3,7 @@ name: agent-evals
 description: >-
   Define evaluation-first quality gates for an AI agent or model-powered workflow. Use when specifying agent success before implementation, building gold task sets, comparing agent variants, or diagnosing outcome and trajectory regressions. Do not use for ordinary unit-test writing or tool-interface usability alone without an agent quality measurement question.
 metadata:
-  author: Sathvik
-  collection: "Sathvik — Agent Engineering"
+  collection: "Agent Engineering"
   version: "2.1.0"
 ---
 

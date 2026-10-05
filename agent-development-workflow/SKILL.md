@@ -3,8 +3,7 @@ name: agent-development-workflow
 description: >-
   Coordinate the complete engineering lifecycle for substantial AI-agent or model-assisted workflow builds. Use when building, productionizing or substantially redesigning an agent, adding major tools/state/RAG/orchestration, or evaluating and hardening a whole agent system. Do not use for one bug, tiny prompt/schema/API changes, ordinary app work, simple deterministic utilities, conceptual agent explanations, or a narrow task owned by one specialist.
 metadata:
-  author: Sathvik
-  collection: "Sathvik — Agent Engineering"
+  collection: "Agent Engineering"
   version: "2.1.0"
 ---
 

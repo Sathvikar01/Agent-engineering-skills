@@ -3,8 +3,7 @@ name: agent-guardrails
 description: >-
   Assemble and verify layered runtime guardrails for an AI system without confusing guidance with enforcement. Use when designing agent safety/quality containment, abstention gates, policy enforcement, permissions, runtime limits or approval layers, or reviewing a prompt-only guardrail claim. Do not use for security threat modeling alone, writing admission code alone, generic input validation, or making a system prompt sound safer.
 metadata:
-  author: Sathvik
-  collection: "Sathvik — Agent Engineering"
+  collection: "Agent Engineering"
   version: "2.0.0"
 ---
 

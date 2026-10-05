@@ -3,8 +3,7 @@ name: agent-state-and-memory
 description: >-
   Design agent runtime state, checkpoints and memory without confusing recall with authoritative facts. Use when deciding what an AI system should persist, handling long-running context, cross-run memory, checkpoint/resume, provenance, expiry or deterministic state transitions. Do not use for coding-session context setup, a normal database migration, or conversational summarization with no runtime persistence design.
 metadata:
-  author: Sathvik
-  collection: "Sathvik — Agent Engineering"
+  collection: "Agent Engineering"
   version: "1.0.0"
 ---
 

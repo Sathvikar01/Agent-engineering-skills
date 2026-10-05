@@ -3,8 +3,7 @@ name: structured-output-design
 description: >-
   Design and validate model-produced structured proposals before application use. Use when specifying JSON or typed outputs from an LLM, handling refusals or malformed generations, validating semantic constraints, or migrating model output contracts. Do not use for routine API serialization or database schema design without model-generated data.
 metadata:
-  author: Sathvik
-  collection: "Sathvik — Agent Engineering"
+  collection: "Agent Engineering"
   version: "2.0.0"
 ---
 
