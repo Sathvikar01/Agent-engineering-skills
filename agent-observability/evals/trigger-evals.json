@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Operators cannot explain why our assistant stopped after two retries. Design events linking request, proposal, policy decision, tool attempts, checkpoint, budget, and final status without logging private reasoning.",
+    "should_trigger": true
+  },
+  {
+    "query": "Instrument a deployed agent so a lost tool response can be joined to its logical operation, attempt IDs, later receipt, and final persisted state across restart.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our trace shows model calls but not which prompt, schema, tool, policy, or retrieval version ran. Define a privacy-aware event contract and outcome links needed to compare releases.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design telemetry for a planner with three workers. Preserve parent-child IDs, causal ordering, conflict resolution, approvals, aggregate spend, and missing-worker outcomes so one trajectory is reconstructable.",
+    "should_trigger": true
+  },
+  {
+    "query": "We want dashboards for agent abstentions, policy denials, retry exhaustion, unknown effects, and verified success by release. Define bounded labels and alerts with actionable operator queries.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review logs that copy entire agent contexts and tool payloads. Replace them with bounded redacted fields and restricted evidence pointers while preserving enough information to diagnose failed runs.",
+    "should_trigger": true
+  },
+  {
+    "query": "An agent evaluator disagrees with the visible result. Link evaluator versions and verdicts to source evidence, receipts, and state transitions, and retain failed attempts even when a later step succeeds.",
+    "should_trigger": true
+  },
+  {
+    "query": "Specify how to attribute model, retrieval, and worker costs to one logical agent task, including retries and unavailable token usage. Design safe instrumentation rather than estimating missing values as zero.",
+    "should_trigger": true
+  },
+  {
+    "query": "Prove our new agent event stream is useful: reconstruct a denied action, an approved action, a lost response, and a restart using events alone with fakes for replay.",
+    "should_trigger": true
+  },
+  {
+    "query": "A support assistant has a scheduler and a manual entry point feeding the same trace sink. Design run identifiers, entry attribution, versions, and safe retention for approvals and side-effect evidence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Add structured logging, request correlation, RED metrics, distributed tracing, and symptom-based alerts to a conventional payment service. There is no model or agent trajectory to reconstruct.",
+    "should_trigger": false
+  },
+  {
+    "query": "Define the task-quality rubric for an agent, including groundedness, completeness, abstention, and forbidden effects. Build representative gold cases and calibrate graders; telemetry already captures the necessary evidence.",
+    "should_trigger": false
+  },
+  {
+    "query": "Implement retry and reconciliation policy for unknown agent commits. Existing traces are adequate; decide budgets, checkpoint recovery, compensation, and poison-task handling.",
+    "should_trigger": false
+  },
+  {
+    "query": "Profile an agent whose completion time is slow and expensive. Use existing traces to compare context reduction, caching, routing, and independent read parallelism while preserving the quality gate.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design a checkpoint and memory lifecycle for an assistant, including consent, source provenance, expiry, typed transitions, and deletion. Event instrumentation is outside this request.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create deterministic runtime tests for an agent using scripted model replies, provider fakes, race conditions, and restart fault injection. We need executable correctness evidence rather than trace design.",
+    "should_trigger": false
+  },
+  {
+    "query": "Threat-model whether hostile tool outputs can cause file upload or secret leakage. Map attacker-to-effect paths and enforce capabilities; the current telemetry already supports investigation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design model-facing lookup and update tools with bounded result payloads, error semantics, and operation keys. Keep telemetry unchanged and focus on contract usability.",
+    "should_trigger": false
+  },
+  {
+    "query": "Debug a current build failure by reading the error, reproducing it, checking recent changes, and testing one hypothesis. This is a coding defect without an opaque agent run.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a review interface for an agent action that needs a manager's judgment. Show exact targets, material diff, denial alternatives, expiry, and cancellation using the existing audit stream.",
+    "should_trigger": false
+  }
+]

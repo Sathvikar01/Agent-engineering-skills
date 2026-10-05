@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Our booking assistant times out after a provider may have committed the reservation. Design unknown-outcome reconciliation and stable operation keys before allowing retries or resumed runs.",
+    "should_trigger": true
+  },
+  {
+    "query": "Specify recovery for an agent crash between external payment commit and local receipt persistence. Cover each crash window, authoritative status checks, cumulative budgets, and safe escalation.",
+    "should_trigger": true
+  },
+  {
+    "query": "A workflow agent retries authorization denials and malformed outputs forever. Classify permanent and transient failures and define bounded backoff, repair ceilings, deadlines, and honest terminal status.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design partial-result reporting when an assistant completes three of five external actions and compensation fails. Separate committed, pending, failed, and compensated work and preserve authorization for reversals.",
+    "should_trigger": true
+  },
+  {
+    "query": "We have a provider with no idempotency support or reliable status lookup. Choose a recovery policy for uncertain mutations without promising exactly-once execution or blindly forcing progress.",
+    "should_trigger": true
+  },
+  {
+    "query": "An agent restarts and repeats completed work while resetting its retry limit. Specify a durable operation ledger, remaining budgets, checkpoint validation, and fresh authorization of pending effects.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our queue keeps redelivering a task whose model proposal can never pass validation. Design poison-task quarantine, sanitized cause evidence, owner escalation, and prerequisites for a safe redrive.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review retry policy for agent tool calls under rate limits and degraded dependencies. Bound retry-after, avoid synchronized storms, and justify whether circuit breakers add value for this traffic.",
+    "should_trigger": true
+  },
+  {
+    "query": "A cancelled agent has a tool operation still in flight. Define reconciliation, late receipts, checkpoint status, and what may safely resume without duplicating or unauthorized compensation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design a failure-to-action table for a long-running assistant: stale state, denied policy, transient outage, unknown commit, expired grant, and exhausted budget. Include executable crash/restart cases.",
+    "should_trigger": true
+  },
+  {
+    "query": "A unit test fails after a recent dependency upgrade. Reproduce the failure, compare working code and configuration, state one root-cause hypothesis, and implement the smallest verified fix.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design the typed checkpoint schema and memory ownership table for an assistant. Decide scope, provenance, state versions, expiry, and concurrent transitions; recovery policy is already documented.",
+    "should_trigger": false
+  },
+  {
+    "query": "Specify tool error contracts distinguishing denial, conflict, rate limit, transient failure, and unknown commit. We need the interface definition and examples, not an agent retry implementation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Test whether an LLM interprets a timeout and chooses the status tool rather than repeating a mutation. Freeze tool contracts and score selection and response interpretation in sandbox traces.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write fault-injection tests for the existing executor and durable fake at known crash boundaries. The reconciliation strategy is fixed; deliver runnable assertions and CI triggers.",
+    "should_trigger": false
+  },
+  {
+    "query": "Implement atomic idempotency for a conventional charge endpoint, including request hashing, unique key claims, retention, and in-flight responses. No AI runtime or agent resumption is involved.",
+    "should_trigger": false
+  },
+  {
+    "query": "Add correlated events for agent retries, unknown effects, checkpoint resume, and terminal status. The failure policy is unchanged; operators need evidence to reconstruct a run.",
+    "should_trigger": false
+  },
+  {
+    "query": "Reduce an agent's spending by comparing direct model routing with fallback chains. Include failed calls and retry costs in cost per verified success, under the existing recovery rules.",
+    "should_trigger": false
+  },
+  {
+    "query": "Specify a human decision flow for unresolved agent work, including exact action preview, reviewer authority, timeout, and cancellation. Backend recovery and state representation are already fixed.",
+    "should_trigger": false
+  },
+  {
+    "query": "Handle an ordinary synchronous file-read exception by returning a typed error in a deterministic utility. Add a focused test; no durable agent, side effect uncertainty, or retry policy is present.",
+    "should_trigger": false
+  }
+]

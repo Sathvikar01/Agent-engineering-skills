@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Our team calls a long system prompt the agent's safety boundary. Design a layered control matrix covering proposals, permissions, execution, output, budgets, and meaningful approval with explicit enforcement owners.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compose safety and quality checks for a support assistant with harmless reads and consequential updates. Choose proportional controls and define abstention, denial, and partial results when required checks fail.",
+    "should_trigger": true
+  },
+  {
+    "query": "A content classifier allows an action that the policy engine denies. Specify precedence, failure handling, and tests for contradictory layers so probabilistic scores cannot bypass hard constraints.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review an agent whose output filter blocks a message only after it has already been sent. Move controls to the right boundaries and verify pre-execution denial and receipt-backed outcome checks.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design outage behavior when an AI workflow's required checker is unavailable. Fail closed for critical effects, allow policy-approved read-only degradation, and bound repair and escalation loops.",
+    "should_trigger": true
+  },
+  {
+    "query": "Measure whether optional safety classifiers improve an assistant without excessive false blocking. Define severity-aware thresholds, sandbox ablations, review burden, and latency while preserving mandatory permissions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a risk-to-control matrix for an expense assistant: malformed proposals, stale grants, missing evidence, cumulative budget exhaustion, and unsupported actions. Identify bypass paths across retries and resumed workers.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our agent can safely refuse, ask for evidence, or request human review, but these paths are inconsistent. Compose validators, policy gates, limits, and escalation rules with concrete terminal behavior.",
+    "should_trigger": true
+  },
+  {
+    "query": "Evaluate a runtime containment design under poisoned inputs, layer disagreement, expired approval, and legitimate difficult tasks. Assert actual effects and false positives, not just reassuring assistant text.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design release and rollback checks for layered agent controls. Capture control versions, compatibility, violation rates, abstention, added cost, and an operator path without adding redundant gates everywhere.",
+    "should_trigger": true
+  },
+  {
+    "query": "Threat-model indirect prompt injection, malicious tool metadata, memory poisoning, credential exfiltration, and confused-deputy execution. Trace attacker-to-effect paths; composing all operational quality controls is outside scope.",
+    "should_trigger": false
+  },
+  {
+    "query": "Implement a typed admission function for proposed transfers with principal checks, policy version, hard reserve rules, and atomic commit. Existing surrounding guardrail layers are unchanged.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design an approval interface for external agent actions with exact previews, authorized reviewers, item rejection, expiry, and cancellation. Policy and enforcement composition already exist.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a production prompt with clear responsibilities, source-data separation, evidence requirements, and stop conditions. We need a versioned instruction artifact, not a runtime enforcement system.",
+    "should_trigger": false
+  },
+  {
+    "query": "Validate ordinary form input using allowed fields, length bounds, enums, and consistent errors. No model output, AI runtime, or composed agent control layers are present.",
+    "should_trigger": false
+  },
+  {
+    "query": "Define a structured model proposal schema with refusal variants, semantic checks, bounded repair, and migration tests. Keep the established authorization and runtime guardrails fixed.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design unknown-effect reconciliation, checkpoint resume, retry ceilings, compensation, and poison-task handling for an agent. The missing contract is recovery semantics, not layering safety controls.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build agent runtime tests using production validators, scripted model outputs, provider fakes, and crash injection. The control design is approved; implement verification and CI coverage.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create representative gold tasks and calibrated rubrics for agent correctness, grounding, abstention, safety, and release regression slices. Evaluate the fixed product rather than redesign containment.",
+    "should_trigger": false
+  },
+  {
+    "query": "Instrument existing policy decisions, approvals, tool attempts, evaluator results, and terminal statuses with safe correlated events. We need reconstructable trajectories under current controls.",
+    "should_trigger": false
+  }
+]

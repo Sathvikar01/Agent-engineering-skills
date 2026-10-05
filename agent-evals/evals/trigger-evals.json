@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Before we build a claims assistant, define representative tasks, safe refusals, prohibited effects, and a scoring contract. Include dataset provenance and a release gate for consequential errors.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare two deployed support assistants on the same tickets. Separate answer correctness from unauthorized tool actions, repeat noisy tasks, and report paired quality differences with uncertainty.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our new agent scores well overall but fails uncommon urgent requests. Design severity-weighted slices and acceptance thresholds so common easy tasks cannot hide costly regressions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a gold set for an assistant that investigates invoice mismatches. Specify initial state, reset procedures, evidence expectations, partial outcomes, and what should be scored by code versus human judgment.",
+    "should_trigger": true
+  },
+  {
+    "query": "We use a model to grade research answers, but it favors longer responses and trusts quoted instructions. Calibrate a blinded rubric against human labels and document disagreement handling.",
+    "should_trigger": true
+  },
+  {
+    "query": "A planning bot reaches correct final answers after making forbidden intermediate calls. Define trajectory and outcome scores and ensure those violations fail the release decision regardless of answer quality.",
+    "should_trigger": true
+  },
+  {
+    "query": "Help prevent evaluation leakage when ticket paraphrases, source documents, and remembered answers appear in both tuning and test data. Propose split units and a frozen held-out evaluation procedure.",
+    "should_trigger": true
+  },
+  {
+    "query": "We changed retrieval and prompts together and cannot explain the agent improvement. Build matched ablations, an earliest-failure taxonomy, and quality, abstention, latency, and cost reporting.",
+    "should_trigger": true
+  },
+  {
+    "query": "The team calls a single successful demo an agent benchmark. Replace it with a versioned task population, repeated stochastic runs, operational constraints, and a defensible acceptance decision.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design release checks for a booking assistant that can complete, abstain, or return partial work. Define denominators, observed safety violations, evidence-grounded scoring, and meaningful baseline comparisons.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write deterministic tests for admission and state transitions in an agent executor. Stub model responses, inject crash windows, and assert that denied proposals never change persisted state.",
+    "should_trigger": false
+  },
+  {
+    "query": "Measure whether the model selects the correct search tool among similar names and passes valid IDs into dependent calls. Focus on tool usability dimensions rather than overall task-answer quality.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a scoring script for our retrieval stage using labeled document relevance, Recall@10, MRR, and deduplicated source identities. Generation and whole-agent release scoring are outside this request.",
+    "should_trigger": false
+  },
+  {
+    "query": "Our task-quality thresholds are already approved. Calculate total model and tool spend per successful run, including retries and cache charges, and compare routing changes under that fixed quality floor.",
+    "should_trigger": false
+  },
+  {
+    "query": "Add trace fields linking evaluator verdicts to source evidence and tool receipts across resumed agent runs. Reuse the existing rubric unchanged; the missing piece is operational instrumentation.",
+    "should_trigger": false
+  },
+  {
+    "query": "A checkout total is wrong when discounts are applied twice. Reproduce the defect with a failing unit test, locate its cause, implement the fix, and run the repository test suite.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design JSON variants for a model-produced action, refusal, and insufficient evidence response. Specify semantic validation and bounded repair; we are not choosing task populations or scoring rubrics.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build an MCP server evaluation XML with ten independent read-only questions whose stable answers require several tool calls. Follow the existing protocol tooling rather than designing an agent benchmark.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rewrite a production classification prompt with conflicting instructions and redundant examples. Existing evaluation cases and thresholds are fixed; deliver a versioned prompt and a rollback-compatible change.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review evidence before claiming this implementation is finished: run the build and tests, inspect exit codes, and map the approved requirements to the resulting changes and any uncovered gaps.",
+    "should_trigger": false
+  }
+]

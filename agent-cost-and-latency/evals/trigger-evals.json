@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Our assistant uses fewer tokens after a model downgrade but retries more often. Compare total attributable spend per verified successful task, success rate, abstentions, and p95 completion latency.",
+    "should_trigger": true
+  },
+  {
+    "query": "Profile a tool-using agent that takes twelve model turns to answer simple requests. Measure call and retrieval time, reduce unnecessary loops, and keep quality and safety gates intact.",
+    "should_trigger": true
+  },
+  {
+    "query": "Choose model routing for easy versus hard agent tasks using current measured evidence. Include failed small-model calls, escalation charges, latency, and an explicit ceiling on fallback attempts.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design enforced run budgets for a planner with parallel workers. Reserve aggregate spend and calls centrally, preserve limits across restarts, and return honest partial results when exhausted.",
+    "should_trigger": true
+  },
+  {
+    "query": "We want to cache AI workflow results without leaking across tenants or reusing stale permissions. Define keys, versioning, expiry, invalidation, charges, and a quality-gated cost experiment.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare independent read parallelism with sequential calls in our assistant. Measure critical-path and tail latency under rate limits and concurrency caps without reordering dependent mutations.",
+    "should_trigger": true
+  },
+  {
+    "query": "A document assistant spends most of its context on duplicate chunks. Test reducing context and tool payloads while measuring groundedness, retrieval recall, total spend, and successful outcomes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Calculate economics for two agent variants using all attempts, retries, cache reads, and worker overhead. Handle zero successes correctly and distinguish response latency from final completion time.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our offline AI tagging workflow can tolerate delay. Evaluate batching and queue time, retry blast radius, throughput, cost per success, and whether the quality floor survives the change.",
+    "should_trigger": true
+  },
+  {
+    "query": "Set up a before-and-after experiment for an expensive agent. Pin versions and pricing timestamp, compare matched tasks and cache conditions, and keep only gains beyond measurement noise.",
+    "should_trigger": true
+  },
+  {
+    "query": "Profile a conventional dashboard with slow database queries, large images, and poor interaction latency. Measure the actual bottleneck and verify improvements without any model or agent spending.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design event fields capturing model tokens, tool time, worker spans, cache status, and evaluator outcomes. We need accurate agent instrumentation; optimization choices and budget policy are already settled.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create an agent quality benchmark with representative tasks, safety violations, abstention, repeated runs, and uncertainty. Operational costs are fixed constraints; the request is scoring and release thresholds.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rewrite a production prompt to remove contradictory instructions and add missing-evidence behavior. Keep the existing cost ceilings and evaluation contract rather than designing an economics experiment.",
+    "should_trigger": false
+  },
+  {
+    "query": "Evaluate whether two runtime agents outperform one worker, then specify handoffs, fan-in, cancellation, shared-state ownership, and central budgets. The main decision is coordination necessity and correctness.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design the retry policy for unknown external commits and transient failures, including reconciliation, backoff, durable budgets, and poison-task handling. Recovery correctness is the requested outcome.",
+    "should_trigger": false
+  },
+  {
+    "query": "Compare sparse, dense, hybrid, and reranked retrieval for unsupported citations. Use relevance labels and oracle evidence to isolate pipeline failures; general agent routing and spending are outside scope.",
+    "should_trigger": false
+  },
+  {
+    "query": "Our authorization gate permits individually valid operations that collectively exceed a reserve. Implement atomic aggregate admission and version checks, using fixed runtime budgets rather than profiling economics.",
+    "should_trigger": false
+  },
+  {
+    "query": "Shorten this one-off prompt so I can paste it into a chat window while preserving its meaning. No production workflow, verified outcomes, pricing measurements, or release decision is involved.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review approval batching and standing grants to reduce human friction in an agent workflow. Specify exact previews, reviewer authority, expiration, and changed-action behavior, keeping model costs unchanged.",
+    "should_trigger": false
+  }
+]

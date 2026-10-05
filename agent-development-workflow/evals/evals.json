@@ -1,0 +1,39 @@
+{
+  "skill_name": "agent-development-workflow",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Productionize a prototype that reads ambiguous receipts, calculates exact reimbursement, answers with citations and may send a payment after approval. It passed one happy example. Team wants regex-only receipt parsing and a five-agent framework. Before coding produce the engineering path, uncertainty map, baseline/eval gates, contract/authority/evidence flow, vertical slice and meaningful decision/defence artifacts. No repository or dataset is supplied; distinguish proposed checks from executed evidence.",
+      "expected_output": "Full lifecycle with task-fit models, authority and measured acceptance.",
+      "files": [],
+      "expectations": [
+        "Maps semantic receipt uncertainty to bounded model interpretation and arithmetic/permissions to deterministic authority; rejects unsupported framework/workers.",
+        "Defines baseline/multidimensional critical gates before large implementation and a repeatable run/debug/correct/review path with vertical slice.",
+        "Covers evidence reconciliation and model-failure/security/recovery behavior without claiming unexecuted results.",
+        "Gives material decision status and direct technical defence with limitations/fallback; one happy example is insufficient."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Build a local Python vertical slice, no provider or payments. Scripted model proposes reimbursement from observed receipt R1, amount=30; deterministic policy cap=20; a second permitted supported proposal amount=20 exists and user authorized any amount<=20 for this fake. Starter admission is def admit(p): return p[\"amount\"]>=20 (bug). PLAN expected invariant, implement fixture tests, RUN to expose bug, DEBUG/CORRECT it, rerun and REVIEW. Also test invented R9, timeout, schema-valid inconsistent explanation_amount and no valid candidate. Save code, actual command logs and a concise evidence/defence report.",
+      "expected_output": "Executed correction loop and truthful safe vertical slice.",
+      "files": [],
+      "expectations": [
+        "Actually executes a test exposing starter bug, identifies root cause, corrects it and reruns meaningful regression checks.",
+        "Denies amount30/unknown evidence/inconsistent explanation without effects; supported authorized20 reaches fresh admission once.",
+        "Bounds timeout/alternative paths and reports no-admissible status; trace links source/decision/effect and evidence.",
+        "Reviews results/limitations and defends the implementation without claiming provider or production reliability."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Fix one typo in this production model prompt: Return insufficent_evidence when facts are absent. Supply the corrected sentence only.",
+      "expected_output": "Specialist-sized direct edit; no meta-workflow overhead.",
+      "files": [],
+      "expectations": [
+        "Returns corrected insufficient_evidence sentence.",
+        "Does not impose architecture/approval/eval/lifecycle documentation for this typo."
+      ]
+    }
+  ]
+}

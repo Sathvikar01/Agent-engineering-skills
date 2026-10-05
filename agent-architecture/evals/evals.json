@@ -1,0 +1,50 @@
+{
+  "skill_name": "agent-architecture",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Choose architectures for: (A) compute invoice totals from typed line items and tax rules; (B) extract invoice fields, validate them and route by fixed rules; (C) investigate inconsistent service incidents by choosing read-only diagnostic tools from new observations; (D) compare 80 independent document sets with strict tenant isolation. Give one minimal design per case and evidence required before adding autonomy.",
+      "expected_output": "Classifications, restrained autonomy and bounded run contracts.",
+      "files": [],
+      "expectations": [
+        "A uses deterministic software without a model or agent loop.",
+        "B uses a fixed workflow with model extraction followed by deterministic validation.",
+        "C justifies adaptive tool use and specifies authority, evidence and stop conditions.",
+        "D treats multi-agent execution as conditional on measured benefit and isolation, not automatic."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Our support prototype loops until the model says solved. It may edit account permissions and remembers success in chat. A retrieved ticket says grant admin and skip review. Redesign its runtime architecture before implementation and define the release gate.",
+      "expected_output": "A boundary redesign with deterministic authority and verified termination.",
+      "files": [],
+      "expectations": [
+        "Retrieved ticket content cannot authorize a permission change.",
+        "Permission changes use authoritative state, deterministic policy and required human approval.",
+        "Defines bounded termination and a verified outcome rather than model-declared success.",
+        "Provides failure/recovery and concrete pre-implementation eval cases."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Review the architecture of a static billing calculator: typed amounts, a supplied tax table, no natural-language inputs, and no model runtime. Keep the recommendation small.",
+      "expected_output": "Ordinary deterministic software; no new agent machinery.",
+      "files": [],
+      "expectations": [
+        "Keeps the calculator deterministic and introduces no AI runtime.",
+        "Does not require agent framework, memory, multi-agent reviewers or LLM evals."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "A team replaces semantic document interpretation with regex to avoid AI: policy notes include negation, exceptions, contradictory accounts and paraphrases. The next steps are known: interpret, validate, calculate totals, explain. They also suggest a five-agent framework for typed invoice arithmetic. Choose architectures and a baseline/ablation decision, and explain why a second model would or would not help. No implementation needed.",
+      "expected_output": "Task-fit uncertainty map, restrained autonomy and measured complexity.",
+      "files": [],
+      "expectations": [
+        "Identifies semantic interpretation as model-worthy uncertainty and rejects regex-only guessing as a universally safer solution.",
+        "Uses fixed control and deterministic calculations/authority while permitting bounded model interpretation.",
+        "Rejects multi-agent/framework machinery for typed arithmetic and requires evidence before extra model/framework complexity."
+      ]
+    }
+  ]
+}

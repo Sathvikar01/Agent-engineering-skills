@@ -1,0 +1,50 @@
+{
+  "skill_name": "agent-guardrails",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "An assistant can answer from documents and send external messages. The proposed safety plan is a system prompt saying never leak data plus a second-model reviewer. Design a layered guardrail matrix, enforcement points, outage behavior and acceptance tests without excessive approvals on harmless answers.",
+      "expected_output": "Layered enforceable controls and proportional friction.",
+      "files": [],
+      "expectations": [
+        "Does not treat prompt or reviewer agreement as a security/authorization boundary.",
+        "Places permissions/data policy and required approval before external send.",
+        "Separates schema/semantic validation, runtime limits and grounded output checks.",
+        "Fails closed for required boundary outages while allowing explicitly safe read-only degradation."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "An output filter runs only after an email tool sends; a policy checker outage defaults to allow; a reviewer model approves an over-limit payment; retries bypass validation. Show concrete release-gate failures and the corrected execution path.",
+      "expected_output": "Rejects bypass and post-effect-only protection.",
+      "files": [],
+      "expectations": [
+        "Blocks release for post-send-only protection and moves admission before execution.",
+        "Denies effects during required policy outage and rejects over-limit payment despite reviewer approval.",
+        "Enforces the same admission controls on retry/resume paths.",
+        "Defines no-effect tests and operational/false-blocking measurements."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Validate a deterministic web form: required email, maximum message length and numeric age range. There is no LLM or agent runtime.",
+      "expected_output": "Basic deterministic validation.",
+      "files": [],
+      "expectations": [
+        "Uses ordinary schema/input validation without agent guardrail orchestration.",
+        "Does not introduce model reviewers, runtime step budgets or approval gates."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Guardrails deny a first installment plan [40,40] for required total100. A supported permitted candidate [40,60] exists. The product currently refuses immediately; the team alternatively wants to skip sum/permission checks after model repair. Design layered behavior including no authorized valid candidate, required checker outage and approval changes. No live execution.",
+      "expected_output": "Bounded constructive path without enforcement bypass.",
+      "files": [],
+      "expectations": [
+        "Constructs/repairs the supported alternative and revalidates/re-authorizes under unchanged constraints rather than lazy terminal refusal.",
+        "Does not skip policy/permission/semantic checks after repair or allow human/model approval to waive hard invariants.",
+        "Bounds search and fails closed when no candidate or required checker exists while testing false blocking of valid candidates."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "skill_name": "tool-evals",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "For tools search_orders, get_order, preview_address_change, commit_address_change and delete_order, create a tool-usability eval for correcting the shipping address of the latest matching order. Include duplicate names, two result pages, version conflicts, permissions, final state and unnecessary tool use. Define fixtures and scoring.",
+      "expected_output": "A realistic multi-step usability suite.",
+      "files": [],
+      "expectations": [
+        "Checks that selected order IDs originate in retrieved results and pagination is handled.",
+        "Requires current state/version and authority before committing a supported change.",
+        "Treats delete_order use as a forbidden effect and verifies final persisted address.",
+        "Separates argument, chaining, unnecessary-call and outcome scores."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Grade this trace: search returns id=O7,version=4; agent commits O9/version=4; commit response is timeout/unknown; agent retries with a new key, gets success, then says finished without reading state. Give assertion outcomes, evidence and a recovery test.",
+      "expected_output": "Fails invented ID, blind retry and unsupported completion.",
+      "files": [],
+      "expectations": [
+        "Fails O9 because it was not supported by the search result.",
+        "Fails retry with a new key while the original commit outcome is unknown.",
+        "Does not accept the final success sentence as verified application state."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Write schema and HTTP status tests for a deterministic internal API endpoint used only by a fixed backend service. No model chooses or chains calls.",
+      "expected_output": "Deterministic API contract tests.",
+      "files": [],
+      "expectations": [
+        "Uses deterministic contract tests instead of model tool-selection evaluations.",
+        "Does not introduce a probabilistic discovery benchmark."
+      ]
+    }
+  ]
+}

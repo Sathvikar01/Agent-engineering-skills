@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Threat-model a web-reading assistant that can upload files. Trace hidden page instructions into proposed uploads and enforce scoped credentials and independent destination policies using harmless attack fixtures.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our search tool returns text that looks like a system message. Map how it reaches the model and executor, then prove that source content cannot become authority or user authorization.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review a multi-tenant assistant using server-wide API credentials. Identify confused-deputy paths and restrict tool identity so a low-privilege user cannot act as an administrator.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design containment tests for poisoned tool descriptions and changed tool metadata. Verify origin and version, restrict capabilities independently, and measure whether malicious suggestions cause forbidden effects.",
+    "should_trigger": true
+  },
+  {
+    "query": "A retrieved document tries to write new preferences that instruct the assistant to reveal secrets later. Threat-model memory poisoning, preserve taint/provenance, and validate writes outside model instructions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review an agent file tool for traversal, symlink escape, drive-letter paths, and UNC destinations. Use typed operations and resolved allowlists, with sandbox tests proving denied paths cause no effects.",
+    "should_trigger": true
+  },
+  {
+    "query": "An assistant fetches user-provided URLs through a tool. Review redirects, resolved addresses, metadata endpoints, DNS rebinding, decompression limits, and how malicious response content reaches later actions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our agent includes credentials in error messages and model-visible tool payloads. Design scoped credential brokering, safe envelopes, redaction, and leak tests using synthetic secret markers.",
+    "should_trigger": true
+  },
+  {
+    "query": "Trace a forged approval in a retrieved attachment through summarization, planning, and proposed payment. Specify containment at each trust boundary and verify a legitimate task still succeeds.",
+    "should_trigger": true
+  },
+  {
+    "query": "Assess a research agent that can run shell commands and access the network. Replace unnecessary broad capabilities and test injection through tool arguments without using real secrets or destructive targets.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit a normal web login flow for cookie flags, account enumeration, password hashing, CSRF, rate limits, and dependency advisories. No model reads content or chooses actions in this system.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build the executable permission and reserve-floor gate for model-proposed transfers. Trusted principal, atomic budget reservation, and current versions are known; focus on business-rule admission, not threat discovery.",
+    "should_trigger": false
+  },
+  {
+    "query": "Assemble safety and quality controls across agent input, proposals, execution, and output. Measure abstention and false blocking and identify coverage gaps; detailed attack-path analysis is already complete.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design a human approval preview for external messages, with exact recipients, attachments, expiry, and cancellation. The threat model and deterministic enforcement are settled.",
+    "should_trigger": false
+  },
+  {
+    "query": "Evaluate an agent on a representative gold set containing ordinary and adversarial tasks. Calibrate semantic graders and severity-weighted release gates without redesigning security controls.",
+    "should_trigger": false
+  },
+  {
+    "query": "Specify memory retention, consent, provenance, deletion, and conflicting facts for a support assistant. There is no suspected attack; the request is runtime persistence ownership and lifecycle.",
+    "should_trigger": false
+  },
+  {
+    "query": "Define typed structured outputs for an advisory model classifier, including refusal and missing evidence. Focus on supported schema constraints, semantic checks, and bounded formatting repair.",
+    "should_trigger": false
+  },
+  {
+    "query": "Our fixed agent integration needs deterministic tests for malformed proposals, denied effects, tenant isolation, and restart behavior. Implement the risk-based test matrix using existing security policy.",
+    "should_trigger": false
+  },
+  {
+    "query": "Profile retrieval and model-call latency in an assistant. Compare caching and smaller-model routing with fixed permission and quality gates; do not conduct a new threat assessment.",
+    "should_trigger": false
+  },
+  {
+    "query": "Add redacted telemetry and protected evidence references to existing agent traces. Verify run reconstruction and retention using established privacy rules, keeping the security architecture unchanged.",
+    "should_trigger": false
+  }
+]

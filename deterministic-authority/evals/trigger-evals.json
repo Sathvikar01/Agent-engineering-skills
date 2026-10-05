@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Our assistant proposes refunds and includes approved=true in its JSON. Design a trusted admission function that ignores model permission claims and checks authenticated role, amount limits, and current order state.",
+    "should_trigger": true
+  },
+  {
+    "query": "Two agent workers each propose an allowed transfer, but together they exceed the spending ceiling. Implement atomic cumulative reservation and prove denied proposals leave authoritative balances unchanged.",
+    "should_trigger": true
+  },
+  {
+    "query": "A model cites an urgent request to waive the minimum inventory reserve. Specify executable invariants, structured deny reasons, and an authorized policy-exception path that prose cannot override.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit every route from an LLM proposal to a side effect, including retries, resumed runs, alternate tools, and workers. Put admission immediately before execution and eliminate bypass paths.",
+    "should_trigger": true
+  },
+  {
+    "query": "Bind a grant for an agent action to principal, resource, canonical arguments, state version, expiry, and use count. Define how trusted code rejects a forged or stale authorization.",
+    "should_trigger": true
+  },
+  {
+    "query": "An AI assistant calculates loan eligibility and then updates the record. Move consequential calculations and permissions into deterministic code while keeping model interpretation as a typed advisory proposal.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design the allow, deny, and needs_approval results for proposed account permission changes. Missing facts and policy outages must fail closed; reviewers cannot silently override hard invariants.",
+    "should_trigger": true
+  },
+  {
+    "query": "The agent received approval for one recipient but changes the destination before sending. Define admission checks and compare-and-set commit logic preventing substitution after the earlier allow decision.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our scheduling model writes completed directly into the workflow database. Define receipt-backed deterministic state transitions and execution rights so evaluator approval or confident text cannot establish completion.",
+    "should_trigger": true
+  },
+  {
+    "query": "Implement a model-to-action gate for stock adjustments. Check units, evidence freshness, tenant ownership, current version, and permissions, then issue an auditable receipt only after a valid commit.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design a readable approval experience for an agent-generated campaign: exact audience preview, evidence, item-level rejection, timeout behavior, and cancellation. The admission policy implementation is already complete.",
+    "should_trigger": false
+  },
+  {
+    "query": "Compose runtime controls for an assistant using input screening, output grounding, permissions, approvals, and deadlines. Find gaps and contradictory layer behavior; existing admission code stays unchanged.",
+    "should_trigger": false
+  },
+  {
+    "query": "Threat-model an agent that consumes web pages and can upload documents. Trace indirect injection, credential leakage, confused-deputy risks, and destination restrictions rather than implementing business-rule admission.",
+    "should_trigger": false
+  },
+  {
+    "query": "Define a JSON proposal contract for action, refusal, or missing evidence responses. Specify bounded parsing and semantic validation before the existing authorization layer receives the result.",
+    "should_trigger": false
+  },
+  {
+    "query": "Implement deterministic eligibility calculations for a conventional application form. Inputs arrive through a normal endpoint; there is no LLM proposal or model-to-action trust boundary.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design an advisory writing assistant that summarizes meeting notes and cannot invoke tools or change application state. Focus on concise production instructions and supported evidence gaps.",
+    "should_trigger": false
+  },
+  {
+    "query": "Specify memory provenance and checkpoint fields for an assistant. Explain how to retain pending action IDs and state versions across compaction without redesigning the already enforced execution gate.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build tests asserting the existing executor denies forged approvals, stale versions, and concurrent overdrafts. Use fakes and property cases; no admission implementation changes are requested.",
+    "should_trigger": false
+  },
+  {
+    "query": "Evaluate two agents on answer correctness, safe abstention, and prohibited trajectory effects. Keep the policy engine fixed and produce a calibrated benchmark and severity-aware release decision.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review ordinary session-cookie authorization, access control, security headers, and upload validation in a web application. Its backend operates directly on authenticated requests without model proposals.",
+    "should_trigger": false
+  }
+]

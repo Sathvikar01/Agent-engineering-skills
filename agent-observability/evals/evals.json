@@ -1,0 +1,50 @@
+{
+  "skill_name": "agent-observability",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "A support agent runs models, retrieval, address updates, human approvals and retries. Operators only see \"started\" and \"done\". Specify event fields and an example timeline that reconstructs a lost mutation response followed by resume, with outcome/cost/latency metrics and privacy controls.",
+      "expected_output": "Joined, bounded and privacy-aware trajectory events.",
+      "files": [],
+      "expectations": [
+        "Uses stable run/operation IDs plus separate attempts, correlation and state versions.",
+        "Links approval/policy, mutation receipt, checkpoint/resume and evaluator outcome.",
+        "Records model/tool/prompt/policy versions and unknown outcome distinctly.",
+        "Handles unavailable usage as unavailable and redacts sensitive payloads before storage."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Telemetry exports raw tokens, API credentials and full private reasoning. Metrics label every run ID. A successful final answer hides an earlier denied write. Design the corrected trace and an operator reconstruction test.",
+      "expected_output": "Privacy, cardinality and failed-trajectory evidence corrected.",
+      "files": [],
+      "expectations": [
+        "Removes credentials/private reasoning and uses redacted evidence or bounded references.",
+        "Avoids run IDs as unbounded metric labels while retaining correlation in events.",
+        "Preserves the denied write and does not equate final answer success with a clean trajectory.",
+        "Defines a reconstruction check using observable events without re-executing live side effects."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Add HTTP request duration and error counters to a normal web service. It has no models, tools, approvals or agent state.",
+      "expected_output": "Ordinary service instrumentation.",
+      "files": [],
+      "expectations": [
+        "Uses general observability without adding model-call or agent-trajectory events.",
+        "Does not require evaluator or approval infrastructure."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Production support agent logs all retrieved IDs as citations and a quality=good event. Formal gold evals say 90%, live unsupported-evidence rate doubled, and an ad-hoc sample says fine. Design distinct signals and an action plan for unsupported evidence, tool errors, user overrides, safety breach, retry exhaustion, retrieval miss, latency/cost drift. Supply at least three concrete signal contracts; actual historical numeric baselines are unavailable.",
+      "expected_output": "Evidence-use joins and actionable honest signal definitions.",
+      "files": [],
+      "expectations": [
+        "Separates formal eval metrics, production telemetry and ad-hoc diagnostics rather than treating them as interchangeable quality evidence.",
+        "Defines at least three signals with baseline or provisional baseline, threshold, window/denominator, severity and owner/response.",
+        "Distinguishes retrieved/visible/used support and proposes reconstructable decision/claim/evidence joins; no invented measured baselines."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Define model-generated JSON for invoice decisions: proposed match, insufficient evidence, or refusal. Specify required fields, semantic checks, evidence references, and safe handling of provider truncation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our LLM returns valid JSON with invented customer IDs and contradictory actions. Design separate shape and semantic validation stages and keep the result advisory until trusted admission accepts it.",
+    "should_trigger": true
+  },
+  {
+    "query": "We need a typed action proposal contract whose missing safety fields never become permissive defaults. Define null versus absent values, closed variants, size limits, and representative malformed examples.",
+    "should_trigger": true
+  },
+  {
+    "query": "Plan a migration from version one to version two of a model output schema. Define deterministic adapters, unknown-version rejection, producer-consumer compatibility, and preservation of refusal semantics.",
+    "should_trigger": true
+  },
+  {
+    "query": "A generated report contains duplicate JSON keys and non-finite numeric values that different parsers interpret differently. Specify bounded parsing, normalization, and cross-field validation before consumption.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design a bounded repair path for malformed model responses. Distinguish formatting errors from missing evidence and policy rejection, revalidate repaired output, and prevent execution during repair.",
+    "should_trigger": true
+  },
+  {
+    "query": "Turn our free-form booking suggestions into a strict proposal schema. Identify model-supplied versus server-owned fields and prevent generated approval tokens or receipts from entering trusted state.",
+    "should_trigger": true
+  },
+  {
+    "query": "We are adopting constrained generation but the provider supports only part of JSON Schema. Choose a compatible contract and specify runtime checks for constraints the generation API cannot enforce.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create structured variants for a classification workflow that can succeed, refuse, or need more facts. Avoid contradictory combinations and define how consumer code handles every supported result.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review an LLM extraction contract for units, freshness, evidence provenance, numeric ranges, and unknown fields. Deliver staged validation and examples of syntactically valid but semantically rejected output.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design JSON response shapes for a conventional REST API, including error codes, pagination, input/output separation, and additive evolution. All response fields come from deterministic server code.",
+    "should_trigger": false
+  },
+  {
+    "query": "Specify input and output contracts for a callable document-search tool, including cursor behavior, bounded results, selection description, and retryable errors. The model output contract is already fixed.",
+    "should_trigger": false
+  },
+  {
+    "query": "Implement policy admission for validated model proposals using authenticated roles, tenant ownership, current state, and atomic budget reservation. Parsing and schema checks already run before this function.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create executable tests for the existing proposal validator and executor. Use malformed fixtures, concurrent state changes, and fault injection; keep the schema unchanged and focus on CI coverage.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design persistence for a long-running assistant: typed run states, checkpoint versions, memory provenance, expiry, deletion, and conflicting source handling. No generation contract is being introduced.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rewrite a product prompt that produces verbose explanations and ignores evidence gaps. Reference the existing schema unchanged and improve responsibilities, examples, stopping behavior, and versioned rollout.",
+    "should_trigger": false
+  },
+  {
+    "query": "Our research assistant has a validated output contract but still gives weak answers. Build outcome rubrics, representative tasks, paired comparisons, and calibrated human/model grading for semantic quality.",
+    "should_trigger": false
+  },
+  {
+    "query": "Threat-model how hostile document text reaches shell arguments through an assistant. Review capability scope, injection containment, credential handling, and external destination restrictions across the entire attack path.",
+    "should_trigger": false
+  },
+  {
+    "query": "Plan an approval screen for a proposed bulk update, showing exact targets and differences. Specify authorized reviewers, changed-payload handling, expiration, and cancellation around the existing typed proposal.",
+    "should_trigger": false
+  },
+  {
+    "query": "We need a database migration adding an enum and nullable audit field to a deterministic service. Specify compatibility, deployment order, and rollback with no model-generated data involved.",
+    "should_trigger": false
+  }
+]

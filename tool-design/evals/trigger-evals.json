@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Expose order lookup and cancellation to an LLM assistant. Design names, selection descriptions, strict schemas, bounded results, and distinct read versus mutation permissions instead of a generic execute tool.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our model confuses search_records with get_records and invents record identifiers. Redesign the capabilities and result contracts so discovery and dependent calls have clear preconditions and supported IDs.",
+    "should_trigger": true
+  },
+  {
+    "query": "A ticket assistant receives a huge raw API payload for each lookup. Specify concise structured output, provenance, pagination, empty and truncated states, and a bounded way to fetch detailed evidence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design a reservation tool contract that survives retries and stale inventory. Include idempotency scope, canonical request hashing, state versions, denial errors, and a lost-commit-response exchange.",
+    "should_trigger": true
+  },
+  {
+    "query": "We have fifty tiny agent tools and an omnibus action tool. Derive a coherent smaller surface from representative user intents while preserving distinct permission and side-effect boundaries.",
+    "should_trigger": true
+  },
+  {
+    "query": "Give an assistant access to maintenance scheduling without exposing arbitrary HTTP requests. Specify permitted capabilities, model-facing descriptions, trusted identity fields, validation, and cancellation behavior.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our update tool returns success after accepting a request even when the effect is still pending. Redesign response states and errors so an agent can verify commitment and handle unknown outcomes.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review units, enums, null versus missing fields, and resource versions in tools for an expense assistant. Produce contracts with examples that make incorrect model arguments detectable before execution.",
+    "should_trigger": true
+  },
+  {
+    "query": "An LLM needs to search, inspect, and propose edits to a catalogue. Design discoverable read, preview, and commit capabilities with bounded payloads and actionable validation and authorization errors.",
+    "should_trigger": true
+  },
+  {
+    "query": "Specify an agent tool for bulk document tagging. Keep downstream fan-out and page sizes bounded, distinguish partial results from empty results, and make effects and retry semantics explicit.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design REST contracts for a calendar API consumed by normal web clients. Define resource names, pagination, consistent errors, versioning, and idempotent updates; no model consumes this interface.",
+    "should_trigger": false
+  },
+  {
+    "query": "Our model-facing tool contracts are frozen. Evaluate discovery, selection, argument accuracy, dependent-call correctness, and unnecessary requests against realistic tasks before changing any interface.",
+    "should_trigger": false
+  },
+  {
+    "query": "Implement an MCP server using the existing tool catalogue and schemas. Configure transports, authentication, registration, structuredContent responses, build checks, and Inspector testing without redesigning capabilities.",
+    "should_trigger": false
+  },
+  {
+    "query": "Define the model output schema for a proposed expense decision with refusal and missing-evidence variants. Focus on generation constraints and semantic validation; no callable tool interface is being added.",
+    "should_trigger": false
+  },
+  {
+    "query": "Enforce tenant ownership and spending limits immediately before a tool executes. Its public contract already exists; implement the trusted admission function and atomic cumulative budget reservation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Threat-model a URL-fetching assistant for redirect abuse, internal-network access, leaked credentials, and malicious result text. Verify containment using harmless fixtures rather than redesigning tool descriptions.",
+    "should_trigger": false
+  },
+  {
+    "query": "A provider committed a booking but our worker crashed before storing its receipt. Design reconciliation, durable checkpoints, retry ceilings, and manual escalation when outcome cannot be determined.",
+    "should_trigger": false
+  },
+  {
+    "query": "Instrument existing tool calls with logical operation IDs, attempt IDs, safe payload references, normalized action digests, and versioned receipt links. Keep the actual tools and schemas unchanged.",
+    "should_trigger": false
+  },
+  {
+    "query": "Profile an agent whose tool calls dominate p95 latency. Compare safe read parallelism and result caching under the existing contracts, preserving task quality and tenant-aware invalidation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write adapter contract tests for an existing client, checking pagination, timeout classification, and idempotency against a resettable sandbox. We need executable verification of the agreed interface.",
+    "should_trigger": false
+  }
+]

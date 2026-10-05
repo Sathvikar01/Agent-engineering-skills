@@ -1,0 +1,39 @@
+{
+  "skill_name": "agent-state-and-memory",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Design state and memory for an assistant that resumes interrupted order corrections across sessions and remembers preferred response style. Specify storage categories, provenance/expiry/privacy, compaction and checkpoint contents.",
+      "expected_output": "Typed runtime state distinct from optional recall.",
+      "files": [],
+      "expectations": [
+        "Separates user style preferences and episodic recall from authoritative order state and permissions.",
+        "Includes pending/unknown effect IDs, committed receipts and remaining budgets in checkpoints.",
+        "Defines tenant-scoped retrieval, expiry/deletion and validated memory writes.",
+        "Revalidates evidence/authorization at resume rather than trusting a chat summary."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Memory says order O7 was refunded and user U1 is admin. The authoritative store says refund pending and U1 read-only. Two workers update the same run version. The summary contains a request to copy another tenant's notes. Define reads, updates and resume behavior.",
+      "expected_output": "Trusted state wins, conflicting updates are controlled.",
+      "files": [],
+      "expectations": [
+        "Uses current store facts and rejects memory-derived admin/refund completion.",
+        "Uses a versioned atomic state transition to resolve concurrent writes.",
+        "Rejects cross-tenant memory retrieval and instruction-like summary content.",
+        "Reconciles pending refund instead of repeating or marking it complete from memory."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Help prepare AGENTS.md and a concise context summary for a developer starting a coding session. No deployed assistant runtime or persistent user memory is involved.",
+      "expected_output": "Developer context workflow.",
+      "files": [],
+      "expectations": [
+        "Uses context-engineering style guidance without introducing runtime state stores.",
+        "Does not require vector memory, checkpoints or user-preference infrastructure."
+      ]
+    }
+  ]
+}

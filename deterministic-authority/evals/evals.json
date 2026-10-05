@@ -1,0 +1,49 @@
+{
+  "skill_name": "deterministic-authority",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write an executable Python admission function and tests for transfers. Trusted balance=100, required reserve=20, actor allowed up to 50 per action. Model proposes 90 and claims approved=true. A second proposal is 40. Missing policy facts must fail closed. No real payments. Show state before/after rejected and accepted proposals.",
+      "expected_output": "Executable rejection and controlled valid transition.",
+      "files": [],
+      "expectations": [
+        "Rejects 90 deterministically despite the model approval claim and leaves balance at 100.",
+        "Allows 40 only with trusted actor permission and leaves balance at 60 after one committed action.",
+        "Rejects missing policy facts and distinguishes validation from permission.",
+        "Supplies runnable tests or executable assertions that verify the state outcomes."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Two workers each propose spending 60 from a shared remaining budget of 100. Both check the same snapshot and get allow. One replays an old approval after resume. Design the executor admission and test interleavings, including changed arguments and policy outage.",
+      "expected_output": "Atomic aggregate reservation and bound grants.",
+      "files": [],
+      "expectations": [
+        "Uses atomic reservation or compare-and-set so combined spend cannot exceed 100.",
+        "Binds approval to exact action/principal/arguments/version/expiry and rejects stale replay.",
+        "Rechecks admission at resumed/retried execution and fails closed on policy outage."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Generate three possible names for a read-only report. The model output is advisory text and cannot execute or change state.",
+      "expected_output": "Simple advisory output.",
+      "files": [],
+      "expectations": [
+        "Does not add a policy engine or human approval machinery for name suggestions.",
+        "Keeps suggestions separate from executable authority."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Write and run a Python fake candidate controller: actor is authorized to choose any valid two-installment plan totaling 100 within day 30, no real payments. Proposed [40,40] days [10,20] fails; trusted permitted alternative [40,60] is available. Max candidates=2. Approval is unnecessary for this local fake but policy remains enforced. Also test an actor without permission, impossible due dates and model approved=true. Show state/effects for rejected and admitted candidates.",
+      "expected_output": "Safe candidate construction followed by deterministic admission.",
+      "files": [],
+      "expectations": [
+        "Rejects first candidate without effects, constructs/revalidates the supported alternative and admits exactly one valid plan.",
+        "Bounds candidate attempts and preserves required sum/dates/current permission; no policy relaxation or model approval authority.",
+        "No-permission and no-admissible-candidate cases fail closed with no effect; actual runnable checks are executed."
+      ]
+    }
+  ]
+}

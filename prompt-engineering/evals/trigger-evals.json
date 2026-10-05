@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Rewrite the production instructions for our support assistant. Separate stable responsibilities from ticket evidence, remove contradictory examples, define missing-fact behavior, and version the prompt for measured rollout.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our deployed model invents resource IDs even though search returns the real ones. Revise tool guidance and examples, preserve the existing schemas, and compare the prompt against frozen normal and gap cases.",
+    "should_trigger": true
+  },
+  {
+    "query": "The agent prompt is several pages of repeated safety language and still misses stop conditions. Diagnose instruction conflicts and produce concise scope, evidence, output, and termination rules.",
+    "should_trigger": true
+  },
+  {
+    "query": "Help design prompts for a model-powered document workflow with fixed steps. Define each component's responsibility, uncertainty behavior, trusted inputs, and output guidance without assigning permissions to the model.",
+    "should_trigger": true
+  },
+  {
+    "query": "A quoted source document is being treated as new instructions in our deployed assistant. Restructure trusted instructions and labeled data sections, preserve provenance, and propose prompt regression cases.",
+    "should_trigger": true
+  },
+  {
+    "query": "We need few-shot examples for a product classifier that confuses ambiguity with refusal. Cover the actual hard decisions without copying held-out tasks or expanding the prompt unnecessarily.",
+    "should_trigger": true
+  },
+  {
+    "query": "ok our answer bot gets worse when evidence is long. Review instruction placement and redundant context, then propose one versioned change with paired quality checks and a rollback path.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design a production prompt contract that returns a meaningful evidence gap when facts are absent. State forbidden assumptions and allowed tool preconditions while leaving admission and calculations in code.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review prompt versions for an assistant that now loops through unnecessary searches. Trace instruction conflicts versus missing context and retain only examples that measurably improve observable behavior.",
+    "should_trigger": true
+  },
+  {
+    "query": "Externalize dynamic customer facts from a global model prompt. Specify stable instructions, current-task containers, version hashes, schema references, evaluation cases, and compatibility needed for safe rollback.",
+    "should_trigger": true
+  },
+  {
+    "query": "Set up repository rules, source-file selection, context trimming, and restartable session summaries for a coding assistant. We need developer-session context hygiene rather than prompts shipped in a product.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a one-off friendly email explaining a delayed delivery, using the facts below and a clear next step. Produce the prose itself; no deployed prompt artifact or regression process is needed.",
+    "should_trigger": false
+  },
+  {
+    "query": "Our prompt already defines model responsibilities. Design the JSON schema for action, refusal, and missing evidence variants, including semantic validators, parsing limits, and migration behavior.",
+    "should_trigger": false
+  },
+  {
+    "query": "Prevent a model from bypassing account permissions by enforcing admission in trusted code. Implement principal checks, state versions, hard invariants, and atomic commit rather than changing wording.",
+    "should_trigger": false
+  },
+  {
+    "query": "Threat-model indirect instructions in retrieved web pages that lead to secret upload. Enforce scoped tools and destination policy and test containment independent of the current prompt.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build an agent evaluation dataset and calibrated scoring rubric for correctness, grounding, abstention, and trajectory safety. The prompt is frozen; focus on measurement and release thresholds.",
+    "should_trigger": false
+  },
+  {
+    "query": "Redesign ambiguous tool names, descriptions, schemas, results, and error semantics in the catalogue. The model instructions already reference the contracts correctly; the affordances need improvement.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design the runtime architecture for a document assistant and determine whether it needs a fixed pipeline or adaptive loop. Assign state, execution, and authority ownership before selecting model instructions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Our chatbot's persistent preference store mixes old claims with current facts. Specify provenance, expiry, tenant filtering, memory-write validation, and checkpoint transitions rather than prompt changes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Assemble layered input, output, permission, budget, and approval controls for an AI service. Measure false blocking and outage behavior; improving model wording alone is outside this enforcement task.",
+    "should_trigger": false
+  }
+]

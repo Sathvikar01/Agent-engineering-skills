@@ -1,0 +1,50 @@
+{
+  "skill_name": "agent-orchestration",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "The team wants planner, accountant, reviewer and critic agents to compute invoice totals from typed rows and fixed tax rules. Decide whether multiple agents are needed and propose the smallest verifiable implementation.",
+      "expected_output": "Rejects unnecessary multi-agent design.",
+      "files": [],
+      "expectations": [
+        "Rejects multi-agent architecture and computes totals with deterministic code.",
+        "Does not introduce model conversation/review loops for fixed arithmetic.",
+        "Uses deterministic assertions to verify totals rather than majority vote."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "We compare 60 independent document sets; workers need tenant-isolated context. Design a conditional fan-out/fan-in system with typed handoffs. One worker times out after a possible effect, another returns contradictory evidence, and a late worker responds after cancellation. Include shared spend=100 and no recursive delegation.",
+      "expected_output": "Bounded typed coordination with authority and conflict handling.",
+      "files": [],
+      "expectations": [
+        "Justifies workers against a single-agent/workflow baseline and measures net benefit.",
+        "Defines tenant-scoped handoffs, evidence validation and deterministic merge/conflict escalation.",
+        "Atomically enforces the aggregate budget of 100 and bounds concurrency/rounds.",
+        "Reconciles unknown effects and prevents late/cancelled workers from committing.",
+        "Does not use worker consensus as authorization or allow recursive chat loops."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Run three independent deterministic file checks in parallel and collect their actual exit codes. Use a temporary local fixture inside your output directory: create alpha.txt, beta.txt and gamma.txt with contents \"alpha\\n\", \"beta\\n\" and \"gamma\\n\" respectively. Each check verifies that its file exists and exactly matches the expected content, returning 0 for success and 1 otherwise. Supply runnable Python with bounded ordinary parallel functions/processes, actually run it, and save the log. None calls an LLM or makes adaptive decisions.",
+      "expected_output": "Simple deterministic parallelism.",
+      "files": [],
+      "expectations": [
+        "Uses ordinary bounded parallel functions/processes without agent personas.",
+        "Does not add a planner, reviewer or inter-agent negotiation protocol."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Design next-step control for a document assistant. If a typed source status is stale, fetch its current version. If conflicting prose may materially affect an answer, the next useful read/check is ambiguous. A proposed design uses planner/critic/router/reviewer personas and unlimited mutual messages. Decide control ownership, allowed transitions, no-progress handling, budgets and whether a framework or workers are needed. No code required.",
+      "expected_output": "Known routes in code; ambiguity bounded; no unjustified workers.",
+      "files": [],
+      "expectations": [
+        "Routes typed stale status deterministically and allows model-proposed next steps only for genuine contextual ambiguity.",
+        "Defines controller guards, allowed actions, finite steps/calls/retries/deadline/spend and no-progress termination.",
+        "Does not accept personas or framework availability as benefit; compares workers/framework capability against simpler implementations."
+      ]
+    }
+  ]
+}

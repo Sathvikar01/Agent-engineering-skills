@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Our document assistant answers with citations that exist but do not support the claims. Separate retrieval, context retention, and generation errors, and create source-span labels plus citation-support checks.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design a minimal evidence pipeline for policy questions with exact identifiers and paraphrased language. Compare sparse and dense baselines before adding hybrid search, reranking, or query rewrites.",
+    "should_trigger": true
+  },
+  {
+    "query": "A search-backed answer bot retrieves the right document but loses its decisive paragraph during context assembly. Measure evidence retention and compare chunk boundaries while preserving source and version anchors.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a labeled query set for document-grounded answers, including unanswerable and conflicting-source questions. Define relevance granularity, Recall@K, citation precision, abstention, and leakage-resistant splits.",
+    "should_trigger": true
+  },
+  {
+    "query": "We added a reranker and answers got slower without obvious gains. Design matched retrieval and generation ablations, oracle-evidence comparisons, and quality and latency gates for keeping the component.",
+    "should_trigger": true
+  },
+  {
+    "query": "Diagnose an assistant that finds semantic matches but misses exact product codes. Compare sparse, dense, and hybrid candidate generation with deduplication and source-level relevance scores.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our multi-tenant answer system filters documents after sending candidates to the model. Redesign retrieval, reranking, and cache access boundaries so inaccessible evidence never becomes model-visible.",
+    "should_trigger": true
+  },
+  {
+    "query": "ok the bot keeps citing last year's policy after an update. Specify corpus and index versioning, freshness metadata, deletion propagation, evidence assembly, and grounded generation checks.",
+    "should_trigger": true
+  },
+  {
+    "query": "Evaluate query rewriting for a knowledge assistant that drops user constraints. Bound candidate fan-out and stage time, preserve the original intent, and compare on held-out source-backed tasks.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design ingestion and chunking for long manuals with tables and neighboring definitions. Preserve parent spans, avoid duplicated evidence, bound context, and verify final answers against accessible supporting sources.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build conventional full-text document search that returns ranked links and snippets to users. Evaluate relevance and pagination, but there is no model-generated answer or evidence-assembly stage.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find current official documentation for the library versions in our project and cite the specific APIs used in the implementation. This is engineering documentation verification, not an application retrieval pipeline.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design persistent episodic and semantic memory for an assistant across sessions, including consent, provenance, expiry, state transitions, and deletion. Retrieval quality is adequate and outside this request.",
+    "should_trigger": false
+  },
+  {
+    "query": "Threat-model malicious retrieved pages trying to make a tool-using assistant upload secrets. Trace attacker-to-effect paths and enforce capabilities; relevance and citation quality are already measured.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a versioned production prompt telling a document assistant to distinguish evidence from inference and abstain when support is missing. The retrieval and citation contracts remain unchanged.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build whole-agent gold tasks and semantic scoring for correctness, completeness, safe abstention, and prohibited actions. Reuse the settled retrieval labels; focus on release measurement across task families.",
+    "should_trigger": false
+  },
+  {
+    "query": "Expose a document-search endpoint as a model-facing tool. Specify names, parameter units, bounded results, provenance, pagination, and errors without changing its underlying search or generation pipeline.",
+    "should_trigger": false
+  },
+  {
+    "query": "Profile model, tool, and retrieval spend using existing quality checks. Compare caching and model routing under tenant-aware keys and p95 targets rather than evaluating new retrieval stages.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design an agent architecture for adaptive research, assigning reasoning, state, tools, and execution authority. Decide fixed workflow versus single agent before any corpus or retrieval-quality tuning.",
+    "should_trigger": false
+  },
+  {
+    "query": "Retrieval and context assembly are already fixed. Only design a generic evidence ledger that joins receipts, calculations, decisions and emitted claim IDs.",
+    "should_trigger": false
+  }
+]

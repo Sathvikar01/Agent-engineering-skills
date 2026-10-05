@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Our receipt assistant works on one image. Help turn it into a reliable system that interprets messy receipts, validates reimbursements and emits supported explanations; build and test the whole path.",
+    "should_trigger": true
+  },
+  {
+    "query": "build me a support agent that can find orders and make authorized changes. I want the architecture, working implementation and evidence it behaves safely.",
+    "should_trigger": true
+  },
+  {
+    "query": "We have a chatbot prototype; productionize it with real state, tools and restart behavior rather than just a better prompt.",
+    "should_trigger": true
+  },
+  {
+    "query": "Substantially redesign our document agent: it loses evidence and loops. Audit architecture, implement a small corrected path, run failures and compare it to the old system.",
+    "should_trigger": true
+  },
+  {
+    "query": "Add retrieval, durable state and tool execution to the current one-call assistant. Work through the full engineering lifecycle and verify it.",
+    "should_trigger": true
+  },
+  {
+    "query": "I need an end-to-end hardening review of our agent, from model uncertainty and permissions to recovery, evals, traces and release evidence.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a semi-autonomous workflow for interpreting requests and preparing approvals. Need a measured baseline, vertical slice, implementation and failure tests.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our autonomous research prototype is becoming a product. Plan and carry out its engineering upgrade, then explain why the final design survived evals.",
+    "should_trigger": true
+  },
+  {
+    "query": "The claims assistant needs a major capability addition: new evidence tools, persisted tasks and bounded routing. Coordinate design, implementation, execution and review.",
+    "should_trigger": true
+  },
+  {
+    "query": "Can you architect and build a complete model-assisted pipeline for messy invoices? Code controls money and approval; show actual verification before accepting it.",
+    "should_trigger": true
+  },
+  {
+    "query": "Fix the misspelling insufficent_evidence in our agent prompt.",
+    "should_trigger": false
+  },
+  {
+    "query": "The agent parser raises ValueError for an empty integer argument; fix that one bug and run the parser test.",
+    "should_trigger": false
+  },
+  {
+    "query": "Add evidence_version as an optional field to this existing proposal schema; leave other contracts alone.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write one REST endpoint to list saved orders for our browser UI.",
+    "should_trigger": false
+  },
+  {
+    "query": "What is an AI agent? Explain it briefly to a beginner.",
+    "should_trigger": false
+  },
+  {
+    "query": "Make a deterministic cents-to-currency utility and its unit tests.",
+    "should_trigger": false
+  },
+  {
+    "query": "Tune just the search tool description so the LLM stops confusing it with delete_order.",
+    "should_trigger": false
+  },
+  {
+    "query": "Only compare latency and cost for these two existing model routes using the supplied numbers.",
+    "should_trigger": false
+  },
+  {
+    "query": "We already have our runtime; specify an exact email approval preview and expiry binding, no broader redesign.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design the evidence ledger reconciliation for our existing answer service; retrieval, controller and release pipeline are fixed.",
+    "should_trigger": false
+  }
+]

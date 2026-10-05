@@ -1,0 +1,49 @@
+{
+  "skill_name": "tool-design",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "An agent receives manage(data:any) for search, update, delete, send email, raw SQL and export. Results are prose strings and retries rerun mutations. Redesign this surface for finding an order and correcting its shipping address. Supply names/descriptions, strict schemas, errors, pagination and mutation semantics.",
+      "expected_output": "Coherent scoped tools and reviewable contracts.",
+      "files": [],
+      "expectations": [
+        "Removes unrestricted SQL/email/delete capability from the address-correction task.",
+        "Provides coherent search/read and address-update contracts with bounded results and clear selection descriptions.",
+        "Defines strict input/output schemas and machine-readable error variants.",
+        "Defines side effects, authorized identity and request-bound idempotency for update."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "A change-address tool times out after committing; retry uses the same key with a changed address. Search silently cuts off after 100 rows and exposes the user token in its error. Design the corrected contracts and demonstrate client behavior.",
+      "expected_output": "Rejects changed-key payload and reveals unknown outcomes safely.",
+      "files": [],
+      "expectations": [
+        "Rejects reuse of an idempotency key with different canonical arguments.",
+        "Returns or reconciles a recorded mutation outcome instead of blindly repeating it.",
+        "Provides explicit truncation/page status and never includes the user token in tool errors."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Design a conventional CRUD REST API for a notes app used only by browser clients. There is no LLM consumer. Keep the agent tools discussion out of scope.",
+      "expected_output": "General interface design.",
+      "files": [],
+      "expectations": [
+        "Treats this as ordinary API design and does not require a model-facing tool layer.",
+        "Does not introduce agent discovery evals or a prompt contract."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Design three model-facing capabilities for invoice work: find invoices, preview a payment schedule, commit a schedule. Search is read-only. Preview checks sums/dates without mutation. Commit requires permission and an application-issued approval bound to the exact schedule. Model calls preview to send money because its description says handles payments. Supply corrected selection descriptions and contract examples; no implementation needed.",
+      "expected_output": "Reviewable capability contracts and unambiguous model choices.",
+      "files": [],
+      "expectations": [
+        "Each important capability has explicit use/non-use guidance, pre/postconditions, permissions and side-effect semantics.",
+        "Provides representative request/response examples and strict input/output/errors for coherent search/preview/commit tools.",
+        "Preview cannot commit and model-selected commit cannot bypass exact approval/validation or idempotency."
+      ]
+    }
+  ]
+}

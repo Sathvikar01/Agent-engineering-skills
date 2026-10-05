@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Design the review step before a purchasing assistant commits an order. Prepare exact items, prices, recipients, and material risks, then specify approver authority, expiry, rejection, and safe continuation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our agent asks permission for every harmless lookup but sends consequential messages without a preview. Create a proportional action-to-gate table that preserves valid standing authorization.",
+    "should_trigger": true
+  },
+  {
+    "query": "An assistant proposes a bulk account change. Show a concrete diff, allow item-level rejection, bind approval to the exact arguments, and handle changed state before commit.",
+    "should_trigger": true
+  },
+  {
+    "query": "We need an escalation flow when a research assistant cannot obtain enough evidence for a consequential recommendation. Specify what the reviewer sees, what decisions they can make, and safe timeout behavior.",
+    "should_trigger": true
+  },
+  {
+    "query": "Approval fatigue is causing users to click through agent actions. Redesign batching and bounded standing grants, measure review burden, and preserve meaningful scrutiny of financial and destructive effects.",
+    "should_trigger": true
+  },
+  {
+    "query": "An agent waits for a manager to approve a refund while continuing unrelated authorized work. Specify pending, denied, expired, and cancelled states and prevent silence from becoming approval.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design preview-before-send for an assistant draft with attachments and multiple recipients. Complete reversible preparation first, identify an authorized reviewer, and invalidate approval if recipients or content materially change.",
+    "should_trigger": true
+  },
+  {
+    "query": "A reviewer approved yesterday's proposal, but today's resource state differs. Define the user-facing re-review, grant binding, cancellation, and resume behavior around a fresh policy decision.",
+    "should_trigger": true
+  },
+  {
+    "query": "Help choose where humans should enter a maintenance agent workflow. Compare impact, reversibility, evidence gaps, and existing user authorization; deliver one exact decision preview and a gate contract.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our AI workflow exposes an approve button for actions that violate a hard reserve rule. Redesign the decision experience so users understand denials, authorized exceptions, and their actual authority.",
+    "should_trigger": true
+  },
+  {
+    "query": "Implement a trusted grant verifier binding principal, action digest, state version, expiry, and use count. The review experience is already approved; focus exclusively on atomic admission and denied-state invariants.",
+    "should_trigger": false
+  },
+  {
+    "query": "Compose input checks, schema validation, permission gates, output grounding, and runtime limits for an agent. Review outages and contradictory layers using the existing approval interface.",
+    "should_trigger": false
+  },
+  {
+    "query": "The coding project has an approved specification. Write a task-by-task implementation plan with files, signatures, tests, and execution handoff; we are not designing a product approval workflow.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a specification for a new conventional web feature and identify open requirements before coding. Follow the existing development review stages rather than adding runtime human approval to an AI system.",
+    "should_trigger": false
+  },
+  {
+    "query": "Threat-model forged approval text in retrieved documents and malicious tool results. Verify trusted capability boundaries stop the attack; the human decision flow itself is fixed.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design model output variants for proposed changes, refusal, and insufficient evidence. Keep application approval logic unchanged and focus on parsing, semantic validation, and bounded repair.",
+    "should_trigger": false
+  },
+  {
+    "query": "We already have grants and reviewer screens. Persist their pending IDs and policy versions in durable agent checkpoints, preserving expiry and budgets across compaction and restart.",
+    "should_trigger": false
+  },
+  {
+    "query": "Our chatbot only drafts advisory summaries and performs authorized read-only searches. Improve its production prompt, evidence requirements, and abstention behavior without adding action approvals.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build evaluation tasks that measure agent accuracy and safety on approved versus denied operations. Keep the gate design fixed and calibrate scoring against existing policy and human labels.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diagnose why a conventional background job retries an expired access token. Reproduce the bug, inspect configuration propagation, and implement a test-backed fix rather than changing human review.",
+    "should_trigger": false
+  }
+]

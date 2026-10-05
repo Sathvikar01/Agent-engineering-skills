@@ -1,0 +1,50 @@
+{
+  "skill_name": "agent-testing",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Design the test pyramid and CI gate for an assistant that retrieves documents, proposes refunds, uses deterministic permission/balance checks and human approvals, then persists receipts. Map risks to layers and indicate which tests require models or browsers.",
+      "expected_output": "Risk-weighted tests with cheap deterministic foundations.",
+      "files": [],
+      "expectations": [
+        "Tests permissions, amounts, approval binding and state transitions deterministically.",
+        "Includes schema/tool contracts, scripted integration, trajectory/eval and fault-injected restart tests.",
+        "Reserves real model calls for behavior affected by model variability.",
+        "Uses browser/E2E for the actual approval flow and reports skips as unverified."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Our CI asks an LLM whether balance checks are correct, asserts exact reasoning transcripts, and skips refund tests when the model API is unavailable. Add concrete deterministic tests for denial-no-effect, duplicate retries, unknown commits, stale approval and cross-tenant IDs. Supply runnable Python tests against a small local fake admission/execution runtime and run them; no live effects.",
+      "expected_output": "Executable outcomes replace grader-only/exact-reasoning checks.",
+      "files": [],
+      "expectations": [
+        "Replaces balance/permission grading with executable deterministic assertions.",
+        "Asserts no forbidden effects and permitted call dependencies rather than private reasoning strings.",
+        "Keeps authority tests active when the model service is unavailable.",
+        "Covers retry/recovery and tenant/approval failures with realistic fixtures."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Use red-green-refactor to fix a deterministic sorting bug in a library with no model runtime. What tests should run?",
+      "expected_output": "Ordinary deterministic TDD.",
+      "files": [],
+      "expectations": [
+        "Keeps the test approach deterministic without agent eval infrastructure.",
+        "Does not add LLM calls or a trajectory grader."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Build and run a small deterministic Python fake around a scripted model response boundary, no provider calls. Contract: kind=propose, amount integer 1..10, evidence_ids only observed A, explanation_amount agrees with amount. Simulate malformed JSON, missing/empty output, valid-shape amount 11, invented Z, contradictory explanation, timeout, refusal, unsupported tool and repeated no-progress answer; include one valid proposal. Surrounding controller must bound retries/steps and record admitted effects. Show actual tests and coverage limitations.",
+      "expected_output": "Executed model-failure fixtures verify predictable surrounding control.",
+      "files": [],
+      "expectations": [
+        "Runs deterministic tests rejecting malformed/missing/invalid-meaning/unknown-ID/contradictory outputs and prevents their effects.",
+        "Covers timeout/refusal/unsupported-tool/no-progress with bounded controller behavior and a valid admitted path.",
+        "Uses scripted responses and observable effects instead of paid graders/private reasoning assertions; labels fake/provider limitations."
+      ]
+    }
+  ]
+}

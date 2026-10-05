@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Our answer cites message IDs the model guessed. Design the runtime ledger and check every claim against observed messages before output.",
+    "should_trigger": true
+  },
+  {
+    "query": "Retrieval returned A and B but only A supported the decision. The final answer cites both. Fix the used-support reconciliation contract.",
+    "should_trigger": true
+  },
+  {
+    "query": "A summary loses document/span/version when passed between models. Preserve transformation ancestry through decision and explanation.",
+    "should_trigger": true
+  },
+  {
+    "query": "The model emits WAIT in JSON but its explanation says approved. Reconcile facts, source support, decision and output before emission.",
+    "should_trigger": true
+  },
+  {
+    "query": "A tool result claims source_id=trusted-1, but that ID never appeared in an observed envelope. Prevent spoofed provenance reaching the decision.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our computed decision uses receipt rows and a versioned rule. Define how calculation inputs and source IDs support each emitted claim.",
+    "should_trigger": true
+  },
+  {
+    "query": "On checkpoint resume the agent cites a document whose access was revoked. Design freshness/access checks for persisted evidence pointers.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a ledger validator that rejects unknown and known-but-unrelated citation IDs, and accepts genuinely supported claims.",
+    "should_trigger": true
+  },
+  {
+    "query": "The pipeline records retrieved documents but cannot show what supported the final answer. Add source-to-claim support lineage across stages.",
+    "should_trigger": true
+  },
+  {
+    "query": "We want honest unsupported status when evidence cannot be reconciled, with bounded repair instead of inventing citations after generation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare Recall@10 for sparse and dense search over our labeled manual queries; leave downstream citation reconciliation fixed.",
+    "should_trigger": false
+  },
+  {
+    "query": "Format these supplied references in APA style for my paper.",
+    "should_trigger": false
+  },
+  {
+    "query": "Add span correlation IDs and redaction to ordinary service event logs, no evidence-support decision path.",
+    "should_trigger": false
+  },
+  {
+    "query": "Find the current official documentation for this framework method and cite it in your coding explanation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Choose a chunk size for retrieval and ablate reranking, with claim provenance already implemented.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design expiry and deletion for remembered user response-style preferences.",
+    "should_trigger": false
+  },
+  {
+    "query": "Validate required field names, numeric types and enum values for this model JSON contract; support rules are unchanged.",
+    "should_trigger": false
+  },
+  {
+    "query": "Implement request duration counters for our normal API server.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rename the evidence_ids JSON field to source_ids using a backwards-compatible serialization adapter; no support evaluation changes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Locate a source file in the repository and explain the deterministic function in it.",
+    "should_trigger": false
+  }
+]

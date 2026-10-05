@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Our policy-document pipeline uses brittle regex for negation and exceptions just to avoid models. Decide the correct uncertainty boundary and architecture; step order is fixed.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our proposed support product uses a planner and six specialist bots. Review that architecture against a fixed workflow and a single tool-using assistant; specify evidence needed before adding workers.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design the runtime boundaries for an assistant that monitors equipment reports and proposes maintenance bookings. Include the source of truth, execution authority, termination, and what a failed run looks like.",
+    "should_trigger": true
+  },
+  {
+    "query": "Can a document triage product use one model classification followed by known routing rules? Compare that option with an agent and define a small experiment to resolve uncertain requirements.",
+    "should_trigger": true
+  },
+  {
+    "query": "I have a tool-calling prototype that keeps planning after the requested task is complete. Review the control structure and specify observable completion, cancellation, no-progress handling, and hard run ceilings.",
+    "should_trigger": true
+  },
+  {
+    "query": "Before choosing an orchestration framework, map a travel-planning run from user intent through retrieved options, proposed reservation, authorization, evidence, and stored outcome. Recommend the simplest adequate runtime.",
+    "should_trigger": true
+  },
+  {
+    "query": "A reporting assistant only calculates known totals and formats a narrative. Assess whether any agent autonomy is needed, show the deterministic baseline, and identify what would justify a model-powered step.",
+    "should_trigger": true
+  },
+  {
+    "query": "Help separate reasoning, state ownership, permissions, and actual execution in an inventory assistant. Several components currently let the model write workflow status directly; produce a boundary decision record.",
+    "should_trigger": true
+  },
+  {
+    "query": "We need an AI research product whose next sources depend on earlier findings. Compare a fixed retrieval pipeline with one adaptive worker and define the eval and budget gates for the choice.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review an assistant design that combines conversations, remembered preferences, payment tools, and a reviewer model. Specify component ownership and safe success and denied trajectories before implementation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design module boundaries for a conventional appointment application: accounts, calendars, notifications, and billing. The execution flow is fully deterministic; produce a dependency map and API ownership contracts.",
+    "should_trigger": false
+  },
+  {
+    "query": "The deployed assistant architecture is approved. Create gold tasks, separate final-answer and trajectory scores, and set release thresholds for comparing its next prompt revision with the current version.",
+    "should_trigger": false
+  },
+  {
+    "query": "Our fixed two-worker product has measured benefits and a settled component map. Specify fan-in rules for contradictory outputs, late results, cancellation, and centralized worker budget reservations.",
+    "should_trigger": false
+  },
+  {
+    "query": "Implement admission for proposed transfers using authenticated identity, a reserve floor, version checks, and atomic balance reservation. The surrounding agent architecture is fixed; focus on the executable allow/deny path.",
+    "should_trigger": false
+  },
+  {
+    "query": "The support agent already has its runtime design. Rewrite its ambiguous search and update tool descriptions, input schemas, bounded results, and unknown-outcome errors so the model can use them correctly.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review our password reset endpoint for token expiry, account enumeration, rate limiting, and session invalidation. Its behavior is conventional application logic and has no model-mediated action path.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write an implementation plan from the approved assistant specification, naming files, signatures, tests, and task dependencies. We need a coding work breakdown rather than another runtime autonomy decision.",
+    "should_trigger": false
+  },
+  {
+    "query": "Instrument an existing agent so operators can join model calls, policy decisions, tool receipts, retries, and final state across restarts. The component boundaries and autonomy choices are already settled.",
+    "should_trigger": false
+  },
+  {
+    "query": "Set up repository instructions and focused source-file context for a coding assistant that keeps forgetting conventions after compaction. Preserve pending tasks and verification evidence in the session handoff.",
+    "should_trigger": false
+  },
+  {
+    "query": "Our document-backed answer service loses citation spans after reranking. Trace retrieval, context assembly, and generation separately, and compare chunking variants while keeping the current architecture fixed.",
+    "should_trigger": false
+  }
+]

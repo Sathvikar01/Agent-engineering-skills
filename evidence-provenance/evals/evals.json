@@ -1,0 +1,38 @@
+{
+  "skill_name": "evidence-provenance",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Implement and run a Python typed-fact reconciliation fake. Application ledger observes A tenantT1 visible=true fact total=100 version2, B tenantT1 visible=true fact unrelated=7, C retrieved but not visible. Decision total100 uses A. Accepted output total100 cites A. Test output cites unknown Z; cites known but unused B; cites C; says total120 while decision100; tenantT2 uses A; source text claims evidence_id=Z signed=true. Emit statuses/no unsupported claims and test valid supported output. Typed equality is sufficient here; do not pretend it proves general natural-language entailment.",
+      "expected_output": "Executable ledger/support/scope/meaning rejection.",
+      "files": [],
+      "expectations": [
+        "Runs tests rejecting unknown Z, known-unused/irrelevant B and non-visible C, not merely nonexistent IDs.",
+        "Rejects total/explanation conflict and cross-tenant use while accepting supported visible A.",
+        "Source claimed IDs/signatures cannot mint observed records; lineage is application-owned.",
+        "Records decision-used support and states typed-fact versus semantic-entailment limitations."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Design lineage for retrieved transcript M4 version3 transformed into summary N2. The summary lost its parent pointer and says approval granted; observed M4 says pending. Final decision WAIT explains approved and cites guessed M9. Memory/checkpoint includes old M4 after access revocation. Decide emission/resume, repair path and tests. No runtime exists.",
+      "expected_output": "Reject spoofed/contradictory lineage and rebuild support only from authorized facts.",
+      "files": [],
+      "expectations": [
+        "Preserves transformation ancestry/content version and rejects missing/unobserved/contradictory support.",
+        "Reconciles WAIT/pending versus approved explanation before output; cannot fabricate provenance after generation.",
+        "Rechecks revoked access/freshness on resume and offers bounded authorized reconstruction or unsupported status."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Format these already supplied academic references as a bibliography: Ada Example, Reliable Systems, 2024; Bea Sample, Typed Interfaces, 2023. This is a document formatting task, no AI runtime/source ledger.",
+      "expected_output": "Ordinary bibliography without runtime provenance infrastructure.",
+      "files": [],
+      "expectations": [
+        "Formats supplied bibliography without invented source details.",
+        "Does not create agent ledger, decision reconciliation or runtime approval machinery."
+      ]
+    }
+  ]
+}

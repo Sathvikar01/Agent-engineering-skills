@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Our single tool-using agent sometimes needs another read to resolve conflicting text. Design who controls next steps, guards and stop limits.",
+    "should_trigger": true
+  },
+  {
+    "query": "A known stale-document status always means refetch; a semantic contradiction may need a model-selected check. Build bounded routing for these paths.",
+    "should_trigger": true
+  },
+  {
+    "query": "The planner repeats the same action after no progress. Define admissible next actions and controller termination across fallback and resume.",
+    "should_trigger": true
+  },
+  {
+    "query": "Should a model choose when to retrieve again, verify or escalate in this runtime? Compare it with a fixed state machine using task evidence.",
+    "should_trigger": true
+  },
+  {
+    "query": "We need bounded next-tool selection for one deployed agent, with max calls and a shared deadline; do we need a framework?",
+    "should_trigger": true
+  },
+  {
+    "query": "Specify worker handoffs for a planner-reviewer product: IDs, evidence, capabilities, output schemas, completion criteria, deadlines, and budgets. Reviewer agreement must not substitute for authoritative permissions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our orchestrator grants all workers its broad credentials. Redesign worker scope and fan-in validation, and handle conflicting proposals without majority vote becoming execution authority.",
+    "should_trigger": true
+  },
+  {
+    "query": "A cancelled worker returns a proposed mutation after the coordinator has moved on. Design late-result admission, task expiry, checkpoint resume, and duplicate-dispatch handling for the deployed system.",
+    "should_trigger": true
+  },
+  {
+    "query": "Plan coordination for assistants that use distinct confidential contexts. Show whether isolation warrants multiple workers, what minimal evidence crosses handoffs, and how the coordinator validates provenance and results.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review a runtime multi-agent design under skewed workloads and partial failure. Define merge behavior, bounded reviewer rounds, central budgets, traces, and a policy-compatible simpler fallback.",
+    "should_trigger": true
+  },
+  {
+    "query": "Execute this approved coding plan using a fresh implementer and reviewer for each task. Track commits, brief files, review findings, and completion in a ledger in the development session.",
+    "should_trigger": false
+  },
+  {
+    "query": "Dispatch independent coding investigations for frontend and backend defects and synthesize their reports. The request concerns development collaboration, with no deployed multi-agent product design.",
+    "should_trigger": false
+  },
+  {
+    "query": "Parallelize deterministic image transformations in a background queue. Define worker concurrency, retry limits, and ordered output assembly; no models plan, interpret, or coordinate the tasks.",
+    "should_trigger": false
+  },
+  {
+    "query": "Choose whether an invoice product needs deterministic rules, a fixed model workflow, or one adaptive assistant. Establish the simplest runtime first; there is no justified multiple-worker coordination yet.",
+    "should_trigger": false
+  },
+  {
+    "query": "Our single agent makes independent read calls slowly. Measure safe request parallelism and caching under the existing architecture, quality floor, rate limits, and cost-per-success budget.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design persistence for shared run status, checkpoint versions, receipts, provenance, and deletion. The worker graph is already approved; focus on state lifecycle rather than handoff or fan-in rules.",
+    "should_trigger": false
+  },
+  {
+    "query": "Implement the trusted gate for worker-proposed transfers, checking principal scope, hard rules, and atomic aggregate reservation. Existing orchestration contracts are fixed; only admission implementation is requested.",
+    "should_trigger": false
+  },
+  {
+    "query": "Benchmark current agents against a representative task set using quality, grounding, abstention, safety, cost, and latency. No runtime coordination changes are planned; establish defensible scoring and release gates.",
+    "should_trigger": false
+  },
+  {
+    "query": "Instrument parent-child spans, worker versions, proposal digests, and receipts in a settled deployed system. Operators need trajectory reconstruction, not another orchestration necessity decision.",
+    "should_trigger": false
+  },
+  {
+    "query": "Productionize the entire receipt agent across architecture, implementation, evals, security and release; coordinate the lifecycle without specifying controller transitions here.",
+    "should_trigger": false
+  }
+]

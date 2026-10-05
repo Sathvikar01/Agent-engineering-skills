@@ -1,0 +1,50 @@
+{
+  "skill_name": "agent-failure-recovery",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Build a small executable Python fake and recovery test: step 1 reserves inventory successfully; step 2 creates a shipment, commits externally, then its response is lost; the process restarts and retries. Stable idempotency/status lookup is available. Demonstrate one shipment, preserved budgets and an honest final state.",
+      "expected_output": "Executable unknown-outcome reconciliation without duplicate shipment.",
+      "files": [],
+      "expectations": [
+        "Looks up or reuses the same request-bound operation key before any repeat shipment effect.",
+        "Executable assertions prove one shipment after lost response and restart.",
+        "Preserves completed reservation evidence and remaining retry/run budgets.",
+        "Separates unknown, committed and partial states until evidence resolves the outcome."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "A tool reports permission denied on every call, but the planner retries forever and restarts to reset its budget. Another provider has no idempotency or status API after a payment timeout. Define safe termination, escalation and partial completion behavior.",
+      "expected_output": "Bounded permanent-failure handling and unresolved commit status.",
+      "files": [],
+      "expectations": [
+        "Stops unchanged permission-denied retries and cannot reset budget via restart.",
+        "Does not blindly resend a payment or promise exactly-once without provider support.",
+        "Reports the unresolved payment outcome and a reconciliation/manual-review path.",
+        "Does not compensate earlier work without separate authority."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Fix this deterministic CLI parser, which has no model, persistent run or side effects. It currently crashes with ValueError for a non-integer --limit and accepts negative values:\n\nimport argparse\ndef parse_limit(argv):\n    parser = argparse.ArgumentParser()\n    parser.add_argument('--limit', default='10')\n    return int(parser.parse_args(argv).limit)\n\nRequire an integer from 1 through 100, default 10. Invalid values must produce argparse's normal usage error with exit code 2, not a ValueError traceback. Supply the corrected Python file and finite deterministic tests for default, valid, non-integer and out-of-range inputs; actually run the tests.",
+      "expected_output": "Ordinary debugging and error handling.",
+      "files": [],
+      "expectations": [
+        "Does not introduce checkpoint infrastructure, agent retry loops or dead-letter queues.",
+        "Uses normal validation/debugging with a finite deterministic test."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "An extraction model times out, then returns schema-valid but contradictory fields. After two failed attempts a team returns regex guesses as success. A fallback model is available, but total model calls=3 and deadline=5s; if required facts remain unknown it must return review-needed. Define retry vs repair vs fallback vs escalation vs terminal failure for timeout, refusal, empty output and contradiction. Explain when a valid candidate should still be constructed; no implementation required.",
+      "expected_output": "Finite contract-preserving degradation without lazy refusal or fake success.",
+      "files": [],
+      "expectations": [
+        "Separates retry/repair/fallback/escalation/terminal behavior for the model failures and enforces cumulative three-call/deadline limits.",
+        "Attempts supported repair/alternative when feasible but does not treat semantic regex guessing as verified fallback success.",
+        "Revalidates fallback under original semantic/policy/evidence requirements and reports review-needed/terminal status if unresolved."
+      ]
+    }
+  ]
+}

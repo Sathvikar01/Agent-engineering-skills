@@ -1,0 +1,50 @@
+{
+  "skill_name": "structured-output-design",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Define a strict JSON Schema and validation pipeline for a model that proposes inventory adjustments. Variants are propose, no_action and insufficient_evidence. Amounts use integer units; tenant and permissions come from authenticated context. Include malformed/refused generation recovery and schema version upgrades.",
+      "expected_output": "Strict proposal union and separate semantic admission.",
+      "files": [],
+      "expectations": [
+        "Uses discriminated variants with necessary required fields and bounded integer quantities.",
+        "Derives identity and permissions from trusted context rather than the generated JSON.",
+        "Separates shape, semantic validation and authority before state mutation.",
+        "Defines finite repair/refusal behavior and rejects unsupported schema versions."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "The model emits {\"version\":\"1\",\"kind\":\"propose\",\"item_id\":\"I4\",\"quantity_delta\":-99,\"approved\":true}. JSON parses. Trusted stock is 3 and the actor has read permission only. The schema currently ignores unknown fields. Show whether and how this proposal can enter application state.",
+      "expected_output": "Rejects shape/semantic/authority violations.",
+      "files": [],
+      "expectations": [
+        "Rejects or strictly handles the unexpected approved field and never trusts it as authority.",
+        "Rejects a negative stock result based on deterministic current stock.",
+        "Rejects write authorization for a read-only actor even if schema is fixed.",
+        "Does not mutate application state or repair the value into a fabricated authorized action."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Serialize an existing trusted server record to JSON for a conventional API. No model produces or edits this record. Keep the implementation straightforward.",
+      "expected_output": "Ordinary serialization.",
+      "files": [],
+      "expectations": [
+        "Does not introduce model-repair loops, refusals or agent state machinery.",
+        "Uses a conventional typed serialization contract."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Implement and run a small Python semantic validator for schema-shaped payment proposals using a local fake, no real effects. Trusted required total=100, allowed installments positive integers, latest due day=30; permitted candidate schedules include [40,60] days [10,20]. Candidate [40,40] days [10,20] is invalid; another candidate says WAIT yet execute_day=0 and explanation_status=APPROVED. Unknown evidence Z is invalid; observed allowed evidence A supports the total. Show rejection, bounded safe reconstruction of the first candidate from permitted facts, revalidation and no admission of unsupported/conflicting candidates. State full JSON Schema coverage limitations.",
+      "expected_output": "Executed meaning checks and supported repair under unchanged rules.",
+      "files": [],
+      "expectations": [
+        "Executable checks reject wrong sum, WAIT/immediate or explanation contradiction and unknown evidence despite valid shape.",
+        "Constructs a permitted [40,60] alternative, revalidates under unchanged facts/rules and bounds reconstruction.",
+        "Invalid candidates cause no trusted transition/effect and full schema/entailment limitations are stated honestly."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "skill_name": "agent-evals",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We plan a document-backed support assistant with read-only search and optional account changes. Before coding, design a 12-case pilot eval, deterministic and grader scoring, data splits, baseline and release thresholds. We have 200 historical tasks, including paraphrases from the same incidents.",
+      "expected_output": "A usable eval specification before implementation.",
+      "files": [],
+      "expectations": [
+        "Includes representative successes, abstentions, adversarial content and forbidden account changes.",
+        "Groups related incident paraphrases into one split and keeps held-out answers out of retrieval and prompts.",
+        "Separates final-answer quality, trajectory safety and operational metrics.",
+        "Uses deterministic scoring where possible and gives a calibrated rubric for remaining grader judgments."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Variant A scores 92% and B 94% on 50 tasks run once. B made one unauthorized account edit. We tuned B repeatedly against those same 50 answers. Should B ship? Give a concrete rerun design and release decision.",
+      "expected_output": "Rejects unsupported or unsafe release and repairs experiment design.",
+      "files": [],
+      "expectations": [
+        "Rejects shipping B because an unauthorized side effect is independently disqualifying.",
+        "Does not claim a reliable two-point gain from one run of 50 tasks.",
+        "Creates a fresh held-out group split and repeat-run paired comparison.",
+        "Keeps critical violation results separate from aggregate task success."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Add unit tests for a pure cents-to-currency formatting function; no LLM or agent is involved. Describe the smallest test approach.",
+      "expected_output": "Deterministic tests only.",
+      "files": [],
+      "expectations": [
+        "Uses ordinary deterministic tests without a gold agent suite or model grader.",
+        "Does not introduce paid model calls for format checks."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Same 100 held-out tasks: baseline quality=86%, provenance errors=0, critical safety violations=0, p95=4s,cost=20; verifier variant quality=91%, provenance errors=3, safety=1,p95=7s,cost=35. Predeclared gates are zero safety violations, zero unsupported IDs,p95<=5s,cost<=30. The team says the extra model makes reliability better. Decide release, propose reproducible rerun/ablation and record what would justify retaining it. No actual dataset is available.",
+      "expected_output": "Reject gated regressions; propose honest rerun manifest.",
+      "files": [],
+      "expectations": [
+        "Rejects variant despite average quality gain because critical safety/provenance and operational gates fail.",
+        "Specifies same gold/version/configuration comparison and verifier ablation plus an obvious repeatable command/path.",
+        "Records quality/safety/provenance/latency/cost separately and does not invent executed rerun or reliability evidence."
+      ]
+    }
+  ]
+}

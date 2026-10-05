@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Test whether our assistant chooses the right inventory capability among similar tool names. Include distractors, invalid units, absent evidence, and tasks where no call should be made.",
+    "should_trigger": true
+  },
+  {
+    "query": "Benchmark the current and revised tool catalogues on identical tasks. Separate discovery, selection, arguments, response interpretation, redundant calls, and recovery rather than only checking final answers.",
+    "should_trigger": true
+  },
+  {
+    "query": "Evaluate a search-read-update chain where the model must use a returned ID and current version. Allow alternative safe sequences, but reject fabricated identifiers and unauthorized committed effects.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our model claims it changed a ticket without a receipt. Build tool-use cases that join calls to final state and distinguish a correct final sentence from an actually completed mutation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create usability tests for tools that return empty, truncated, malformed, and paginated results. Measure whether the model interprets each state and obtains missing evidence within a bounded call budget.",
+    "should_trigger": true
+  },
+  {
+    "query": "We renamed two agent tools and selection errors increased. Design matched cases with plausible distractors and repeated runs, then identify whether failures begin in discovery or semantic choice.",
+    "should_trigger": true
+  },
+  {
+    "query": "Evaluate model behavior when a mutation times out after committing. Use an idempotent fake and inspect whether it reconciles the outcome instead of blindly repeating or minting a new operation.",
+    "should_trigger": true
+  },
+  {
+    "query": "Test an assistant tool surface under rate limits, stale versions, authorization denials, cancellation, and exhausted budgets. Score failure recovery separately from server contract correctness.",
+    "should_trigger": true
+  },
+  {
+    "query": "Users ask ambiguous bulk-update requests and the model picks an overly broad tool. Create substantial cases for clarification, safe abstention, argument scope, and forbidden effects in sandbox state.",
+    "should_trigger": true
+  },
+  {
+    "query": "Compare whether removing unused tools improves an LLM workflow. Freeze fixtures, prompts, permissions, and initial state; report selection errors and valid chain dependencies without demanding one transcript.",
+    "should_trigger": true
+  },
+  {
+    "query": "Redesign ambiguous lookup and mutation tools for our assistant. Produce names, descriptions, schemas, actionable errors, idempotency rules, and success and denial exchanges before any usability measurement.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build a representative benchmark for whole-agent research answers, covering factual accuracy, source support, completeness, safe abstention, and severity-weighted release slices. Tool usability is already acceptable.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write unit and adapter tests for the server pagination and error mapping. Call the functions directly with fixed inputs; this request has no model selecting or interpreting capabilities.",
+    "should_trigger": false
+  },
+  {
+    "query": "Implement a new MCP integration from official SDK examples, including transport setup, registration, structured response handling, build verification, and Inspector smoke checks for the provided contract.",
+    "should_trigger": false
+  },
+  {
+    "query": "Specify crash recovery for an agent operation ledger when an external effect is committed but no receipt is stored. Define reconciliation, compensation, resume authorization, and terminal partial statuses.",
+    "should_trigger": false
+  },
+  {
+    "query": "Threat-model whether malicious tool metadata can induce credential exfiltration. Map attacker-controlled text to proposed actions and verify destination policies and scoped identities prevent forbidden effects.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a typed schema for model-produced plans, refusals, and missing evidence. Test semantic consistency and unknown versions; the output is advisory data and invokes no external capability.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rewrite the production instructions that tell our assistant when to stop. Remove conflicting examples and define evidence requirements against the existing tool catalogue and established regression suite.",
+    "should_trigger": false
+  },
+  {
+    "query": "Compare model routing and cache policies for an assistant whose task quality is already scored. Include retries and fallback charges in cost per success and keep p95 completion within budget.",
+    "should_trigger": false
+  },
+  {
+    "query": "Add tracing around discovery, tool attempts, policy denial, and final receipt linkage. We need run reconstruction and safe event retention, not new usability cases or quality scores.",
+    "should_trigger": false
+  }
+]

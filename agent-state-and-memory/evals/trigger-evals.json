@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Decide what our long-running support assistant should persist: conversation excerpts, working plans, pending actions, receipts, preferences, and verified account facts. Specify authority, provenance, scope, and expiry for each.",
+    "should_trigger": true
+  },
+  {
+    "query": "An assistant remembers that a customer is entitled to a refund, but the current account state disagrees. Design memory reads and typed transitions that preserve history without replacing authoritative facts.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design checkpoints for an investigation agent that may restart between tool calls. Include pending outcomes, budgets, state and policy versions, evidence pointers, and validation before resume.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our conversational product stores preferences across users and sessions. Define consented writes, tenant isolation, deduplication, deletion, stale preference handling, and protection against poisoned memory instructions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Two agent workers update the same run record and occasionally overwrite completed steps. Specify allowed state transitions, expected versions, ownership, and immutable receipts for concurrent writers.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build a runtime compaction contract for an assistant with days of history. Preserve uncertainty, source references, pending effects, and remaining budgets without turning old approval text into a grant.",
+    "should_trigger": true
+  },
+  {
+    "query": "We want episodic recall of previous troubleshooting outcomes. Distinguish summaries from verified events and define provenance, freshness checks, retrieval limits, retention, and conflicting evidence handling.",
+    "should_trigger": true
+  },
+  {
+    "query": "An agent restart resets its spend limit and reuses expired access. Redesign persisted run state and resume checks so cumulative budgets and current permissions survive process boundaries.",
+    "should_trigger": true
+  },
+  {
+    "query": "Map memory ownership for a personal assistant: searchable knowledge, user preferences, task status, and current permissions. Show which data is advisory and how critical facts are revalidated.",
+    "should_trigger": true
+  },
+  {
+    "query": "A user revoked access and deleted a document, yet the assistant still retrieves its cached memory. Design revocation and deletion paths across runtime memory, retrieval caches, and evidence references.",
+    "should_trigger": true
+  },
+  {
+    "query": "Set up coding-session rules and a project map for an assistant that forgets repository conventions. Design focused file loading, context trimming, and a durable developer-session handoff after compaction.",
+    "should_trigger": false
+  },
+  {
+    "query": "Define retry and reconciliation policy after an agent mutation times out. The checkpoint schema is settled; specify unknown-outcome handling, compensation, backoff, and escalation within existing budgets.",
+    "should_trigger": false
+  },
+  {
+    "query": "Our document-backed answer system retrieves stale sources and misses exact identifiers. Compare sparse, dense, and hybrid retrieval, evaluate source relevance, and fix evidence assembly without adding persistent memory.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a migration adding job status and retry count to a conventional queue table. Define rollout, indexes, and rollback; no AI runtime or model-written memory is involved.",
+    "should_trigger": false
+  },
+  {
+    "query": "Summarize this long conversation into agreed decisions, unresolved questions, and next steps for a human reader. This is a one-off summary, with no storage lifecycle or resume design required.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design admission for pending agent actions using trusted identity, current state, grants, and atomic version checks. The state representation already exists; focus on executable authorization.",
+    "should_trigger": false
+  },
+  {
+    "query": "Threat-model poisoned document summaries influencing an assistant to upload secrets. Trace attacker-to-effect paths and enforce capability and destination boundaries rather than redesigning memory storage.",
+    "should_trigger": false
+  },
+  {
+    "query": "Add events for checkpoint creation, resume attempts, state transitions, and final receipts. We need run reconstruction from telemetry using the existing persistence contract.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design the human decision flow for an agent proposal that waits overnight: preview, approve or reject, expiry, cancellation, and changed-action review. Keep storage and admission contracts fixed.",
+    "should_trigger": false
+  },
+  {
+    "query": "Rewrite production instructions so an assistant cites current evidence and stops when facts are absent. Reference the existing memory API without changing persistence, retrieval lifetime, or transitions.",
+    "should_trigger": false
+  }
+]

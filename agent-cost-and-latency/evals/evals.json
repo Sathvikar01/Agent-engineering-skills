@@ -1,0 +1,50 @@
+{
+  "skill_name": "agent-cost-and-latency",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Over 100 tasks A costs 20 units and succeeds on 80; B costs 12 and succeeds on 40. Both include retries. Calculate cost per successful task, choose a tentative option and design quality/latency-gated experiments for routing, context and caching.",
+      "expected_output": "Outcome-based cost comparison and measured experiments.",
+      "files": [],
+      "expectations": [
+        "Calculates A=0.25 and B=0.30 cost units per successful task.",
+        "Does not select B solely because total cost or tokens are smaller.",
+        "Includes success/safety floors and p95 latency in matched optimization experiments.",
+        "Defines bounded model/tool/spend budgets and routing escalation costs."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "A shared response cache omits tenant and prompt versions. Two dependent mutation tools run in parallel to save latency. Workers each spend up to the full run cap, and restarts reset it. Correct the optimization and acceptance tests.\n\nBuild and actually run a small local Python fake workload; no live models, external calls or mutations. Supply safe cache isolation, ordered permissioned mutations, and one durable shared reservation/spend ledger across workers and restart. Use a deterministic fake clock and billing ledger: each attempt advances the logical task clock and incurs the stated charge, including failed attempts. The read is immutable cacheable data; cached responses never grant permission/approval or replace current authoritative state. Every logical task has a distinct ID; mutation B requires successful A. Both require current fake permission. Independently verify the ordered outcome, not the model's success claim.\n\nExecute 40 logical tasks, 10 of each fixture below. Each task starts its own logical clock at zero. Costs are synthetic units; durations are simulated milliseconds. Cold successful read costs1/duration10; warm authorized cache hit costs0.1/duration2; mutation A costs2/duration20; mutation B costs3/duration30; final deterministic verification costs0.2/duration5.\n- Cold-success: cold read, successful A, successful B, verification.\n- Warm-success: scoped preloaded cache hit, successful A, successful B, verification.\n- Retry-success: one transient failed cold read charged1/duration10, one successful cold read charged1/duration10, then successful A, successful B, verification. Exactly one eligible retry.\n- Permanent-failure: cold read, A returns permanent failure charged2/duration20, no B, verification reports unsuccessful. Do not retry A.\n\nMeasure executed ledger totals across all40 tasks, count independently verified successes, compute total cost divided by those successes (include all failed tasks/retries), and nearest-rank p95 logical completion latency across all40 terminal tasks. Also state the success-only latency denominator if reported. Do not fabricate a pre-change benchmark or claim simulated fees/durations measure a real provider. The workload's shared cost cap is250 units and per-task cap10; admission must reserve conservatively so multiple workers cannot each take the whole cap. Include separate deterministic acceptance tests for cross-tenant/access/version/freshness cache isolation, permission denial/no mutation, B-before-A rejection, aggregate budget contention, and resumed spent/pending reservations; keep those tests out of workload metric totals. Save code, actual command logs and a concise report of measurements and limitations.",
+      "expected_output": "Preserves quality, isolation, dependency and aggregate budget.",
+      "files": [],
+      "expectations": [
+        "Scopes cache by tenant/access and relevant versions/freshness; does not cache approval as authority.",
+        "Keeps dependent mutations ordered and authorized rather than parallelizing blindly.",
+        "Enforces a shared aggregate budget preserved across restart.",
+        "Measures end-to-end cost per success and tail latency after the change."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Profile and optimize an N+1 SQL query in a normal web endpoint. No models, retrieval context or agent calls occur.",
+      "expected_output": "Standard application profiling.",
+      "files": [],
+      "expectations": [
+        "Uses ordinary query/performance measurements without agent token accounting.",
+        "Does not introduce model routing or prompt caching."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "We split receipt interpretation, exact total arithmetic, ambiguous contradiction review and explanation across four models because a popular competition used many models. No per-role evals exist. Variant S costs20, succeeds80/100,p95=4s; added verifier V costs30,succeeds82/100,p95=8s. Required p95<=5s. Decide role ownership and retain/reject, then propose role/model routing ablations including failed retries. No provider recommendations.",
+      "expected_output": "Role-specific measured selection and outcome economics.",
+      "files": [],
+      "expectations": [
+        "Uses deterministic arithmetic and evaluates genuine semantic roles individually; does not prescribe one model per role or providers by popularity.",
+        "Computes cost per success S=0.25 and V=30/82, rejects V under p95 gate and does not claim proven reliability gain.",
+        "Defines same-gold end-to-end routing/verifier ablations including retries/fallbacks and completion latency under budgets."
+      ]
+    }
+  ]
+}

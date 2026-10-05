@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Build a test pyramid for our tool-using assistant. Separate policy and schema unit tests, adapter contracts, scripted trajectories, model evals, and fault-injected restart checks by risk and CI cost.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write integration tests proving malformed model proposals cannot reach effects. Use production validators and scripted model responses, and assert denied state stays unchanged rather than matching error text.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create property tests for an agent runtime: tenant isolation, budgets never increasing on resume, unknown variants failing closed, and supported idempotency committing at most one effect under concurrency.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our agent tests mock every internal method and miss real executor bugs. Redesign fixtures and fakes around admission-to-receipt-to-state outcomes, with adapter checks in a resettable sandbox.",
+    "should_trigger": true
+  },
+  {
+    "query": "Design crash injection around an assistant's external commit and receipt persistence. Test unknown outcomes, stale approval, resumed budgets, and reconciliation using a durable provider fake.",
+    "should_trigger": true
+  },
+  {
+    "query": "Plan CI triggers for prompt, model, tool, schema, and retrieval changes. Keep cheap deterministic agent checks fast and choose targeted expensive eval slices without allowing missing critical checks to pass.",
+    "should_trigger": true
+  },
+  {
+    "query": "Test an approval-enabled assistant in its actual user interface. Cover preview accuracy, rejection, cancellation, expired grants, and visible committed outcome, and keep unrelated browser checks out of scope.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our trajectory tests demand one exact tool-call sequence and reject valid alternatives. Replace them with dependency, permission, evidence, termination, and forbidden-effect assertions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Build regression fixtures for agent refusals, malformed results, poisoned tool output, rate limits, slow tools, and evaluator disagreement. Preserve failing trajectories and distinguish infrastructure failure from product failure.",
+    "should_trigger": true
+  },
+  {
+    "query": "We need executable verification of concurrent agent proposals against current permissions and state. Map high-impact invariants to deterministic tests and show exact commands, counts, and uncovered risks.",
+    "should_trigger": true
+  },
+  {
+    "query": "Implement a normal password validation function using red-green-refactor, with boundary cases and repository test commands. No agent runtime, model output, tool, or recovery behavior is involved.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design a gold task population for a research agent, with source provenance, leakage-resistant splits, semantic rubric calibration, repeated runs, and severity-weighted release thresholds.",
+    "should_trigger": false
+  },
+  {
+    "query": "Measure whether an LLM discovers the correct capability and interprets empty and partial results. Score selection and arguments under a frozen catalogue; backend and runtime correctness tests already exist.",
+    "should_trigger": false
+  },
+  {
+    "query": "Specify a new deterministic policy admission function for model-proposed transfers, including atomic aggregate reservations, hard invariants, and grant binding. Implement its authority boundary rather than only test coverage.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design unknown-outcome recovery and compensation for an agent whose provider lacks idempotency. Choose safe replay and escalation semantics before writing crash-injection tests.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create model-produced JSON variants for proposed action, refusal, and evidence gap. Specify parsing limits, semantic validation, repair, and contract migration before the consumer is implemented.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit a conventional API for injection, broken access control, insecure cookies, dependency scripts, and sensitive data retention. This is general application hardening without an agent test strategy.",
+    "should_trigger": false
+  },
+  {
+    "query": "Prepare ten stable read-only XML questions for an MCP server, with independently verified answers and multi-call exploration. Follow its existing evaluation tooling rather than design an agent CI pyramid.",
+    "should_trigger": false
+  },
+  {
+    "query": "Profile an agent using the existing eval suite and telemetry. Compare smaller-model routing, caching, and critical-path parallelism under fixed safety and quality thresholds.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review whether completed code meets the approved plan by running the full build and tests and inspecting their outputs. Report precise completion evidence for this coding task without designing new agent tests.",
+    "should_trigger": false
+  }
+]
