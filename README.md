@@ -1,4 +1,4 @@
-# Sathvik — Agent Engineering Skills
+# Agent Engineering Skills
 
 A framework-agnostic collection of 19 agent skills for designing, building, evaluating, and operating AI agents and model-powered workflows.
 
